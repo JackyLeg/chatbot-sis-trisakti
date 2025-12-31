@@ -1,0 +1,5 @@
+.env
+.rasa
+actions/__pycache__/
+models/
+credentials.yml

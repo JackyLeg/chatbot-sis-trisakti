@@ -1,0 +1,9 @@
+recipe: default.v1
+language: en
+
+pipeline:
+- name: CompactLLMCommandGenerator
+
+policies:
+- name: FlowPolicy
+assistant_id: 20250704-231009-sunny-helo

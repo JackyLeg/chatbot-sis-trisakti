@@ -1,0 +1,8 @@
+flows:
+  check_weather:
+    description: Help users check the weather for a specified location.
+    steps:
+      - collect: location
+        description: The city or place the user wants the weather for
+      - action: action_check_weather
+      - respond: utter_weather_info
