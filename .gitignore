@@ -3,3 +3,4 @@
 actions/__pycache__/
 models/
 credentials.yml
+.DS_Store
