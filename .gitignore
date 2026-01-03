@@ -7,3 +7,4 @@ endpoints.yml
 /actions/__init__.py
 /models
 .DS_Store
+rasapro_env
