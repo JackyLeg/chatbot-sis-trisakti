@@ -1,0 +1,15 @@
+version: "3.1"
+
+actions:
+- menu_kartuPesertaUjian
+
+slots:
+  menu_kartuPesertaUjian:
+    type: text
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_kartuPesertaUjian:
+    - text: "Please select one of the following kartu peserta ujian options: [Cek Kartu Peserta Ujian], [Kartu Peserta Ujian Tidak Dapat Diunduh], [Syarat mendapatkan Kartu Peserta Ujian]."
+

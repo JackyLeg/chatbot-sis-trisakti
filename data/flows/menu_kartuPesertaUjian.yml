@@ -1,0 +1,7 @@
+flows:
+  kartuPesertaUjian:
+      description: Help user with kartu peserta ujian menus
+      steps:
+        - collect: menu_kartuPesertaUjian
+          description: User must select one of 3 options for kartu peserta ujian.
+        - action: menu_kartuPesertaUjian

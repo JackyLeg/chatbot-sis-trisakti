@@ -1,0 +1,16 @@
+version: "3.1"
+
+actions:
+- hello_world
+
+slots:
+  name:
+    type: text
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_name:
+    - text: "What's your name?"
+  utter_greet:
+    - text: "Hello {name}! How can I assist you today?"

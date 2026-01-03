@@ -6,3 +6,4 @@ endpoints.yml
 /actions/__pycache__
 /actions/__init__.py
 /models
+.DS_Store

@@ -1,0 +1,16 @@
+version: "3.1"
+
+actions:
+- menu_cuti
+
+slots:
+  menu_cuti:
+    type: text
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_cuti:
+    - text: "Please select one of the following cuti options: [Pengajuan Cuti Akademik], [Status Pengajuan Cuti Akademik], [Kendala Pengajuan Cuti Akademik]."
+
+    

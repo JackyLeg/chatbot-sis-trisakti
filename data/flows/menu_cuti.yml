@@ -1,0 +1,7 @@
+flows:
+  cuti:
+      description: Help user with cuti menus
+      steps:
+        - collect: menu_cuti
+          description: User must select one of 3 options for cuti.
+        - action: menu_cuti

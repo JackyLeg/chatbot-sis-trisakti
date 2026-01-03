@@ -1,0 +1,9 @@
+flows:
+  greetings:
+    description: greet users when they start a conversation
+    name: greet users
+    steps:
+      - collect: "name"
+        description: "the name of the user"
+      - action: hello_world
+
