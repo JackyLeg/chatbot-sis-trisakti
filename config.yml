@@ -1,11 +1,14 @@
 recipe: default.v1
+assistant_id: central-noir
 language: en
-assistant_id: sis-trisakti
 pipeline:
 - name: CompactLLMCommandGenerator
   llm:
-    model_group: rasa_command_generation_model
-  flow_retrieval:
-    active: false
+    model_group: openai-gpt-4o
 policies:
 - name: FlowPolicy
+- name: IntentlessPolicy
+  llm:
+    model_group: openai-gpt-4o
+  embeddings:
+    model_group: openai-embeddings
