@@ -1,8 +1,27 @@
 flows:
-  check_weather:
-    description: Help users check the weather for a specified location.
+  transfer_money:
+    description: Help users send money to friends and family.
     steps:
-      - collect: location
-        description: The city or place the user wants the weather for
-      - action: action_check_weather
-      - respond: utter_weather_info
+      - collect: recipient
+      - collect: amount
+        description: the number of US dollars to send
+      - action: utter_transfer_complete
+  greetings:
+    description: Greet the user when they start a conversation
+    steps:
+      - collect: name
+      - action: action_greetings
+
+  cuti:
+    description: Help user with cuti menus
+    steps:
+      - collect: menu_cuti
+        description: User must select one of 3 options for cuti.
+      - action: action_menu_cuti
+  
+  kartuPesertaUjian:
+    description: Help user with kartu peserta ujian menus
+    steps:
+      - collect: menu_kartuPesertaUjian
+        description: User must select one of 3 options for kartu peserta ujian.
+      - action: action_menu_kartuPesertaUjian

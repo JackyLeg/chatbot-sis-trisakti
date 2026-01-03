@@ -1,16 +1,69 @@
 version: "3.1"
 
 slots:
-  location:
+  recipient:
     type: text
-  weather_info:
+    mappings:
+      - type: from_llm
+  amount:
+    type: float
+    mappings:
+      - type: from_llm
+  name:
     type: text
+    mappings:
+      - type: from_llm
+
+  menu_cuti:
+    type: text
+    mappings:
+      - type: from_llm
+
+  menu_kartuPesertaUjian:
+    type: text
+    mappings:
+      - type: from_llm
 
 responses:
-  utter_ask_location:
-    - text: "Which location would you like the weather for?"
-  utter_weather_info:
-    - text: "The current weather in {location} is {weather_info}."
+  utter_ask_menu_kartuPesertaUjian:
+    - text: "Please select one of the following kartu peserta ujian options: [Cek Kartu Peserta Ujian], [Kartu Peserta Ujian Tidak Dapat Diunduh], [Syarat mendapatkan Kartu Peserta Ujian]."
+  utter_ask_menu_cuti:
+    - text: "Please select one of the following cuti options: [Pengajuan Cuti Akademik], [Status Pengajuan Cuti Akademik], [Kendala Pengajuan Cuti Akademik]."
+  utter_ask_name:
+    - text: "What is your name?"
+    - text: "May I know who you are?"
+
+  utter_ask_recipient:
+    - text: "Who would you like to send money to?"
+
+  utter_ask_amount:
+    - text: "How much money would you like to send?"
+
+  utter_transfer_complete:
+    - text: "All done. {amount} has been sent to {recipient}."
+
+  utter_free_chitchat_response:
+    - text: "placeholder"
+      metadata:
+        rephrase: True
+        rephrase_prompt: |
+          The following is a conversation with an AI assistant built with Rasa.
+          The assistant can help the user transfer money.
+          The assistant is helpful, creative, clever, and very friendly.
+          The user is making small talk, and the assistant should respond, keeping things light.
+          Context / previous conversation with the user:
+          {{history}}
+          {{current_input}}
+          Suggested AI Response:
+
+  utter_greet:
+    - text: "Hey, {name}!"
+    - text: "Hello, {name}!"
+
+  utter_bye:
+    - text: "See you next time!"
 
 actions:
-  - action_check_weather
+  - action_greetings
+  - action_menu_cuti
+  - action_menu_kartuPesertaUjian
