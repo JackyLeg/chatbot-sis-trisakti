@@ -13,8 +13,8 @@
 #   embeddings:
 #     model_group: openai-embeddings
 recipe: default.v1
-language: en
-assistant_id: sis-trisakti
+language: id
+assistant_id: chatbot-sis-trisakti
 pipeline:
 - name: CompactLLMCommandGenerator
   llm:

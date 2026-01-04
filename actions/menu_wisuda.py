@@ -14,10 +14,10 @@ class MenuWisuda(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        if tracker.get_slot("menu_wisuda") == "Graduation (Yudisium dan Dokumen Kelulusan)":
+        if tracker.get_slot("menu_wisuda") == "Graduation":
             dispatcher.utter_message("Yudisium dan Dokumen Kelulusan *giveInfo*")
 
-        elif tracker.get_slot("menu_wisuda") == "Wisuda (Pendaftaran dan Pelaksanaan)":
+        elif tracker.get_slot("menu_wisuda") == "Wisuda":
             dispatcher.utter_message("Pendaftaran dan Pelaksanaan Wisuda *giveInfo*")
 
         else:

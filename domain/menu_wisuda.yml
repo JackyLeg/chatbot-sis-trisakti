@@ -5,13 +5,18 @@ actions:
 
 slots:
   menu_wisuda:
-    type: text
+    type: categorical
+    values:
+      - Graduation
+      - Wisuda
     mappings:
       - type: from_llm
 
 responses:
   utter_ask_menu_wisuda:
-    - text: "Please select one of the following wisuda options: 
-        [Graduation (Yudisium dan Dokumen Kelulusan)], 
-        [Wisuda (Pendaftaran dan Pelaksanaan)]."
-
+    - text: "Please select one of the following wisuda options:"
+      buttons:
+        - title: "Graduation (Yudisium dan Dokumen Kelulusan)"
+          payload: Graduation
+        - title: "Wisuda (Pendaftaran dan Pelaksanaan)"
+          payload: Wisuda

@@ -5,12 +5,21 @@ actions:
 
 slots:
   menu_cuti:
-    type: text
+    type: categorical
+    values:
+      - Pengajuan Cuti Akademik
+      - Status Pengajuan Cuti Akademik
+      - Kendala Pengajuan Cuti Akademik
     mappings:
       - type: from_llm
 
 responses:
   utter_ask_menu_cuti:
-    - text: "Please select one of the following cuti options: [Pengajuan Cuti Akademik], [Status Pengajuan Cuti Akademik], [Kendala Pengajuan Cuti Akademik]."
-
-    
+    - text: "Please select one of the following cuti options:"
+      buttons:
+        - title: "Pengajuan Cuti Akademik"
+          payload: Pengajuan Cuti Akademik
+        - title: "Status Pengajuan Cuti Akademik"
+          payload: Status Pengajuan Cuti Akademik
+        - title: "Kendala Pengajuan Cuti Akademik"
+          payload: Kendala Pengajuan Cuti Akademik

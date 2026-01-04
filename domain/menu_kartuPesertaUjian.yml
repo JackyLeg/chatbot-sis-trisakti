@@ -5,14 +5,21 @@ actions:
 
 slots:
   menu_kartuPesertaUjian:
-    type: text
+    type: categorical
+    values:
+      - Cek Kartu Peserta Ujian
+      - Kartu Peserta Ujian Tidak Dapat Diunduh
+      - Syarat mendapatkan Kartu Peserta Ujian
     mappings:
       - type: from_llm
 
 responses:
   utter_ask_menu_kartuPesertaUjian:
-    - text: "Please select one of the following kartu peserta ujian options: 
-        [Cek Kartu Peserta Ujian], 
-        [Kartu Peserta Ujian Tidak Dapat Diunduh], 
-        [Syarat mendapatkan Kartu Peserta Ujian]."
-
+    - text: "Please select one of the following kartu peserta ujian options:"
+      buttons:
+        - title: "Cek Kartu Peserta Ujian"
+          payload: Cek Kartu Peserta Ujian
+        - title: "Kartu Peserta Ujian Tidak Dapat Diunduh"
+          payload: Kartu Peserta Ujian Tidak Dapat Diunduh
+        - title: "Syarat mendapatkan Kartu Peserta Ujian"
+          payload: Syarat mendapatkan Kartu Peserta Ujian

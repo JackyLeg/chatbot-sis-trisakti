@@ -5,17 +5,30 @@ actions:
 
 slots:
   menu_kartuRencanaStudi:
-    type: text
+    type: categorical
+    values:
+      - Cara Mengisi KRS
+      - Periode Pengisian KRS
+      - Tidak Bisa Mengisi KRS
+      - Ubah/Batalkan KRS
+      - Cetak/Unduh KRS
+      - Masalah KRS
     mappings:
       - type: from_llm
 
 responses:
   utter_ask_menu_kartuRencanaStudi:
-    - text: "Please select one of the following kartu rencana studi options:
-        [Cara Mengisi KRS], 
-        [Periode Pengisian KRS], 
-        [Tidak Bisa Mengisi KRS], 
-        [Ubah/Batalkan KRS], 
-        [Cetak/Unduh KRS], 
-        [Masalah KRS]."
-
+    - text: "Please select one of the following kartu rencana studi options:"
+      buttons:
+        - title: "Cara Mengisi KRS"
+          payload: Cara Mengisi KRS
+        - title: "Periode Pengisian KRS"
+          payload: Periode Pengisian KRS
+        - title: "Tidak Bisa Mengisi KRS"
+          payload: Tidak Bisa Mengisi KRS
+        - title: "Ubah/Batalkan KRS"
+          payload: Ubah/Batalkan KRS
+        - title: "Cetak/Unduh KRS"
+          payload: Cetak/Unduh KRS
+        - title: "Masalah KRS"
+          payload: Masalah KRS

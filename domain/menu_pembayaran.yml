@@ -5,13 +5,18 @@ actions:
 
 slots:
   menu_pembayaran:
-    type: text
+    type: categorical
+    values:
+      - Cek Status Pembayaran
+      - Kendala Pembayaran
     mappings:
       - type: from_llm
 
 responses:
   utter_ask_menu_pembayaran:
-    - text: "Please select one of the following pembayaran options: 
-        [Cek Status Pembayaran], 
-        [Kendala Pembayaran]."
-
+    - text: "Please select one of the following pembayaran options:"
+      buttons:
+      - title: "Cek Status Pembayaran"
+        payload: Cek Status Pembayaran
+      - title: "Kendala Pembayaran"
+        payload: Kendala Pembayaran
