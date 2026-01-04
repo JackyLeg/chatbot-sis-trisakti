@@ -1,0 +1,21 @@
+version: "3.1"
+
+actions:
+- menu_tugasAkhir
+
+slots:
+  menu_tugasAkhir:
+    type: text
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_tugasAkhir:
+    - text: "Please select one of the following tugas akhir options:
+        [Pendaftaran Tugas Akhir], 
+        [Judul Tugas Akhir], 
+        [Dosen Pembimbing], 
+        [Proposal dan Bimbingan], 
+        [Seminar Proposal dan Sidang], 
+        [Nilai, Revisi, dan Kelulusan]."
+

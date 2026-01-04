@@ -1,0 +1,7 @@
+flows: 
+  pembayaran:
+      description: Help user with pembayaran menus
+      steps:
+        - collect: menu_pembayaran
+          description: User must select one of 2 options for pembayaran.
+        - action: menu_pembayaran

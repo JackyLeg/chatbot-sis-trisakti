@@ -1,0 +1,17 @@
+version: "3.1"
+
+actions:
+- menu_pembayaran
+
+slots:
+  menu_pembayaran:
+    type: text
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_pembayaran:
+    - text: "Please select one of the following pembayaran options: 
+        [Cek Status Pembayaran], 
+        [Kendala Pembayaran]."
+

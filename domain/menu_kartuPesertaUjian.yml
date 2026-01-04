@@ -11,5 +11,8 @@ slots:
 
 responses:
   utter_ask_menu_kartuPesertaUjian:
-    - text: "Please select one of the following kartu peserta ujian options: [Cek Kartu Peserta Ujian], [Kartu Peserta Ujian Tidak Dapat Diunduh], [Syarat mendapatkan Kartu Peserta Ujian]."
+    - text: "Please select one of the following kartu peserta ujian options: 
+        [Cek Kartu Peserta Ujian], 
+        [Kartu Peserta Ujian Tidak Dapat Diunduh], 
+        [Syarat mendapatkan Kartu Peserta Ujian]."
 

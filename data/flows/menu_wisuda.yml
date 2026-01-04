@@ -1,0 +1,7 @@
+flows:
+  wisuda:
+      description: Help user with wisuda menus
+      steps:
+        - collect: menu_wisuda
+          description: User must select one of 2 options for wisuda.
+        - action: menu_wisuda

@@ -1,0 +1,7 @@
+flows: 
+  tugasAkhir:
+      description: Help user with tugas akhir menus
+      steps:
+        - collect: menu_tugasAkhir
+          description: User must select one of 6 options for tugas akhir.
+        - action: menu_tugasAkhir

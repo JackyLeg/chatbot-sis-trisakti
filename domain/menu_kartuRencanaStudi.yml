@@ -1,0 +1,21 @@
+version: "3.1"
+
+actions:
+- menu_kartuRencanaStudi
+
+slots:
+  menu_kartuRencanaStudi:
+    type: text
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_kartuRencanaStudi:
+    - text: "Please select one of the following kartu rencana studi options:
+        [Cara Mengisi KRS], 
+        [Periode Pengisian KRS], 
+        [Tidak Bisa Mengisi KRS], 
+        [Ubah/Batalkan KRS], 
+        [Cetak/Unduh KRS], 
+        [Masalah KRS]."
+

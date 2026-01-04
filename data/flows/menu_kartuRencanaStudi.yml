@@ -1,0 +1,7 @@
+flows:
+  kartuRencanaStudi:
+      description: Help user with kartu rencana studi menus
+      steps:
+        - collect: menu_kartuRencanaStudi
+          description: User must select one of 6 options for kartu rencana studi.
+        - action: menu_kartuRencanaStudi
