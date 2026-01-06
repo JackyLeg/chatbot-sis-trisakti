@@ -1,20 +1,20 @@
-flows:
-  # pattern_chitchat:
-  #   description: Conversation repair flow for off-topic interactions that won't disrupt the main conversation. should not respond to greetings or anything else for which there is a flow defined
-  #   name: pattern chitchat
-  #   steps:
-  #     - action: utter_free_chitchat_response
-  # pattern_search:
-  #   description: Flow for handling knowledge-based questions
-  #   name: pattern search
-  #   steps:
-  #     - action: utter_free_chitchat_response
+responses:
+  utter_noop:
+    - text: ""
 
+
+flows:
   pattern_completed:
-    description: Show academic menu after flow completion
-    name: pattern completed
+    description: End flow without additional messages
     steps:
-      - action: utter_show_academic_menu  
+      - action: utter_noop
+
+
+  # pattern_completed:
+  #   description: Show academic menu after flow completion
+  #   name: pattern completed
+  #   steps:
+  #     - action: utter_show_academic_menu  
 
   # pattern_session_start :
   #   description: Flow for handling knowledge-based questions
