@@ -1,0 +1,43 @@
+flows:
+  transfer_money:
+    description: Help users send money to friends and family.
+    steps:
+      - collect: recipient
+      - collect: amount
+        description: the number of US dollars to send
+      - action: utter_transfer_complete
+
+  greet:
+    description: Greet the user and provide navigation for academic services
+    steps:
+      - action: utter_greeting
+
+  info_wisuda:
+    description: Provide information about graduation (wisuda) services at Universitas Trisakti
+    steps:
+      - action: utter_info_wisuda
+
+  info_tugas_akhir:
+    description: Provide information about final project (tugas akhir) requirements and deadlines
+    steps:
+      - action: utter_info_tugas_akhir
+
+  info_cuti:
+    description: Provide information about academic leave (cuti) procedures and requirements
+    steps:
+      - action: utter_info_cuti
+
+  info_kartu_peserta_ujian:
+    description: Provide information on how to access or print the student exam card
+    steps:
+      - action: utter_info_kartu_peserta_ujian
+
+  info_krs:
+    description: Provide information on the study plan card (KRS) process and access
+    steps:
+      - action: utter_info_krs
+
+  info_pembayaran:
+    description: Provide information for academic payment status and procedure
+    steps:
+      - action: utter_info_pembayaran

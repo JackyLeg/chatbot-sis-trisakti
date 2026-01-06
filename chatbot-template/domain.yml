@@ -1,0 +1,74 @@
+version: "3.1"
+
+slots:
+  recipient:
+    type: text
+    mappings:
+      - type: from_llm
+  amount:
+    type: float
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_recipient:
+    - text: "Who would you like to send money to?"
+
+  utter_ask_amount:
+    - text: "How much money would you like to send?"
+
+  utter_transfer_complete:
+    - text: "All done. {amount} has been sent to {recipient}."
+
+  utter_greeting:
+    - text: |
+        Halo! 👋  
+        Aku adalah Asisten Akademik Digital Universitas Trisakti.  
+        Silakan pilih topik layanan yang kamu butuhkan seperti wisuda, tugas akhir, cuti, kartu ujian, KRS, atau pembayaran.
+  
+  utter_info_wisuda:
+    - text: "Informasi wisuda: periode, syarat, dan pendaftaran bisa kamu cek di portal mahasiswa atau hubungi BAA."
+
+  utter_info_tugas_akhir:
+    - text: "Informasi tugas akhir: silakan cek panduan tugas akhir di laman jurusan dan pastikan daftar pembimbing sesuai jadwal."
+
+  utter_info_cuti:
+    - text: "Informasi cuti akademik: prosedur, formulir, dan peraturan cuti ada di portal akademik."
+
+  utter_info_kartu_peserta_ujian:
+    - text: "Untuk kartu peserta ujian, login ke portal Trisakti Student Service dan pilih menu Ujian."
+
+  utter_info_krs:
+    - text: "KRS dapat diakses melalui portal akademik di menu KRS setelah login dengan NIM dan password kamu."
+
+  utter_info_pembayaran:
+    - text: "Informasi pembayaran bisa dilihat di portal finance/BAA, termasuk tagihan dan statusnya."
+
+  utter_show_academic_menu:
+    - text: |
+        Silakan pilih layanan akademik berikut:
+      buttons:
+        - title: "🎓 Wisuda"
+          payload: "wisuda"
+        - title: "📄 Tugas Akhir"
+          payload: "tugas akhir"
+        - title: "📘 KRS"
+          payload: "krs"
+        - title: "💳 Pembayaran"
+          payload: "pembayaran"
+        - title: "⏸️ Cuti"
+          payload: "cuti"
+
+  # utter_free_chitchat_response:
+  #   - text: "placeholder"
+  #     metadata:
+  #       rephrase: True
+  #       rephrase_prompt: |
+  #         The following is a conversation with an AI assistant built with Rasa.
+  #         The assistant can help the user transfer money.
+  #         The assistant is helpful, creative, clever, and very friendly.
+  #         The user is making small talk, and the assistant should respond, keeping things light.
+  #         Context / previous conversation with the user:
+  #         {{history}}
+  #         {{current_input}}
+  #         Suggested AI Response:
