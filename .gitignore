@@ -8,3 +8,4 @@ endpoints.yml
 /models
 .DS_Store
 rasapro_env
+endpoints.yml

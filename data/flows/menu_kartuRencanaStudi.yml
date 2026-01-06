@@ -3,5 +3,28 @@ flows:
       description: Help user with kartu rencana studi menus
       steps:
         - collect: menu_kartuRencanaStudi
-          description: User must select one of 6 options for kartu rencana studi.
-        - action: menu_kartuRencanaStudi
+          description: User must select one of 5 options for kartu rencana studi.
+          next:
+          - if: slots.menu_kartuRencanaStudi is "More"
+            then:
+            - collect: menu_kartuRencanaStudi2
+              next:
+              - if: slots.menu_kartuRencanaStudi2 is "Back"
+                then:
+                - collect: menu_kartuRencanaStudi
+                  next: END
+              - else: menu_confirmation
+          - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_kartuRencanaStudi_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_kartuRencanaStudi_confirmation is not true
+            then: 
+              - action: utter_menu_kartuRencanaStudi_cancelled
+              - collect: menu_kartuRencanaStudi
+                next: END
+          - else:
+            - action: utter_menu_kartuRencanaStudi_ok
+              next: END

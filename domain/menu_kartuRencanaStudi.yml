@@ -7,12 +7,23 @@ slots:
   menu_kartuRencanaStudi:
     type: categorical
     values:
-      - Cara Mengisi KRS
-      - Periode Pengisian KRS
-      - Tidak Bisa Mengisi KRS
-      - Ubah/Batalkan KRS
-      - Cetak/Unduh KRS
-      - Masalah KRS
+      - Melihat Mata Kuliah Pada KRS
+      - Mengisi Data Academic Advising
+      - Mengisi KRS
+      - Melihat Prasyarat Pengisian KRS
+      - More
+  menu_kartuRencanaStudi2:
+    type: categorical
+    values:
+      - Melihat Kurikulum
+      - Mengajukan Fast Track
+      - Melihat Data Conversion Plan
+      - Back
+    mappings:
+      - type: from_llm
+
+  menu_kartuRencanaStudi_confirmation:
+    type: bool
     mappings:
       - type: from_llm
 
@@ -20,15 +31,39 @@ responses:
   utter_ask_menu_kartuRencanaStudi:
     - text: "Please select one of the following kartu rencana studi options:"
       buttons:
-        - title: "Cara Mengisi KRS"
-          payload: Cara Mengisi KRS
-        - title: "Periode Pengisian KRS"
-          payload: Periode Pengisian KRS
-        - title: "Tidak Bisa Mengisi KRS"
-          payload: Tidak Bisa Mengisi KRS
-        - title: "Ubah/Batalkan KRS"
-          payload: Ubah/Batalkan KRS
-        - title: "Cetak/Unduh KRS"
-          payload: Cetak/Unduh KRS
-        - title: "Masalah KRS"
-          payload: Masalah KRS
+        - title: "Mengisi Data Academic Advising"
+          payload: Mengisi Data Academic Advising
+        - title: "Mengisi KRS"
+          payload: Mengisi KRS
+        - title: "Melihat Prasyarat Pengisian KRS"
+          payload: Melihat Prasyarat Pengisian KRS
+        - title: "Melihat Mata Kuliah Pada KRS"
+          payload: Melihat Mata Kuliah Pada KRS
+        - title: "More"
+          payload: More
+
+  utter_ask_menu_kartuRencanaStudi2:
+    - text: "Please select one of the following additional kartu rencana studi options:"
+      buttons:
+        - title: "Melihat Kurikulum"
+          payload: Melihat Kurikulum
+        - title: "Mengajukan Fast Track"
+          payload: Mengajukan Fast Track
+        - title: "Melihat Data Conversion Plan"
+          payload: Melihat Data Conversion Plan
+        - title: "Back"
+          payload: Back
+
+  utter_ask_menu_kartuRencanaStudi_confirmation:
+    - text: "You have selected the option: {menu_kartuRencanaStudi}. Is that correct?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+        - title: "No"
+          payload: No, I want to change it
+
+  utter_menu_kartuRencanaStudi_cancelled:
+    - text: "Okay, let's try again. Please select one of the kartu rencana studi options."
+  
+  utter_menu_kartuRencanaStudi_ok:
+    - text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
