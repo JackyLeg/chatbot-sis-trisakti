@@ -1,5 +1,3 @@
-version: "3.1"
-
 responses:
   utter_greeting:
     - text: |
@@ -20,20 +18,3 @@ responses:
           payload: "wisuda"
         - title: "⏸️ Cuti"
           payload: "cuti"
-
-  utter_krs_menu:
-    - text: |
-        Silakan pilih topik terkait Kartu Rencana Studi (KRS):
-      buttons:
-        - title: "📝 Cara mengisi KRS"
-          payload: "cara mengisi krs"
-        - title: "🗓️ Periode pengisian KRS"
-          payload: "periode krs"
-        - title: "❌ Tidak bisa mengisi KRS"
-          payload: "tidak bisa krs"
-        - title: "✏️ Ubah / batalkan KRS"
-          payload: "ubah krs"
-        - title: "📥 Cetak / unduh KRS"
-          payload: "cetak krs"
-        - title: "⚠️ Masalah KRS lainnya"
-          payload: "masalah krs"

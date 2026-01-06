@@ -1,0 +1,15 @@
+# version: "3.1"
+
+# flows:
+#   kartuRencanaStudiMore:
+#     description: Menu lanjutan KRS
+#     steps:
+#       - collect: krs_menu_more
+#         next:
+#           - if: slots.krs_menu_more is "Back"
+#             then:
+#               - collect: krs_menu
+#                 next: END
+#           - else:
+#             - call: kartuRencanaStudiConfirm
+#               next: END

@@ -1,0 +1,16 @@
+# version: "3.1"
+
+# flows:
+#   kartuRencanaStudiConfirm:
+#     description: Konfirmasi pilihan menu KRS
+#     steps:
+#       - collect: krs_menu_confirmation
+#         next:
+#           - if: slots.krs_menu_confirmation
+#             then:
+#               - action: utter_krs_menu_success
+#                 next: END
+#           - else:
+#             - action: utter_krs_cancelled
+#             - collect: krs_menu
+#               next: END

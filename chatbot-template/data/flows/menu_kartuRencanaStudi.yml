@@ -1,0 +1,42 @@
+version: "3.1"
+
+flows:
+  kartuRencanaStudi:
+    description: Menu Kartu Rencana Studi
+    steps:
+
+      - collect: krs_menu
+        next:
+          - if: slots.krs_menu is "More"
+            then:
+
+              - collect: krs_menu_more
+                next:
+                  - if: slots.krs_menu_more is "Back"
+                    then:
+                      - collect: krs_menu
+                        next: END   # ✅ WAJIB
+
+                  - else:
+                      - collect: krs_menu_confirmation
+                        next:
+                          - if: slots.krs_menu_confirmation is true
+                            then:
+                              - action: utter_krs_ok
+                                next: END
+                          - else:
+                              - action: utter_krs_cancelled
+                              - collect: krs_menu
+                                next: END
+
+          - else:
+              - collect: krs_menu_confirmation
+                next:
+                  - if: slots.krs_menu_confirmation is true
+                    then:
+                      - action: utter_krs_ok
+                        next: END
+                  - else:
+                      - action: utter_krs_cancelled
+                      - collect: krs_menu
+                        next: END

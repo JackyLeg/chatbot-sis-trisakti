@@ -1,12 +1,12 @@
-version: "3.1"
+# version: "3.1"
 
-flows:
-  greet:
-    description: Menyapa pengguna dan menampilkan menu utama akademik
-    steps:
-      - action: utter_greeting
+# flows:
+#   greet:
+#     description: Menyapa pengguna dan menampilkan menu utama akademik
+#     steps:
+#       - action: utter_greeting
 
-  krs_menu:
-    description: Menampilkan menu layanan KRS
-    steps:
-      - action: utter_krs_menu
+#   krs_menu:
+#     description: Menampilkan menu layanan KRS
+#     steps:
+#       - action: utter_krs_menu

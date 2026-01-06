@@ -1,6 +1,20 @@
+# recipe: default.v1
+# assistant_id: worn-frame
+# language: en
+# pipeline:
+# - name: CompactLLMCommandGenerator
+#   llm:
+#     model_group: openai-gpt-4o
+# policies:
+# - name: FlowPolicy
+# - name: IntentlessPolicy
+#   llm:
+#     model_group: openai-gpt-4o
+#   embeddings:
+#     model_group: openai-embeddings
 recipe: default.v1
-language: en
-assistant_id: ecru-cowboy
+language: id
+assistant_id: chatbot-sis-trisakti
 pipeline:
 - name: CompactLLMCommandGenerator
   llm:

@@ -1,0 +1,76 @@
+version: "3.1"
+
+slots:
+  krs_menu:
+    type: categorical
+    values:
+      - Mengisi Data Academic Advising
+      - Mengisi KRS
+      - Melihat Prasyarat Pengisian KRS
+      - Melihat Mata Kuliah Pada KRS
+      - More
+
+  krs_menu_more:
+    type: categorical
+    values:
+      - Melihat Kurikulum
+      - Mengajukan Fast Track
+      - Melihat Data Conversion Plan
+      - Back
+
+  krs_menu_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+
+responses:
+
+  utter_ask_krs_menu:
+    - text: "Silakan pilih menu Kartu Rencana Studi:"
+      buttons:
+        - title: "Mengisi Data Academic Advising"
+          payload: "Mengisi Data Academic Advising"
+        - title: "Mengisi KRS"
+          payload: "Mengisi KRS"
+        - title: "Melihat Prasyarat Pengisian KRS"
+          payload: "Melihat Prasyarat Pengisian KRS"
+        - title: "Melihat Mata Kuliah Pada KRS"
+          payload: "Melihat Mata Kuliah Pada KRS"
+        - title: "More"
+          payload: "More"
+
+  utter_ask_krs_menu_more:
+    - text: "Menu lanjutan Kartu Rencana Studi:"
+      buttons:
+        - title: "Melihat Kurikulum"
+          payload: "Melihat Kurikulum"
+        - title: "Mengajukan Fast Track"
+          payload: "Mengajukan Fast Track"
+        - title: "Melihat Data Conversion Plan"
+          payload: "Melihat Data Conversion Plan"
+        - title: "Back"
+          payload: "Back"
+
+  utter_ask_krs_menu_confirmation:
+    - text: |
+        Anda memilih opsi Kartu Rencana Studi:
+        "{krs_menu}"
+
+        Apakah pilihan ini sudah benar?
+      buttons:
+        - title: "Ya"
+          payload: "ya"
+        - title: "Tidak"
+          payload: "tidak"
+
+
+  utter_krs_ok:
+    - text: |
+        Anda berhasil memilih opsi Kartu Rencana Studi:
+        "{krs_menu}"
+
+  utter_krs_cancelled:
+    - text: |
+        Baik, pilihan dibatalkan.
+        Silakan pilih kembali menu Kartu Rencana Studi.
