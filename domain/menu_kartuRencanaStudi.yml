@@ -7,18 +7,10 @@ slots:
   menu_kartuRencanaStudi:
     type: categorical
     values:
-      - Melihat Mata Kuliah Pada KRS
-      - Mengisi Data Academic Advising
-      - Mengisi KRS
-      - Melihat Prasyarat Pengisian KRS
-      - More
-  menu_kartuRencanaStudi2:
-    type: categorical
-    values:
-      - Melihat Kurikulum
-      - Mengajukan Fast Track
-      - Melihat Data Conversion Plan
-      - Back
+      - Prosedur KRS
+      - Persyaratan KRS
+      - Transaksi KRS
+      - Hasil KRS
     mappings:
       - type: from_llm
 
@@ -31,28 +23,14 @@ responses:
   utter_ask_menu_kartuRencanaStudi:
     - text: "Please select one of the following kartu rencana studi options:"
       buttons:
-        - title: "Mengisi Data Academic Advising"
-          payload: Mengisi Data Academic Advising
-        - title: "Mengisi KRS"
-          payload: Mengisi KRS
-        - title: "Melihat Prasyarat Pengisian KRS"
-          payload: Melihat Prasyarat Pengisian KRS
-        - title: "Melihat Mata Kuliah Pada KRS"
-          payload: Melihat Mata Kuliah Pada KRS
-        - title: "More"
-          payload: More
-
-  utter_ask_menu_kartuRencanaStudi2:
-    - text: "Please select one of the following additional kartu rencana studi options:"
-      buttons:
-        - title: "Melihat Kurikulum"
-          payload: Melihat Kurikulum
-        - title: "Mengajukan Fast Track"
-          payload: Mengajukan Fast Track
-        - title: "Melihat Data Conversion Plan"
-          payload: Melihat Data Conversion Plan
-        - title: "Back"
-          payload: Back
+        - title: "Prosedur KRS"
+          payload: Prosedur KRS
+        - title: "Persyaratan KRS"
+          payload: Persyaratan KRS
+        - title: "Transaksi KRS"
+          payload: Transaksi KRS
+        - title: "Hasil KRS"
+          payload: Hasil KRS
 
   utter_ask_menu_kartuRencanaStudi_confirmation:
     - text: "You have selected the option: {menu_kartuRencanaStudi}. Is that correct?"
@@ -64,6 +42,68 @@ responses:
 
   utter_menu_kartuRencanaStudi_cancelled:
     - text: "Okay, let's try again. Please select one of the kartu rencana studi options."
-  
+
   utter_menu_kartuRencanaStudi_ok:
     - text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
+
+
+
+  #     - Melihat Mata Kuliah Pada KRS
+  #     - Mengisi Data Academic Advising
+  #     - Mengisi KRS
+  #     - Melihat Prasyarat Pengisian KRS
+  #     - More
+  # menu_kartuRencanaStudi2:
+  #   type: categorical
+  #   values:
+  #     - Melihat Kurikulum
+  #     - Mengajukan Fast Track
+  #     - Melihat Data Conversion Plan
+  #     # - Back
+
+
+
+
+  #       - title: "Mengisi Data Academic Advising"
+  #         payload: Mengisi Data Academic Advising
+  #       - title: "Mengisi KRS"
+  #         payload: Mengisi KRS
+  #       - title: "Melihat Prasyarat Pengisian KRS"
+  #         payload: Melihat Prasyarat Pengisian KRS
+  #       - title: "Melihat Mata Kuliah Pada KRS"
+  #         payload: Melihat Mata Kuliah Pada KRS
+  #       - title: "More"
+  #         payload: More
+
+  # utter_ask_menu_kartuRencanaStudi2:
+  #   - text: "Please select one of the following additional kartu rencana studi options:"
+  #     buttons:
+  #       - title: "Melihat Kurikulum"
+  #         payload: Melihat Kurikulum
+  #       - title: "Mengajukan Fast Track"
+  #         payload: Mengajukan Fast Track
+  #       - title: "Melihat Data Conversion Plan"
+  #         payload: Melihat Data Conversion Plan
+  #       # - title: "Back"
+  #       #   payload: Back
+
+
+
+
+  # - condition: slots.menu_kartuRencanaStudi is null
+    #   text: "You have selected the option: {menu_kartuRencanaStudi2}. Is that correct?"
+    #   buttons:
+    #     - title: "Yes"
+    #       payload: Yes, that's correct
+    #     - title: "No"
+    #       payload: No, I want to change it
+
+
+
+
+     # - condition: slots.menu_kartuRencanaStudi2 is null
+    #   text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
+
+    # - condition: slots.menu_kartuRencanaStudi is null
+    #   text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi2}."
+

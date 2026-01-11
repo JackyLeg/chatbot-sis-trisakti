@@ -17,45 +17,62 @@ class MenuKartuRencanaStudi(Action):
     ) -> List[Dict[Text, Any]]:
 
         pilihan_menu = tracker.get_slot("menu_kartuRencanaStudi")
-        pilihan_menu2 = tracker.get_slot("menu_kartuRencanaStudi2")
         
         match pilihan_menu:
-            case "Melihat Mata Kuliah Pada KRS":
-                dispatcher.utter_message("Melihat Mata Kuliah Pada KRS *info*")
-                return [SlotSet(pilihan_menu, "Melihat Mata Kuliah Pada KRS")]
-            case "Mengisi Data Academic Advising":
-                dispatcher.utter_message("Mengisi Data Academic Advising *info*")
-                return [SlotSet(pilihan_menu, "Mengisi Data Academic Advising")]
-            case "Mengisi KRS":
-                dispatcher.utter_message("Mengisi KRS *info*")
-                return [SlotSet(pilihan_menu, "Mengisi KRS")]
-            case "Melihat Prasyarat Pengisian KRS":
-                dispatcher.utter_message("Melihat Prasyarat Pengisian KRS *info*")
-                return [SlotSet(pilihan_menu, "Melihat Prasyarat Pengisian KRS")]
-            case "More":
-                dispatcher.utter_message("Untuk menu KRS lainnya, silakan kunjungi laman")
-                return [SlotSet(pilihan_menu, "More")]
+            case "Prosedur KRS":
+                dispatcher.utter_message("Prosedur KRS *info*")
+                return [SlotSet(pilihan_menu, "Prosedur KRS")]
+            case "Persyaratan KRS":
+                dispatcher.utter_message("Persyaratan KRS *info*")
+                return [SlotSet(pilihan_menu, "Persyaratan KRS")]
+            case "Transaksi KRS":
+                dispatcher.utter_message("Transaksi KRS *info*")
+                return [SlotSet(pilihan_menu, "Transaksi KRS")]
+            case "Hasil KRS":
+                dispatcher.utter_message("Hasil KRS *info*")
+                return [SlotSet(pilihan_menu, "Hasil KRS")]
             case _:
                 dispatcher.utter_message("Maaf, menu tidak ditemukan.")
                 return []
             
+        # pilihan_menu2 = tracker.get_slot("menu_kartuRencanaStudi2")
+        # match pilihan_menu:
+        #     case "Melihat Mata Kuliah Pada KRS":
+        #         dispatcher.utter_message("Melihat Mata Kuliah Pada KRS *info*")
+        #         return [SlotSet(pilihan_menu, "Melihat Mata Kuliah Pada KRS")]
+        #     case "Mengisi Data Academic Advising":
+        #         dispatcher.utter_message("Mengisi Data Academic Advising *info*")
+        #         return [SlotSet(pilihan_menu, "Mengisi Data Academic Advising")]
+        #     case "Mengisi KRS":
+        #         dispatcher.utter_message("Mengisi KRS *info*")
+        #         return [SlotSet(pilihan_menu, "Mengisi KRS")]
+        #     case "Melihat Prasyarat Pengisian KRS":
+        #         dispatcher.utter_message("Melihat Prasyarat Pengisian KRS *info*")
+        #         return [SlotSet(pilihan_menu, "Melihat Prasyarat Pengisian KRS")]
+        #     case "More":
+        #         dispatcher.utter_message("Untuk menu KRS lainnya, silakan kunjungi laman")
+        #         return [SlotSet(pilihan_menu, None)]
+        #     case _:
+        #         dispatcher.utter_message("Maaf, menu tidak ditemukan.")
+        #         return []
+            
         
-        match pilihan_menu2:
-            case "Melihat Kurikulum":
-                dispatcher.utter_message("Melihat Kurikulum *info*")
-                return [SlotSet(pilihan_menu2, "Melihat Kurikulum")]
-            case "Mengajukan Fast Track":
-                dispatcher.utter_message("Mengajukan Fast Track *info*")
-                return [SlotSet(pilihan_menu2, "Mengajukan Fast Track")]
-            case "Melihat Data Conversion Plan":
-                dispatcher.utter_message("Melihat Data Conversion Plan *info*")
-                return [SlotSet(pilihan_menu2, "Melihat Data Conversion Plan")]
-            case "Back":
-                dispatcher.utter_message("Kembali ke menu sebelumnya.")
-                return [SlotSet(pilihan_menu2, "Back")]
-            case _:
-                dispatcher.utter_message("Maaf, menu tidak ditemukan.")
-                return []
+        # match pilihan_menu2:
+        #     case "Melihat Kurikulum":
+        #         dispatcher.utter_message("Melihat Kurikulum *info*")
+        #         return [SlotSet(pilihan_menu2, "Melihat Kurikulum")]
+        #     case "Mengajukan Fast Track":
+        #         dispatcher.utter_message("Mengajukan Fast Track *info*")
+        #         return [SlotSet(pilihan_menu2, "Mengajukan Fast Track")]
+        #     case "Melihat Data Conversion Plan":
+        #         dispatcher.utter_message("Melihat Data Conversion Plan *info*")
+        #         return [SlotSet(pilihan_menu2, "Melihat Data Conversion Plan")]
+        #     # case "Back":
+        #     #     dispatcher.utter_message("Kembali ke menu sebelumnya.")
+        #     #     return [SlotSet(pilihan_menu2, "Back")]
+        #     case _:
+        #         dispatcher.utter_message("Maaf, menu tidak ditemukan.")
+        #         return []
 
         if tracker.get_slot("menu_kartuRencanaStudi_confirmation") == "Yes, that's correct":
             return [SlotSet("menu_kartuRencanaStudi_confirmation", True)]
