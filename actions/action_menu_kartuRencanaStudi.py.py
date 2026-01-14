@@ -1,12 +1,13 @@
+from re import match
 from typing import Any, Dict, List, Text
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
-class MenuPembayaran(Action):
+class MenuKartuRencanaStudi(Action):
     def name(self) -> Text:
-        return "menu_pembayaran"
+        return "action_menu_kartuRencanaStudi"
 
     def run(
         self,
@@ -14,37 +15,38 @@ class MenuPembayaran(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        
-        pilihan_menu = tracker.get_slot("menu_pembayaran")
-        pilihan_menu2 = tracker.get_slot("menu_pembayaran2")
 
+        dispatcher.utter_message(template = "utter_menu_kartuRencanaStudi_ok")
+        pilihan_menu = tracker.get_slot("menu_kartuRencanaStudi")
+        
         match pilihan_menu:
-            case "Cek Status Pembayaran":
-                dispatcher.utter_message("Cek Status Pembayaran *checkStatus*")
-            case "Kendala Pembayaran":
-                dispatcher.utter_message("Kendala Pembayaran *tellWhy*")
-            case "More":
-                return [SlotSet(pilihan_menu, None)]
+            case "Prosedur KRS":
+                dispatcher.utter_message("""Prosedur pengisian KRS dilakukan melalui tahapan berikut:
+                                            1. Mahasiswa melakukan registrasi administrasi dan memperoleh status aktif.
+                                            2. Mahasiswa melakukan perwalian dengan Dosen Pembimbing Akademik (Dosen Wali) untuk merencanakan mata kuliah.
+                                            3. Dosen Wali memberikan persetujuan perwalian.
+                                            4. Mahasiswa melakukan pengisian KRS melalui Sistem Informasi Akademik sesuai periode pada kalender akademik.
+                                            5. Dosen Wali memberikan persetujuan KRS paling lambat pada hari terakhir masa pengisian KRS.""")
+                return [SlotSet(pilihan_menu, "Prosedur KRS")]
+            case "Persyaratan KRS":
+                dispatcher.utter_message("""Prasyarat pengisian KRS yang harus dipenuhi mahasiswa adalah:
+                                            1. Status mahasiswa aktif setelah registrasi administrasi (sudah/belum).
+                                            2. Registrasi administrasi/BPP telah diselesaikan (sudah/belum).
+                                            3. Perwalian dengan Dosen Wali telah dilakukan (sudah/belum).
+                                            4. Persetujuan Dosen Wali untuk pengisian KRS (sudah/belum).""")
+                return [SlotSet(pilihan_menu, "Persyaratan KRS")]
+            case "Transaksi KRS":
+                dispatcher.utter_message("""Silakan pilih mata kuliah yang akan kamu ambil pada semester ini.
+                                            Setelah selesai, ajukan KRS untuk diproses oleh Dosen Pembimbing Akademik. (Tombol Pengisian KRS)""")
+                return [SlotSet(pilihan_menu, "Transaksi KRS")]
+            case "Hasil KRS":
+                dispatcher.utter_message("Pengajuan KRS kamu sudah diproses.")
+                return [SlotSet(pilihan_menu, "Hasil KRS")]
             case _:
                 dispatcher.utter_message("Maaf, menu tidak ditemukan.")
                 return []
             
-        match pilihan_menu2:
-            case "Prosedur Pembayaran":
-                dispatcher.utter_message("Prosedur Pembayaran *procedure*")
-            case "Persyaratan Pembayaran":
-                dispatcher.utter_message("Persyaratan Pembayaran *requirements*")
-            case "Transaksi Pembayaran":
-                dispatcher.utter_message("Transaksi Pembayaran *transaction*")
-            case "Hasil Pembayaran":
-                dispatcher.utter_message("Hasil Pembayaran *result*")
-            case "Back":
-                return [SlotSet(pilihan_menu2, None)]
-            case _:
-                dispatcher.utter_message("Maaf, menu tidak ditemukan.")
-                return []
-            
-# pilihan_menu2 = tracker.get_slot("menu_kartuRencanaStudi2")
+        # pilihan_menu2 = tracker.get_slot("menu_kartuRencanaStudi2")
         # match pilihan_menu:
         #     case "Melihat Mata Kuliah Pada KRS":
         #         dispatcher.utter_message("Melihat Mata Kuliah Pada KRS *info*")
@@ -82,7 +84,8 @@ class MenuPembayaran(Action):
         #     case _:
         #         dispatcher.utter_message("Maaf, menu tidak ditemukan.")
         #         return []
+
         if tracker.get_slot("menu_kartuRencanaStudi_confirmation") == "Yes, that's correct":
             return [SlotSet("menu_kartuRencanaStudi_confirmation", True)]
         else:
-            return [SlotSet("menu_kartuRencanaStudi_confirmation", False)]  
+            return [SlotSet("menu_kartuRencanaStudi_confirmation", False)]

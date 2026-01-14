@@ -1,8 +1,29 @@
+# flows:
+#   kartuRencanaStudi:
+#       description: Help user with kartu rencana studi menus
+#       steps:
+#         - collect: menu_kartuRencanaStudi
+#           description: User must select one of 4 options for kartu rencana studi.
+#           next: menu_confirmation
+
+#         - id: menu_confirmation
+#           collect: menu_kartuRencanaStudi_confirmation
+#           ask_before_filling: true
+#           next:
+#           - if: slots.menu_kartuRencanaStudi_confirmation is not true
+#             then: 
+#               - action: utter_menu_kartuRencanaStudi_cancelled
+#                 next: END
+#           - else:
+#               - action: utter_menu_kartuRencanaStudi_ok
+#                 next: END
 flows:
   kartuRencanaStudi:
       description: Help user with kartu rencana studi menus
       steps:
-        - collect: menu_kartuRencanaStudi
+        - id: ask_menu
+          collect: menu_kartuRencanaStudi
+          ask_before_filling: true
           description: User must select one of 4 options for kartu rencana studi.
           next: menu_confirmation
 
@@ -10,16 +31,14 @@ flows:
           collect: menu_kartuRencanaStudi_confirmation
           ask_before_filling: true
           next:
-          - if: slots.menu_kartuRencanaStudi_confirmation is not true
-            then: 
+          - if: slots.menu_kartuRencanaStudi_confirmation is false
+            then:
               - action: utter_menu_kartuRencanaStudi_cancelled
-              - collect: menu_kartuRencanaStudi
-                next: END
-          - else:
-            - action: utter_menu_kartuRencanaStudi_ok
-              next: END
+                next: ask_menu
+          - else: continue_flow
 
-
+        - id: continue_flow
+          action: action_menu_kartuRencanaStudi
 
         # - collect: menu_kartuRencanaStudi
         #   description: User must select one of 5 options for kartu rencana studi.

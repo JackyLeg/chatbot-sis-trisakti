@@ -1,0 +1,47 @@
+version: "3.1"
+
+actions:
+- action_menu_kartuHasilStudi
+
+slots:
+  menu_kartuHasilStudi:
+    type: categorical
+    values:
+      - "Prosedur KHS"
+      - "Persyaratan KHS"
+      - "Transaksi KHS"
+      - "Hasil KHS"
+    mappings:
+      - type: from_llm
+
+  menu_kartuHasilStudi_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_kartuHasilStudi:
+    - text: "Please select one of the following kartu hasil studi options:"
+      buttons:
+        - title: "Prosedur KHS"
+          payload: Prosedur KHS
+        - title: "Persyaratan KHS"
+          payload: Persyaratan KHS
+        - title: "Transaksi KHS"
+          payload: Transaksi KHS
+        - title: "Hasil KHS"
+          payload: Hasil KHS
+
+  utter_ask_menu_kartuHasilStudi_confirmation:
+    - text: "You have selected the option: {menu_kartuHasilStudi}. Is that correct?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+        - title: "No"
+          payload: No, I want to change it
+
+  utter_menu_kartuHasilStudi_cancelled:
+    - text: "Okay, let's try again. Please select one of the kartu hasil studi options."
+
+  utter_menu_kartuHasilStudi_ok:
+    - text: "You have successfully selected the kartu hasil studi option: {menu_kartuHasilStudi}."

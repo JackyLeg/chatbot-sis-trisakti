@@ -5,9 +5,9 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
-class MenuKartuRencanaStudi(Action):
+class MenuKartuHasilStudi(Action):
     def name(self) -> Text:
-        return "menu_kartuRencanaStudi"
+        return "action_menu_kartuHasilStudi"
 
     def run(
         self,
@@ -16,21 +16,29 @@ class MenuKartuRencanaStudi(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        pilihan_menu = tracker.get_slot("menu_kartuRencanaStudi")
-        
+        dispatcher.utter_message(template = "utter_menu_kartuHasilStudi_ok")
+        pilihan_menu = tracker.get_slot("menu_kartuHasilStudi")
+
         match pilihan_menu:
-            case "Prosedur KRS":
-                dispatcher.utter_message("Prosedur KRS *info*")
-                return [SlotSet(pilihan_menu, "Prosedur KRS")]
-            case "Persyaratan KRS":
-                dispatcher.utter_message("Persyaratan KRS *info*")
-                return [SlotSet(pilihan_menu, "Persyaratan KRS")]
-            case "Transaksi KRS":
-                dispatcher.utter_message("Transaksi KRS *info*")
-                return [SlotSet(pilihan_menu, "Transaksi KRS")]
-            case "Hasil KRS":
-                dispatcher.utter_message("Hasil KRS *info*")
-                return [SlotSet(pilihan_menu, "Hasil KRS")]
+            case "Prosedur KHS":
+                dispatcher.utter_message("""Prosedur melihat nilai dilakukan melalui tahapan berikut:
+                                            1. Mahasiswa telah mengikuti mata kuliah yang terdaftar pada KRS.
+                                            2. Dosen pengampu menginput dan mempublikasikan nilai mata kuliah.
+                                            3. Mahasiswa mengakses menu Nilai pada Sistem Informasi Akademik untuk melihat nilai mata kuliah dan Kartu Hasil Studi (KHS).""")
+                return [SlotSet(pilihan_menu, "Prosedur KHS")]
+            case "Persyaratan KHS":
+                dispatcher.utter_message("""Prasyarat untuk melihat nilai adalah sebagai berikut:
+                                            1. KRS mahasiswa telah disetujui.
+                                            2. Mata kuliah telah selesai dilaksanakan.
+                                            3. Nilai mata kuliah telah dipublikasikan oleh dosen pengampu.""")
+                return [SlotSet(pilihan_menu, "Persyaratan KHS")]
+            case "Transaksi KHS":
+                dispatcher.utter_message("""Silakan pilih semester untuk melihat nilai mata kuliah yang telah kamu tempuh.""")
+                return [SlotSet(pilihan_menu, "Transaksi KHS")]
+            case "Hasil KHS":
+                dispatcher.utter_message("""Berikut adalah nilai mata kuliah kamu pada semester yang dipilih.
+                                            Kamu juga dapat melihat rekap nilai dalam bentuk Kartu Hasil Studi (KHS).""")
+                return [SlotSet(pilihan_menu, "Hasil KHS")]
             case _:
                 dispatcher.utter_message("Maaf, menu tidak ditemukan.")
                 return []

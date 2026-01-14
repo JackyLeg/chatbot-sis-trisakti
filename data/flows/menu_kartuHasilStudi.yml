@@ -1,0 +1,22 @@
+flows:
+  kartuHasilStudi:
+      description: Help user with kartu hasil studi menus
+      steps:
+        - id: ask_menu
+          collect: menu_kartuHasilStudi
+          ask_before_filling: true
+          description: User must select one of 4 options for kartu hasil studi.
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_kartuHasilStudi_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_kartuHasilStudi_confirmation is false
+            then:
+              - action: utter_menu_kartuHasilStudi_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_kartuHasilStudi

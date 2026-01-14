@@ -1,16 +1,16 @@
 version: "3.1"
 
 actions:
-- menu_kartuRencanaStudi
+- action_menu_kartuRencanaStudi
 
 slots:
   menu_kartuRencanaStudi:
     type: categorical
     values:
-      - Prosedur KRS
-      - Persyaratan KRS
-      - Transaksi KRS
-      - Hasil KRS
+      - "Prosedur KRS"
+      - Persyaratan KRS"
+      - "Transaksi KRS"
+      - "Hasil KRS"
     mappings:
       - type: from_llm
 
@@ -46,8 +46,6 @@ responses:
   utter_menu_kartuRencanaStudi_ok:
     - text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
 
-
-
   #     - Melihat Mata Kuliah Pada KRS
   #     - Mengisi Data Academic Advising
   #     - Mengisi KRS
@@ -60,8 +58,6 @@ responses:
   #     - Mengajukan Fast Track
   #     - Melihat Data Conversion Plan
   #     # - Back
-
-
 
 
   #       - title: "Mengisi Data Academic Advising"
@@ -88,8 +84,6 @@ responses:
   #       #   payload: Back
 
 
-
-
   # - condition: slots.menu_kartuRencanaStudi is null
     #   text: "You have selected the option: {menu_kartuRencanaStudi2}. Is that correct?"
     #   buttons:
@@ -99,9 +93,7 @@ responses:
     #       payload: No, I want to change it
 
 
-
-
-     # - condition: slots.menu_kartuRencanaStudi2 is null
+    # - condition: slots.menu_kartuRencanaStudi2 is null
     #   text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
 
     # - condition: slots.menu_kartuRencanaStudi is null
