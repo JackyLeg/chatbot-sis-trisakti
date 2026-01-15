@@ -1,22 +1,3 @@
-# flows:
-#   kartuRencanaStudi:
-#       description: Help user with kartu rencana studi menus
-#       steps:
-#         - collect: menu_kartuRencanaStudi
-#           description: User must select one of 4 options for kartu rencana studi.
-#           next: menu_confirmation
-
-#         - id: menu_confirmation
-#           collect: menu_kartuRencanaStudi_confirmation
-#           ask_before_filling: true
-#           next:
-#           - if: slots.menu_kartuRencanaStudi_confirmation is not true
-#             then: 
-#               - action: utter_menu_kartuRencanaStudi_cancelled
-#                 next: END
-#           - else:
-#               - action: utter_menu_kartuRencanaStudi_ok
-#                 next: END
 flows:
   kartuRencanaStudi:
       description: Help user with kartu rencana studi menus
@@ -39,14 +20,24 @@ flows:
 
         - id: continue_flow
           action: action_menu_kartuRencanaStudi
+          next:
+            - if: "slots.return_value = 'Prosedur KRS'"
+              then: 
+                - action: utter_answer_prosedur_krs
+                  next: END
+            - if: "slots.return_value = 'Persyaratan KRS'"
+              then: 
+                - action: utter_answer_persyaratan_krs
+                  next: END
+            - if: "slots.return_value = 'Transaksi KRS'"
+              then: 
+                - action: utter_answer_transaksi_krs
+                  next: END
+            - if: "slots.return_value = 'Hasil KRS'"
+              then: 
+                - action: utter_answer_hasil_krs
+                  next: END
+            - else: 
+                - action: utter_answer_error_krs
+                  next: END
 
-        # - collect: menu_kartuRencanaStudi
-        #   description: User must select one of 5 options for kartu rencana studi.
-        #   next:
-        #   - if: slots.menu_kartuRencanaStudi is "More"
-        #     then:
-        #     - set_slots:
-        #       - menu_kartuRencanaStudi: null
-        #     - collect: menu_kartuRencanaStudi2
-        #       next: END
-        #   - else: menu_confirmation

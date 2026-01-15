@@ -7,10 +7,10 @@ slots:
   menu_kartuHasilStudi:
     type: categorical
     values:
-      - "Prosedur KHS"
-      - "Persyaratan KHS"
-      - "Transaksi KHS"
-      - "Hasil KHS"
+      - Prosedur KHS
+      - Persyaratan KHS
+      - Transaksi KHS
+      - Hasil KHS
     mappings:
       - type: from_llm
 
@@ -45,3 +45,25 @@ responses:
 
   utter_menu_kartuHasilStudi_ok:
     - text: "You have successfully selected the kartu hasil studi option: {menu_kartuHasilStudi}."
+
+  utter_answer_prosedur_khs:
+    - text: "Prosedur melihat nilai dilakukan melalui tahapan berikut:
+              1. Mahasiswa telah mengikuti mata kuliah yang terdaftar pada KRS.
+              2. Dosen pengampu menginput dan mempublikasikan nilai mata kuliah.
+              3. Mahasiswa mengakses menu Nilai pada Sistem Informasi Akademik untuk melihat nilai mata kuliah dan Kartu Hasil Studi (KHS)."
+
+  utter_answer_persyaratan_khs:
+    - text: "Prasyarat untuk melihat nilai adalah sebagai berikut:
+              1. KRS mahasiswa telah disetujui.
+              2. Mata kuliah telah selesai dilaksanakan.
+              3. Nilai mata kuliah telah dipublikasikan oleh dosen pengampu."
+
+  utter_answer_transaksi_khs:
+    - text: "Silakan pilih semester untuk melihat nilai mata kuliah yang telah kamu tempuh."
+
+  utter_answer_hasil_khs:
+    - text: "Berikut adalah nilai mata kuliah kamu pada semester yang dipilih.
+              Kamu juga dapat melihat rekap nilai dalam bentuk Kartu Hasil Studi (KHS)."
+
+  utter_answer_error_khs:
+    - text: "Maaf, menu tidak ditemukan."

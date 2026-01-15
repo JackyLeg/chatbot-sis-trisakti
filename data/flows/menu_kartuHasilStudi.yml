@@ -20,3 +20,23 @@ flows:
 
         - id: continue_flow
           action: action_menu_kartuHasilStudi
+          next:
+            - if: "slots.return_value = 'Prosedur KHS'"
+              then: 
+                - action: utter_answer_prosedur_khs
+                  next: END
+            - if: "slots.return_value = 'Persyaratan KHS'"
+              then: 
+                - action: utter_answer_persyaratan_khs
+                  next: END
+            - if: "slots.return_value = 'Transaksi KHS'"
+              then: 
+                - action: utter_answer_transaksi_khs
+                  next: END
+            - if: "slots.return_value = 'Hasil KHS'"
+              then: 
+                - action: utter_answer_hasil_khs
+                  next: END
+            - else: 
+                - action: utter_answer_error_khs
+                  next: END
