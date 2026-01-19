@@ -1,15 +1,21 @@
 version: "3.1"
 
 actions:
-- menu_cuti
+- action_menu_cuti
 
 slots:
   menu_cuti:
     type: categorical
     values:
-      - Pengajuan Cuti Akademik
-      - Status Pengajuan Cuti Akademik
-      - Kendala Pengajuan Cuti Akademik
+      - Prosedur Cuti
+      - Persyaratan Cuti
+      - Transaksi Cuti
+      - Hasil Cuti
+    mappings:
+      - type: from_llm
+
+  menu_cuti_confirmation:
+    type: bool
     mappings:
       - type: from_llm
 
@@ -17,9 +23,49 @@ responses:
   utter_ask_menu_cuti:
     - text: "Please select one of the following cuti options:"
       buttons:
-        - title: "Pengajuan Cuti Akademik"
-          payload: Pengajuan Cuti Akademik
-        - title: "Status Pengajuan Cuti Akademik"
-          payload: Status Pengajuan Cuti Akademik
-        - title: "Kendala Pengajuan Cuti Akademik"
-          payload: Kendala Pengajuan Cuti Akademik
+        - title: "Prosedur Cuti"
+          payload: Prosedur Cuti
+        - title: "Persyaratan Cuti"
+          payload: Persyaratan Cuti
+        - title: "Transaksi Cuti"
+          payload: Transaksi Cuti
+        - title: "Hasil Cuti"
+          payload: Hasil Cuti
+
+  utter_ask_menu_cuti_confirmation:
+    - text: "You have selected the option: {menu_cuti}. Is that correct?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+        - title: "No"
+          payload: No, I want to change it
+
+  utter_menu_cuti_cancelled:
+    - text: "Okay, let's try again. Please select one of the cuti options."
+
+  utter_menu_cuti_ok:
+    - text: "You have successfully selected the cuti option: {menu_cuti}."
+
+  utter_answer_prosedur_cuti:
+    - text: |
+        Prosedur pengajuan cuti akademik dilakukan melalui tahapan berikut:
+          1. Mahasiswa memenuhi ketentuan pengajuan cuti akademik.
+          2. Mahasiswa mengajukan permohonan cuti melalui Sistem Informasi Akademik.
+          3. Dosen Pembimbing Akademik memberikan persetujuan pengajuan cuti.
+          4. Fakultas/Program Studi memproses dan menetapkan status cuti akademik.
+
+  utter_answer_persyaratan_cuti:
+    - text: |
+        Prasyarat pengajuan cuti akademik yang harus dipenuhi mahasiswa adalah:
+          1. Status mahasiswa aktif pada semester berjalan.
+          2. Tidak sedang dalam status cuti atau nonaktif.
+          3. Telah menyelesaikan kewajiban administrasi sesuai ketentuan.
+
+  utter_answer_transaksi_cuti:
+    - text: "Silakan lengkapi data pengajuan cuti akademik dan ajukan permohonan cuti."
+
+  utter_answer_hasil_cuti:
+    - text: "Pengajuan cuti akademik kamu telah diproses."
+
+  utter_answer_error_cuti:
+    - text: "Maaf, menu tidak ditemukan."

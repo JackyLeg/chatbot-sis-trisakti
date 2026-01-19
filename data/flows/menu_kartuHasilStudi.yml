@@ -5,7 +5,9 @@ flows:
         - id: ask_menu
           collect: menu_kartuHasilStudi
           ask_before_filling: true
-          description: User must select one of 4 options for kartu hasil studi.
+          description: |
+            User must select one of 4 options for kartu hasil studi.
+            User may type: KHS, khs, hasil, hasil studi, or kartu hasil studi
           next: menu_confirmation
 
         - id: menu_confirmation

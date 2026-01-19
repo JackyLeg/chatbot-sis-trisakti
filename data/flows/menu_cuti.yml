@@ -2,6 +2,43 @@ flows:
   cuti:
       description: Help user with cuti menus
       steps:
-        - collect: menu_cuti
-          description: User must select one of 3 options for cuti.
-        - action: menu_cuti
+        - id: ask_menu
+          collect: menu_cuti
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for cuti.
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_cuti_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_cuti_confirmation is false
+            then:
+              - action: utter_menu_cuti_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_cuti
+          next:
+            - if: "slots.return_value = 'Prosedur Cuti'"
+              then: 
+                - action: utter_answer_prosedur_cuti
+                  next: END
+            - if: "slots.return_value = 'Persyaratan cuti'"
+              then: 
+                - action: utter_answer_persyaratan_cuti
+                  next: END
+            - if: "slots.return_value = 'Transaksi Cuti'"
+              then: 
+                - action: utter_answer_transaksi_cuti
+                  next: END
+            - if: "slots.return_value = 'Hasil Cuti'"
+              then: 
+                - action: utter_answer_hasil_cuti
+                  next: END
+            - else: 
+                - action: utter_answer_error_cuti
+                  next: END
+            

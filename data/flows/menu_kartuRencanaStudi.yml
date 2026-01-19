@@ -5,7 +5,9 @@ flows:
         - id: ask_menu
           collect: menu_kartuRencanaStudi
           ask_before_filling: true
-          description: User must select one of 4 options for kartu rencana studi.
+          description: |
+            User must select one of 4 options for kartu rencana studi.
+            User may type: KRS, krs, rencana, rencana studi, or kartu rencana studi
           next: menu_confirmation
 
         - id: menu_confirmation

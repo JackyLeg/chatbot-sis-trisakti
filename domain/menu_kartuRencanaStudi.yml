@@ -47,23 +47,26 @@ responses:
     - text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
 
   utter_answer_prosedur_krs:
-    - text: "Prosedur pengisian KRS dilakukan melalui tahapan berikut:
-              1. Mahasiswa melakukan registrasi administrasi dan memperoleh status aktif.
-              2. Mahasiswa melakukan perwalian dengan Dosen Pembimbing Akademik (Dosen Wali) untuk merencanakan mata kuliah.
-              3. Dosen Wali memberikan persetujuan perwalian.
-              4. Mahasiswa melakukan pengisian KRS melalui Sistem Informasi Akademik sesuai periode pada kalender akademik.
-              5. Dosen Wali memberikan persetujuan KRS paling lambat pada hari terakhir masa pengisian KRS."
+    - text: |
+        Prosedur pengisian KRS dilakukan melalui tahapan berikut:
+          1. Mahasiswa melakukan registrasi administrasi dan memperoleh status aktif.
+          2. Mahasiswa melakukan perwalian dengan Dosen Pembimbing Akademik (Dosen Wali) untuk merencanakan mata kuliah.
+          3. Dosen Wali memberikan persetujuan perwalian.
+          4. Mahasiswa melakukan pengisian KRS melalui Sistem Informasi Akademik sesuai periode pada kalender akademik.
+          5. Dosen Wali memberikan persetujuan KRS paling lambat pada hari terakhir masa pengisian KRS.
 
   utter_answer_persyaratan_krs:
-    - text: "Prasyarat pengisian KRS yang harus dipenuhi mahasiswa adalah:
-              1. Mahasiswa telah terdaftar sebagai mahasiswa aktif pada semester berjalan.
-              2. Registrasi administrasi/BPP telah diselesaikan (sudah/belum).
-              3. Perwalian dengan Dosen Wali telah dilakukan (sudah/belum).
-              4. Persetujuan Dosen Wali untuk pengisian KRS (sudah/belum)."
+    - text: |
+        Prasyarat pengisian KRS yang harus dipenuhi mahasiswa adalah:
+          1. Mahasiswa telah terdaftar sebagai mahasiswa aktif pada semester berjalan.
+          2. Registrasi administrasi/BPP telah diselesaikan (sudah/belum).
+          3. Perwalian dengan Dosen Wali telah dilakukan (sudah/belum).
+          4. Persetujuan Dosen Wali untuk pengisian KRS (sudah/belum).
     
   utter_answer_transaksi_krs:
-    - text: "Silakan pilih mata kuliah yang akan kamu ambil pada semester ini.
-            Setelah selesai, ajukan KRS untuk diproses oleh Dosen Pembimbing Akademik. (Tombol Pengisian KRS)"
+    - text: |
+        Silakan pilih mata kuliah yang akan kamu ambil pada semester ini.
+        Setelah selesai, ajukan KRS untuk diproses oleh Dosen Pembimbing Akademik. (Tombol Pengisian KRS)
 
   utter_answer_hasil_krs:
     - text: "Pengajuan KRS kamu sudah diproses."
