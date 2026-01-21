@@ -9,3 +9,4 @@ endpoints.yml
 .DS_Store
 rasapro_env
 endpoints.yml
+output.json
