@@ -48,18 +48,43 @@ responses:
 
   utter_answer_prosedur_cuti:
     - text: |
-        Prosedur pengajuan cuti akademik dilakukan melalui tahapan berikut:
-          1. Mahasiswa memenuhi ketentuan pengajuan cuti akademik.
-          2. Mahasiswa mengajukan permohonan cuti melalui Sistem Informasi Akademik.
-          3. Dosen Pembimbing Akademik memberikan persetujuan pengajuan cuti.
-          4. Fakultas/Program Studi memproses dan menetapkan status cuti akademik.
+        PROSEDUR CUTI AKADEMIK
+        Cuti akademik adalah masa jeda studi yang tetap diperhitungkan dalam masa studi maksimal. Prosedur pengajuannya terbagi menjadi dua kategori:
+        1. Cuti Akademik Terencana
+          Diajukan atas permintaan sendiri, alasan sakit, atau tugas negara/universitas.
+          - Waktu: Selambat-lambatnya 1 bulan setelah perkuliahan dimulai.
+          - Syarat Utama: Telah menempuh minimal 2 semester akademik.
+          - Alur Dokumen: Mengajukan surat permohonan kepada Dekan yang ditandatangani mahasiswa & orang tua/wali (mencantumkan identitas lengkap, alasan, dan durasi cuti).
+          - Kondisi Khusus: 
+            * Sakit: Jika sakit ≥ 1 bulan (4 kali tatap muka), dapat diajukan segera pada semester berjalan dengan melampirkan Surat Keterangan Rawat Inap.
+            * Tugas Negara/Universitas: Melampirkan surat tugas dari Wakil Rektor Bidang Kemahasiswaan.
+        2. Cuti Akademik Tidak Terencana
+          Diberikan secara otomatis jika mahasiswa tidak melakukan daftar ulang/KRS hingga batas waktu yang ditentukan.
+          - Dapat diberikan maksimal 2 semester berturut-turut.
+          - Jika setelah masa tersebut mahasiswa tetap tidak mendaftar ulang, maka status dinyatakan Putus Studi (DO).
+
+        PROSEDUR AKTIF KEMBALI
+        Mahasiswa wajib mengajukan surat permohonan aktif kembali kepada Dekan (diketahui Dosen Wali & Kaprodi) selambat-lambatnya 1 bulan sebelum masa cuti berakhir, serta menyelesaikan seluruh kewajiban administrasi dan keuangan.
 
   utter_answer_persyaratan_cuti:
     - text: |
-        Prasyarat pengajuan cuti akademik yang harus dipenuhi mahasiswa adalah:
-          1. Status mahasiswa aktif pada semester berjalan.
-          2. Tidak sedang dalam status cuti atau nonaktif.
-          3. Telah menyelesaikan kewajiban administrasi sesuai ketentuan.
+        PERSYARATAN CUTI AKADEMIK
+        1. Syarat Umum
+          - Masa Studi: Telah mengikuti kegiatan akademik minimal 2 semester.
+              Durasi Maksimal: Program D4, S1, dan S3: Maksimal 4 semester.
+          - Program D3, Profesi, dan S2: Maksimal 2 semester.
+          - Ketentuan Pengambilan: Cuti dapat diambil per semester atau maksimal 2 semester berturut-turut.
+        2. Kelengkapan Dokumen (Cuti Terencana)
+          Mahasiswa wajib menyerahkan Surat Permohonan Cuti kepada Dekan yang ditandatangani oleh mahasiswa dan orang tua/wali, berisi:
+          - Data diri lengkap (Nama, NIM, Alamat, Fakultas/Jurusan).
+          - Alasan pengajuan cuti yang jelas.
+          - Periode waktu cuti (semester mulai dan berakhir).
+        3. Syarat Khusus (Berdasarkan Kondisi)
+          - Karena Sakit: Melampirkan Surat Keterangan Rawat Inap (minimal sakit 1 bulan atau setara 4 kali tatap muka berturut-turut).
+          - Bela/Tugas Negara & Universitas: Melampirkan Surat Tugas dari Wakil Rektor Bidang Kemahasiswaan.
+          - Cuti Tidak Terencana: Untuk aktif kembali, mahasiswa wajib melampirkan Laporan Kronologis Kejadian yang ditandatangani orang tua/wali dan Dosen Wali, serta menyelesaikan seluruh kewajiban administrasi keuangan.
+
+        *Catatan: Pastikan seluruh kewajiban administrasi keuangan pada semester sebelumnya telah lunas sebelum mengajukan permohonan.
 
   utter_answer_transaksi_cuti:
     - text: "Silakan lengkapi data pengajuan cuti akademik dan ajukan permohonan cuti."

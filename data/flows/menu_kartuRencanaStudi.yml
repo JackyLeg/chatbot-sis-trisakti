@@ -1,13 +1,15 @@
 flows:
   kartuRencanaStudi:
-      description: Help user with kartu rencana studi menus
+      description: |
+        Help user with kartu rencana studi menus
+        User may type: KRS, krs, rencana, rencana studi, or kartu rencana studi
       steps:
         - id: ask_menu
           collect: menu_kartuRencanaStudi
           ask_before_filling: true
           description: |
             User must select one of 4 options for kartu rencana studi.
-            User may type: KRS, krs, rencana, rencana studi, or kartu rencana studi
+            There are options like Prosedur KRS, Persyaratan KRS, Transaksi KRS, and Hasil KRS.
           next: menu_confirmation
 
         - id: menu_confirmation
@@ -23,19 +25,19 @@ flows:
         - id: continue_flow
           action: action_menu_kartuRencanaStudi
           next:
-            - if: "slots.return_value = 'Prosedur KRS'"
+            - if: slots.return_value = "Prosedur KRS"
               then: 
                 - action: utter_answer_prosedur_krs
                   next: END
-            - if: "slots.return_value = 'Persyaratan KRS'"
+            - if: slots.return_value = "Persyaratan KRS"
               then: 
                 - action: utter_answer_persyaratan_krs
                   next: END
-            - if: "slots.return_value = 'Transaksi KRS'"
+            - if: slots.return_value = "Transaksi KRS"
               then: 
                 - action: utter_answer_transaksi_krs
                   next: END
-            - if: "slots.return_value = 'Hasil KRS'"
+            - if: slots.return_value = "Hasil KRS"
               then: 
                 - action: utter_answer_hasil_krs
                   next: END

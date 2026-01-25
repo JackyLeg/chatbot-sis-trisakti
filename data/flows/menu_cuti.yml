@@ -7,6 +7,7 @@ flows:
           ask_before_filling: true
           description: |
             User must select one of 4 options for cuti.
+            there are options like Prosedur Cuti, Persyaratan Cuti, Transaksi Cuti, and Hasil Cuti.
           next: menu_confirmation
 
         - id: menu_confirmation
@@ -22,19 +23,19 @@ flows:
         - id: continue_flow
           action: action_menu_cuti
           next:
-            - if: "slots.return_value = 'Prosedur Cuti'"
+            - if: slots.return_value = "Prosedur Cuti"
               then: 
                 - action: utter_answer_prosedur_cuti
                   next: END
-            - if: "slots.return_value = 'Persyaratan cuti'"
+            - if: slots.return_value = "Persyaratan Cuti"
               then: 
                 - action: utter_answer_persyaratan_cuti
                   next: END
-            - if: "slots.return_value = 'Transaksi Cuti'"
+            - if: slots.return_value = "Transaksi Cuti"
               then: 
                 - action: utter_answer_transaksi_cuti
                   next: END
-            - if: "slots.return_value = 'Hasil Cuti'"
+            - if: slots.return_value = "Hasil Cuti"
               then: 
                 - action: utter_answer_hasil_cuti
                   next: END

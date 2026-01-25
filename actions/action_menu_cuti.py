@@ -1,3 +1,4 @@
+from re import match
 from typing import Any, Dict, List, Text
 
 from rasa_sdk import Action, Tracker
@@ -33,5 +34,5 @@ class MenuCuti(Action):
         if tracker.get_slot("menu_cuti_confirmation") == "Yes, that's correct":
             return [SlotSet("menu_cuti_confirmation", True)]
         else:
-            return [SlotSet("menu_kartuRencanaStudi_confirmation", False)]
+            return [SlotSet("menu_cuti_confirmation", False)]
         

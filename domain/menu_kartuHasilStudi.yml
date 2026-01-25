@@ -48,18 +48,29 @@ responses:
 
   utter_answer_prosedur_khs:
     - text: |
-        Prosedur melihat nilai dilakukan melalui tahapan berikut:
-          1. Mahasiswa telah mengikuti mata kuliah yang terdaftar pada KRS.
-          2. Dosen pengampu menginput dan mempublikasikan nilai mata kuliah.
-          3. Mahasiswa mengakses menu Nilai pada Sistem Informasi Akademik untuk melihat nilai mata kuliah dan Kartu Hasil Studi (KHS).
-
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS)
+          1. Penerbitan: KHS diterbitkan secara resmi oleh Universitas pada setiap akhir semester setelah masa penilaian dosen berakhir.
+          2. Akses Mahasiswa: Anda dapat melihat dan mengunduh KHS secara mandiri melalui portal student.trisakti.ac.id.
+          3. Pemantauan: Dosen Wali Anda juga akan menerima salinan KHS melalui sistem sis.trisakti.ac.id untuk kepentingan evaluasi akademik dan bimbingan semester berikutnya.
+          -------
+          4. Melihat Kartu Hasil Studi (KHS) & Transkrip Nilai melalui laman https://student.trisakti.ac.id/:
+            a. Mahasiswa mengakses laman https://student.trisakti.ac.id/
+            b. Pilih menu Examination Result, pada menu ini terdapat empat tab yaitu :
+              1) Coursework, dapat dilihat detail atau rincian dari nilai matakuliah
+              2) Kartu Hasil Studi, menampilkan nilai yang diperoleh tiap semester
+              3) Passed Transcript, menampilkan nilai yang lulus saja
+              4) All Transcript, menampilkan seluruh nilai yang sudah ditempuh. Baik KHS maupun transkrip dapat diunduh dalam format pdf
+              
   utter_answer_persyaratan_khs:
     - text: |
-        Prasyarat untuk melihat nilai adalah sebagai berikut:
-          1. KRS mahasiswa telah disetujui.
-          2. Mata kuliah telah selesai dilaksanakan.
-          3. Nilai mata kuliah telah dipublikasikan oleh dosen pengampu.
-
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS)
+          Agar KHS dapat diakses dan diunduh, mahasiswa wajib memenuhi ketentuan berikut:
+          - Penyelesaian KRS: Telah melakukan pengisian KRS secara sah pada awal semester.
+          - Evaluasi Perkuliahan: Mengikuti seluruh rangkaian evaluasi (UTS/UAS) dan memenuhi persyaratan kehadiran minimal yang ditentukan.
+          - Administrasi Keuangan: Pastikan seluruh kewajiban administrasi keuangan semester berjalan telah terselesaikan (sesuai kebijakan Fakultas masing-masing untuk membuka akses nilai).
+          
+          *Catatan: Jika nilai mata kuliah tertentu belum muncul, pastikan Anda telah mengisi kuesioner evaluasi dosen (jika diwajibkan) atau silakan hubungi Sekretariat Program Studi.
+          
   utter_answer_transaksi_khs:
     - text: "Silakan pilih semester untuk melihat nilai mata kuliah yang telah kamu tempuh."
 

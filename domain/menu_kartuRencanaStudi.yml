@@ -48,21 +48,51 @@ responses:
 
   utter_answer_prosedur_krs:
     - text: |
-        Prosedur pengisian KRS dilakukan melalui tahapan berikut:
-          1. Mahasiswa melakukan registrasi administrasi dan memperoleh status aktif.
-          2. Mahasiswa melakukan perwalian dengan Dosen Pembimbing Akademik (Dosen Wali) untuk merencanakan mata kuliah.
-          3. Dosen Wali memberikan persetujuan perwalian.
-          4. Mahasiswa melakukan pengisian KRS melalui Sistem Informasi Akademik sesuai periode pada kalender akademik.
-          5. Dosen Wali memberikan persetujuan KRS paling lambat pada hari terakhir masa pengisian KRS.
+        PROSEDUR PENGISIAN KARTU RENCANA STUDI (KRS):
+        KRS wajib diisi oleh mahasiswa setiap awal semester melalui portal student.trisakti.ac.id untuk mendapatkan hak mengikuti kegiatan akademik. Berikut adalah langkah-langkahnya:
+          1. Tahap Pra-KRS (Registrasi Administrasi)
+            Sebelum mengisi KRS, Anda wajib menyelesaikan registrasi administrasi:
+            - Mahasiswa Lama: Melakukan pembayaran Biaya Penyelenggaraan Pendidikan (BPP) Pokok dan memenuhi persyaratan lain yang ditetapkan Fakultas.
+            - Mahasiswa Baru: KRS Semester 1 akan terisi secara otomatis (paket) setelah memperoleh NIM, kecuali bagi mahasiswa jalur Pindahan/RPL.
+          2. Tahap Pengisian KRS (Registrasi Akademik)
+            Setelah status administrasi aktif, ikuti alur berikut:
+            - Konsultasi: Menghubungi Dosen Wali untuk merencanakan mata kuliah yang akan diambil.
+            - Persetujuan Awal: Dosen Wali memberikan izin akses pengisian KRS.
+            - Input Data: Mahasiswa mengisi KRS secara mandiri pada Sistem Informasi Akademik sesuai jadwal kalender akademik.
+            - Validasi Akhir: Dosen Wali memberikan persetujuan (approve) KRS paling lambat pada hari terakhir masa pengisian.
+          3. Perubahan KRS (Batal Tambah)
+            Jika terdapat perubahan mata kuliah, prosedur Batal Tambah wajib diselesaikan paling lambat 7 hari kerja setelah masa pengisian KRS dimulai.
+          *Catatan: Pastikan Anda memantau jadwal pada Kalender Akademik agar tidak melewati batas waktu pengisian, karena keterlambatan dapat berakibat pada status akademik non-aktif.
+
+
+        PROSEDUR PENGISIAN KRS MELALUI LAMAN https://student.trisakti.ac.id/
+          a. Mahasiswa mengakses laman https://student.trisakti.ac.id/
+          b. Klik menu Register Course untuk mengisi Kartu Rencana Studi.
+          c. Pilih Semester dan tahun akademik yang akan ditempuh, ada 2 jenis pengisian KRS yaitu:
+            1) KRS Reguler, pilih semester dan tahun akademik dengan kode (R)
+            2) KRS Remedial semester berjalan, pilih semester dan tahun akademik dengan kode (Rmd)
+        Catatan :
+          a. Sebelum mengisi KRS mahasiswa wajib melakukan proses perwalian
+          b. Mahasiswa baru bisa mengisi KRS setelah Dosen Pembimbing Akademik/Dosen Wali merespon permintaan perwalian.
 
   utter_answer_persyaratan_krs:
     - text: |
-        Prasyarat pengisian KRS yang harus dipenuhi mahasiswa adalah:
-          1. Mahasiswa telah terdaftar sebagai mahasiswa aktif pada semester berjalan.
-          2. Registrasi administrasi/BPP telah diselesaikan (sudah/belum).
-          3. Perwalian dengan Dosen Wali telah dilakukan (sudah/belum).
-          4. Persetujuan Dosen Wali untuk pengisian KRS (sudah/belum).
-    
+        PERSYARATAN PENGISIAN KARTU RENCANA STUDI (KRS):
+        Untuk dapat melakukan pengisian Kartu Rencana Studi (KRS), mahasiswa wajib memenuhi persyaratan administratif dan akademik sebagai berikut:
+        1. Status Registrasi Administrasi
+          - Pembayaran BPP: Telah melunasi Biaya Penyelenggaraan Pendidikan (BPP) Pokok untuk semester berjalan.
+          - Status Aktif: Terdaftar secara resmi di sistem informasi universitas sebagai mahasiswa aktif.
+          - Persyaratan Khusus: Memenuhi kewajiban administratif tambahan yang ditentukan oleh masing-masing Fakultas (jika ada).
+        2. Ketentuan Akademik
+          - Konsultasi Dosen Wali: Wajib melakukan konsultasi rencana studi dengan Dosen Wali untuk menentukan beban SKS dan mata kuliah yang akan diambil.
+          - Persetujuan (Approval): Mendapatkan izin/persetujuan dari Dosen Wali melalui Sistem Informasi Akademik untuk membuka akses pengisian.
+          - Jadwal Kalender Akademik: Pengisian hanya dapat dilakukan dalam periode yang telah ditetapkan dalam Kalender Akademik Universitas Trisakti.
+        3. Ketentuan Khusus Mahasiswa Baru
+          - Mahasiswa baru jalur reguler tidak perlu melakukan pengisian mandiri pada semester pertama, karena KRS akan terisi secara otomatis dengan paket perkuliahan semester I.
+          - Mahasiswa jalur Pindahan, Transfer Kredit, atau RPL tetap wajib mengikuti prosedur pengisian mandiri.
+
+        *Catatan: Pastikan Anda telah menyelesaikan pembayaran BPP tepat waktu agar sinkronisasi status pada portal student.trisakti.ac.id tidak terhambat.
+
   utter_answer_transaksi_krs:
     - text: |
         Silakan pilih mata kuliah yang akan kamu ambil pada semester ini.

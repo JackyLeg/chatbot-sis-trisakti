@@ -1,13 +1,15 @@
 flows:
   kartuHasilStudi:
-      description: Help user with kartu hasil studi menus
+      description: |
+        Help user with kartu hasil studi menus
+        User may type: KHS, khs, hasil, hasil studi, or kartu hasil studi
       steps:
         - id: ask_menu
           collect: menu_kartuHasilStudi
           ask_before_filling: true
           description: |
             User must select one of 4 options for kartu hasil studi.
-            User may type: KHS, khs, hasil, hasil studi, or kartu hasil studi
+            There are options like Prosedur KHS, Persyaratan KHS, Transaksi KHS, and Hasil KHS.
           next: menu_confirmation
 
         - id: menu_confirmation
@@ -23,19 +25,19 @@ flows:
         - id: continue_flow
           action: action_menu_kartuHasilStudi
           next:
-            - if: "slots.return_value = 'Prosedur KHS'"
+            - if: slots.return_value = "Prosedur KHS"
               then: 
                 - action: utter_answer_prosedur_khs
                   next: END
-            - if: "slots.return_value = 'Persyaratan KHS'"
+            - if: slots.return_value = "Persyaratan KHS"
               then: 
                 - action: utter_answer_persyaratan_khs
                   next: END
-            - if: "slots.return_value = 'Transaksi KHS'"
+            - if: slots.return_value = "Transaksi KHS"
               then: 
                 - action: utter_answer_transaksi_khs
                   next: END
-            - if: "slots.return_value = 'Hasil KHS'"
+            - if: slots.return_value = "Hasil KHS"
               then: 
                 - action: utter_answer_hasil_khs
                   next: END

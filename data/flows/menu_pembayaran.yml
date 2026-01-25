@@ -1,7 +1,45 @@
-flows: 
+flows:
   pembayaran:
       description: Help user with pembayaran menus
       steps:
-        - collect: menu_pembayaran
-          description: User must select one of 2 options for pembayaran.
-        - action: menu_pembayaran
+        - id: ask_menu
+          collect: menu_pembayaran
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for pembayaran.
+            there are options like Prosedur Pembayaran, Persyaratan Pembayaran, Transaksi Pembayaran, and Hasil Pembayaran.
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_pembayaran_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_pembayaran_confirmation is false
+            then:
+              - action: utter_menu_pembayaran_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_pembayaran
+          next:
+            - if: slots.return_value = "Prosedur Pembayaran"
+              then: 
+                - action: utter_answer_prosedur_pembayaran
+                  next: END
+            - if: slots.return_value = "Persyaratan Pembayaran"
+              then: 
+                - action: utter_answer_persyaratan_pembayaran
+                  next: END
+            - if: slots.return_value = "Transaksi Pembayaran"
+              then: 
+                - action: utter_answer_transaksi_pembayaran
+                  next: END
+            - if: slots.return_value = "Hasil Pembayaran"
+              then: 
+                - action: utter_answer_hasil_pembayaran
+                  next: END
+            - else: 
+                - action: utter_answer_error_pembayaran
+                  next: END
+            

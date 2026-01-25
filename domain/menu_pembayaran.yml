@@ -1,14 +1,21 @@
 version: "3.1"
 
 actions:
-- menu_pembayaran
+- action_menu_pembayaran
 
 slots:
   menu_pembayaran:
     type: categorical
     values:
-      - Cek Status Pembayaran
-      - Kendala Pembayaran
+      - Prosedur Pembayaran
+      - Persyaratan Pembayaran
+      - Transaksi Pembayaran
+      - Hasil Pembayaran
+    mappings:
+      - type: from_llm
+
+  menu_pembayaran_confirmation:
+    type: bool
     mappings:
       - type: from_llm
 
@@ -16,7 +23,56 @@ responses:
   utter_ask_menu_pembayaran:
     - text: "Please select one of the following pembayaran options:"
       buttons:
-      - title: "Cek Status Pembayaran"
-        payload: Cek Status Pembayaran
-      - title: "Kendala Pembayaran"
-        payload: Kendala Pembayaran
+        - title: "Prosedur Pembayaran"
+          payload: Prosedur Pembayaran
+        - title: "Persyaratan Pembayaran"
+          payload: Persyaratan Pembayaran
+        - title: "Transaksi Pembayaran"
+          payload: Transaksi Pembayaran
+        - title: "Hasil Pembayaran"
+          payload: Hasil Pembayaran
+
+  utter_ask_menu_pembayaran_confirmation:
+    - text: "You have selected the option: {menu_pembayaran}. Is that correct?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+        - title: "No"
+          payload: No, I want to change it
+
+  utter_menu_pembayaran_cancelled:
+    - text: "Okay, let's try again. Please select one of the pembayaran options."
+
+  utter_menu_pembayaran_ok:
+    - text: "You have successfully selected the pembayaran option: {menu_pembayaran}."
+
+  utter_answer_prosedur_pembayaran:
+    - text: |
+        PROSEDUR PEMBAYARAN
+        Pembayaran dilakukan menggunakan sistem Virtual Account (VA) Bank BNI yang dapat diakses melalui portal mahasiswa. Berikut langkah-langkahnya:
+        1. Login Portal: Akses laman student.trisakti.ac.id.
+        2. Cek Tagihan: Pilih menu Status Keuangan. Di sini terdapat tiga tab utama:
+          - Account Statement: Untuk melihat riwayat transaksi.
+          - Invoice: Berisi rincian tagihan aktif dan nomor Virtual Account.
+          - Payment: Informasi pembayaran yang telah diverifikasi.
+        3. Generate Tagihan: Klik tombol Hitung Single VA untuk memunculkan total tagihan yang harus dibayarkan.
+        4. Pembayaran: Gunakan nomor Virtual Account yang tertera untuk membayar melalui ATM, Teller, atau Mobile Banking BNI.
+
+  utter_answer_persyaratan_pembayaran:
+    - text: |
+        PERSYARATAN PEMBAYARAN
+        - Identitas Pembayaran: Mahasiswa wajib memiliki Nomor Induk Mahasiswa (NIM) aktif.
+        - Kode Virtual Account: Format pembayaran menggunakan kode 8741 + NIM (Contoh: 8741060002xxxx).
+        - Verifikasi Data: Pastikan nominal yang muncul pada layar ATM/Aplikasi perbankan sesuai dengan jumlah yang tertera di tab Invoice portal mahasiswa.
+        - Metode Transaksi: Pembayaran hanya dianggap sah jika dilakukan melalui saluran resmi yang terintegrasi dengan sistem Virtual Account Bank BNI.
+
+  utter_answer_transaksi_pembayaran:
+    - text: "Silakan lakukan pembayaran sesuai nominal dan metode yang tersedia."
+
+  utter_answer_hasil_pembayaran:
+    - text: |
+        Pembayaran kamu berhasil diproses.
+        Status keuangan kamu telah diperbarui.
+
+  utter_answer_error_pembayaran:
+    - text: "Maaf, menu tidak ditemukan."
