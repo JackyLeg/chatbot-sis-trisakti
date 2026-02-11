@@ -1,0 +1,45 @@
+flows:
+  skpi:
+      description: Help user with skpi menus
+      steps:
+        - id: ask_menu
+          collect: menu_skpi
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for skpi.
+            there are options like Prosedur SKPI, Persyaratan SKPI, Transaksi SKPI, and Hasil SKPI.
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_skpi_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_skpi_confirmation is false
+            then:
+              - action: utter_menu_skpi_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_skpi
+          next:
+            - if: slots.return_value = "Prosedur SKPI"
+              then: 
+                - action: utter_answer_prosedur_skpi
+                  next: END
+            - if: slots.return_value = "Persyaratan SKPI"
+              then: 
+                - action: utter_answer_persyaratan_skpi
+                  next: END
+            - if: slots.return_value = "Transaksi SKPI"
+              then: 
+                - action: utter_answer_transaksi_skpi
+                  next: END
+            - if: slots.return_value = "Hasil SKPI"
+              then: 
+                - action: utter_answer_hasil_skpi
+                  next: END
+            - else: 
+                - action: utter_answer_error_skpi
+                  next: END
+            

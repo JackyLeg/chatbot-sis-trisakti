@@ -1,0 +1,84 @@
+version: "3.1"
+
+actions:
+- action_menu_skpi
+
+slots:
+  menu_skpi:
+    type: categorical
+    values:
+      - Prosedur SKPI
+      - Persyaratan SKPI
+      - Transaksi SKPI
+      - Hasil SKPI
+    mappings:
+      - type: from_llm
+
+  menu_skpi_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_skpi:
+    - text: "Please select one of the following SKPI options:"
+      buttons:
+        - title: "Prosedur SKPI"
+          payload: Prosedur SKPI
+        - title: "Persyaratan SKPI"
+          payload: Persyaratan SKPI
+        - title: "Transaksi SKPI"
+          payload: Transaksi SKPI
+        - title: "Hasil SKPI"
+          payload: Hasil SKPI
+
+  utter_ask_menu_skpi_confirmation:
+    - text: "You have selected the option: {menu_skpi}. Is that correct?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+        - title: "No"
+          payload: No, I want to change it
+
+  utter_menu_skpi_cancelled:
+    - text: "Okay, let's try again. Please select one of the SKPI options."
+
+  utter_menu_skpi_ok:
+    - text: "You have successfully selected the SKPI option: {menu_skpi}."
+  utter_answer_prosedur_skpi:
+    - text: |
+        PROSEDUR PENGISIAN SKPI
+        Untuk mengisi SKPI (Surat Keterangan Pendamping Ijazah), silakan ikuti langkah berikut:
+        1. Akses laman: https://student.trisakti.ac.id/
+        2. Klik menu SKPI.
+        3. Isi data pada lima tab berikut:
+          - Penghargaan → Prestasi selama kuliah (universitas, fakultas, prodi, regional, nasional, internasional).
+          - Organisasi → Pengalaman organisasi atau kepanitiaan.
+          - Bahasa Asing → Sertifikat bahasa internasional (contoh: TOEFL).
+          - Pembentukan Karakter → Kegiatan pengembangan diri (PKM, UKM, seminar, workshop, dll).
+          - Praktek Profesional → Magang, PKL, atau kegiatan penerapan ilmu di dunia kerja.
+        4. Semua kegiatan wajib diisi dalam Bahasa Indonesia dan Bahasa Inggris sesuai kolom yang tersedia.
+
+  utter_answer_persyaratan_skpi:
+    - text: |
+        PERSYARATAN PENGISIAN SKPI
+        Setiap kegiatan yang diinput wajib dilengkapi bukti pendukung, seperti:
+          - SK Rektor/Dekan
+          - Sertifikat
+          - Piagam penghargaan
+          - Dokumen resmi lainnya
+        Data harus diisi lengkap dan benar pada masing-masing kategori.
+        Pengisian dilakukan dalam dua bahasa (Indonesia & Inggris).
+
+  utter_answer_transaksi_skpi:
+    - text: |
+        Silakan pilih mata kuliah yang akan kamu ambil pada semester ini.
+        Setelah selesai, ajukan KRS untuk diproses oleh Dosen Pembimbing Akademik. (Tombol Pengisian KRS)
+
+  utter_answer_hasil_skpi:
+    - text: "Silakan lengkapi dan ajukan data SKPI sesuai dengan kegiatan yang telah anda ikuti."
+
+  utter_answer_error_skpi:
+    - text: |
+        Pengajuan SKPI anda sedang diproses.
+        Anda dapat melihat status dan hasil SKPI melalui sistem.
