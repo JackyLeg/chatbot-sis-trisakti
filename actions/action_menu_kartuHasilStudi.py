@@ -28,6 +28,8 @@ class MenuKartuHasilStudi(Action):
                 return [SlotSet("return_value", "Transaksi KHS")]
             case "Hasil KHS":
                 return [SlotSet("return_value", "Hasil KHS")]
+            case "Batal":
+                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
 

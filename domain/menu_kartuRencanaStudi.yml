@@ -11,6 +11,7 @@ slots:
       - Persyaratan KRS
       - Transaksi KRS
       - Hasil KRS
+      - Batal
     mappings:
       - type: from_llm
 
@@ -33,9 +34,12 @@ responses:
           payload: Transaksi KRS
         - title: "Hasil KRS"
           payload: Hasil KRS
+        - title: "Batal"
+          payload: Batal
 
   utter_ask_menu_kartuRencanaStudi_confirmation:
-    - text: "You have selected the option: {menu_kartuRencanaStudi}. Is that correct?"
+    - condition: slots.menu_kartuRencanaStudi != "Batal"
+      text: "You have selected the option: {menu_kartuRencanaStudi}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_kartuRencanaStudi}. Apakah itu benar?"
       buttons:
@@ -51,6 +55,10 @@ responses:
             id: 
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
+    - condition: slots.menu_kartuRencanaStudi == "Batal"
+      text: "Ok, process aborted."
+      translation:
+        id: "Baik, proses dibatalkan."
 
   utter_menu_kartuRencanaStudi_cancelled:
     - text: "Okay, let's try again. Please select one of the kartu rencana studi options."
@@ -117,59 +125,8 @@ responses:
   utter_answer_hasil_krs:
     - text: "Pengajuan KRS kamu sudah diproses."
 
+  utter_answer_batal_krs:
+    - text: "Baik, proses dibatalkan."
+
   utter_answer_error_krs:
     - text: "Maaf, menu tidak ditemukan."
-    
-  #     - Melihat Mata Kuliah Pada KRS
-  #     - Mengisi Data Academic Advising
-  #     - Mengisi KRS
-  #     - Melihat Prasyarat Pengisian KRS
-  #     - More
-  # menu_kartuRencanaStudi2:
-  #   type: categorical
-  #   values:
-  #     - Melihat Kurikulum
-  #     - Mengajukan Fast Track
-  #     - Melihat Data Conversion Plan
-  #     # - Back
-
-
-  #       - title: "Mengisi Data Academic Advising"
-  #         payload: Mengisi Data Academic Advising
-  #       - title: "Mengisi KRS"
-  #         payload: Mengisi KRS
-  #       - title: "Melihat Prasyarat Pengisian KRS"
-  #         payload: Melihat Prasyarat Pengisian KRS
-  #       - title: "Melihat Mata Kuliah Pada KRS"
-  #         payload: Melihat Mata Kuliah Pada KRS
-  #       - title: "More"
-  #         payload: More
-
-  # utter_ask_menu_kartuRencanaStudi2:
-  #   - text: "Please select one of the following additional kartu rencana studi options:"
-  #     buttons:
-  #       - title: "Melihat Kurikulum"
-  #         payload: Melihat Kurikulum
-  #       - title: "Mengajukan Fast Track"
-  #         payload: Mengajukan Fast Track
-  #       - title: "Melihat Data Conversion Plan"
-  #         payload: Melihat Data Conversion Plan
-  #       # - title: "Back"
-  #       #   payload: Back
-
-
-  # - condition: slots.menu_kartuRencanaStudi is null
-    #   text: "You have selected the option: {menu_kartuRencanaStudi2}. Is that correct?"
-    #   buttons:
-    #     - title: "Yes"
-    #       payload: Yes, that's correct
-    #     - title: "No"
-    #       payload: No, I want to change it
-
-
-    # - condition: slots.menu_kartuRencanaStudi2 is null
-    #   text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
-
-    # - condition: slots.menu_kartuRencanaStudi is null
-    #   text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi2}."
-

@@ -28,6 +28,8 @@ class MenuSKPI(Action):
                 return [SlotSet("return_value", "Transaksi SKPI")]
             case "Hasil SKPI":
                 return [SlotSet("return_value", "Hasil SKPI")]
+            case "Batal":
+                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
 

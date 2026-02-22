@@ -9,6 +9,7 @@ flows:
           description: |
             User must select one of 4 options for skpmFK.
             there are options like Prosedur SKPM FK, Persyaratan SKPM FK, Transaksi SKPM FK, and Hasil SKPM FK.
+            while bot not do utter_answer_batal_skpmFK and if user gets their result, flow will continue to what user want to do next in this menu
           next: menu_confirmation
 
         - id: menu_confirmation
@@ -27,20 +28,24 @@ flows:
             - if: slots.return_value = "Prosedur SKPM FK"
               then: 
                 - action: utter_answer_prosedur_skpmFK
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Persyaratan SKPM FK"
               then: 
                 - action: utter_answer_persyaratan_skpmFK
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Transaksi SKPM FK"
               then: 
                 - action: utter_answer_transaksi_skpmFK
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Hasil SKPM FK"
               then: 
                 - action: utter_answer_hasil_skpmFK
+                  next: ask_menu
+            - if: slots.return_value = "Batal"
+              then: 
+                - action: utter_answer_batal_skpmFK
                   next: END
             - else: 
                 - action: utter_answer_error_skpmFK
-                  next: END
+                  next: ask_menu
             

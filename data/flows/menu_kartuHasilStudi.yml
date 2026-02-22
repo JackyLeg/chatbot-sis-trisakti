@@ -4,6 +4,7 @@ flows:
       description: |
         Help user with kartu hasil studi menus
         User may refer this as: "KHS", "khs", "hasil", "hasil studi", or "kartu hasil studi"
+        while bot not do utter_answer_batal_khs and if user gets their result, flow will continue to what user want to do next in this menu
       steps:
         - id: ask_menu
           collect: menu_kartuHasilStudi
@@ -29,19 +30,23 @@ flows:
             - if: slots.return_value = "Prosedur KHS"
               then: 
                 - action: utter_answer_prosedur_khs
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Persyaratan KHS"
               then: 
                 - action: utter_answer_persyaratan_khs
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Transaksi KHS"
               then: 
                 - action: utter_answer_transaksi_khs
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Hasil KHS"
               then: 
                 - action: utter_answer_hasil_khs
+                  next: ask_menu
+            - if: slots.return_value = "Batal"
+              then: 
+                - action: utter_answer_batal_khs
                   next: END
             - else: 
                 - action: utter_answer_error_khs
-                  next: END
+                  next: ask_menu

@@ -4,6 +4,7 @@ flows:
       description: |
         Help user with kartu rencana studi menus
         User may refer this as: "KRS", "krs", "rencana", "rencana studi", or "kartu rencana studi"
+        while bot not do utter_answer_batal_krs and if user gets their result, flow will continue to what user want to do next in this menu
       steps:
         - id: ask_menu
           collect: menu_kartuRencanaStudi
@@ -29,20 +30,24 @@ flows:
             - if: slots.return_value = "Prosedur KRS"
               then: 
                 - action: utter_answer_prosedur_krs
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Persyaratan KRS"
               then: 
                 - action: utter_answer_persyaratan_krs
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Transaksi KRS"
               then: 
                 - action: utter_answer_transaksi_krs
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Hasil KRS"
               then: 
                 - action: utter_answer_hasil_krs
+                  next: ask_menu
+            - if: slots.return_value = "Batal"
+              then: 
+                - action: utter_answer_batal_krs
                   next: END
             - else: 
                 - action: utter_answer_error_krs
-                  next: END
+                  next: ask_menu
 

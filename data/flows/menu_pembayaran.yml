@@ -9,6 +9,7 @@ flows:
           description: |
             User must select one of 4 options for pembayaran.
             there are options like Prosedur Pembayaran, Persyaratan Pembayaran, Transaksi Pembayaran, and Hasil Pembayaran.
+            while bot not do utter_answer_batal_pembayaran and if user gets their result, flow will continue to what user want to do next in this menu
           next: menu_confirmation
 
         - id: menu_confirmation
@@ -27,20 +28,24 @@ flows:
             - if: slots.return_value = "Prosedur Pembayaran"
               then: 
                 - action: utter_answer_prosedur_pembayaran
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Persyaratan Pembayaran"
               then: 
                 - action: utter_answer_persyaratan_pembayaran
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Transaksi Pembayaran"
               then: 
                 - action: utter_answer_transaksi_pembayaran
-                  next: END
+                  next: ask_menu
             - if: slots.return_value = "Hasil Pembayaran"
               then: 
                 - action: utter_answer_hasil_pembayaran
+                  next: ask_menu
+            - if: slots.return_value = "Batal"
+              then: 
+                - action: utter_answer_batal_pembayaran
                   next: END
             - else: 
                 - action: utter_answer_error_pembayaran
-                  next: END
+                  next: ask_menu
             

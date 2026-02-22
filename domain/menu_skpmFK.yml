@@ -11,6 +11,7 @@ slots:
       - Persyaratan SKPM FK
       - Transaksi SKPM FK
       - Hasil SKPM FK
+      - Batal
     mappings:
       - type: from_llm
 
@@ -33,9 +34,12 @@ responses:
           payload: Transaksi SKPM FK
         - title: "Hasil SKPM FK"
           payload: Hasil SKPM FK
+        - title: "Batal"
+          payload: Batal
 
   utter_ask_menu_skpmFK_confirmation:
-    - text: "You have selected the option: {menu_skpmFK}. Is that correct?"
+    - condition: slots.menu_skpmFK != "Batal"
+      text: "You have selected the option: {menu_skpmFK}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_skpmFK}. Apakah itu benar?"
       buttons:
@@ -51,6 +55,10 @@ responses:
             id: 
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
+    - condition: slots.menu_skpmFK == "Batal"
+      text: "Ok, process aborted."
+      translation:
+        id: "Baik, proses dibatalkan."
 
   utter_menu_skpmFK_cancelled:
     - text: "Okay, let's try again. Please select one of the SKPM FK options."
@@ -83,5 +91,8 @@ responses:
         Pengajuan SKPM-FK anda sedang diproses.
         Anda dapat melihat status dan hasil SKPM-FK melalui sistem.
 
+  utter_answer_batal_skpmFK:
+    - text: "Baik, proses dibatalkan."
+    
   utter_answer_error_skpmFK:
     - text: "Maaf, menu tidak ditemukan."
