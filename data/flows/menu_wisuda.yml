@@ -1,5 +1,6 @@
 flows:
   wisuda:
+      name: Wisuda
       description: Help user with wisuda menus
       steps:
         - collect: menu_wisuda

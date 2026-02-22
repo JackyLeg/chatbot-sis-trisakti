@@ -15,6 +15,8 @@ slots:
 responses:
   utter_ask_menu_wisuda:
     - text: "Please select one of the following wisuda options:"
+      translation:
+        id: "Silakan pilih salah satu opsi wisuda berikut:"
       buttons:
         - title: "Graduation (Yudisium dan Dokumen Kelulusan)"
           payload: Graduation

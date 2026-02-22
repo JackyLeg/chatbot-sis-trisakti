@@ -22,6 +22,8 @@ slots:
 responses:
   utter_ask_menu_kartuRencanaStudi:
     - text: "Please select one of the following kartu rencana studi options:"
+      translation:
+        id: "Silakan pilih salah satu opsi kartu rencana studi berikut:"
       buttons:
         - title: "Prosedur KRS"
           payload: Prosedur KRS
@@ -34,17 +36,31 @@ responses:
 
   utter_ask_menu_kartuRencanaStudi_confirmation:
     - text: "You have selected the option: {menu_kartuRencanaStudi}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_kartuRencanaStudi}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
+          translation:
+            id: 
+              title: "Ya"
+              payload: Ya, itu benar
         - title: "No"
           payload: No, I want to change it
+          translation:
+            id: 
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
 
   utter_menu_kartuRencanaStudi_cancelled:
     - text: "Okay, let's try again. Please select one of the kartu rencana studi options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi kartu rencana studi."
 
   utter_menu_kartuRencanaStudi_ok:
     - text: "You have successfully selected the kartu rencana studi option: {menu_kartuRencanaStudi}."
+      translation:
+        id: "Anda telah berhasil memilih opsi kartu rencana studi: {menu_kartuRencanaStudi}."
 
   utter_answer_prosedur_krs:
     - text: |

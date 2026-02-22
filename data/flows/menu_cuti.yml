@@ -1,5 +1,6 @@
 flows:
   cuti:
+      name: Cuti
       description: Help user with cuti menus
       steps:
         - id: ask_menu

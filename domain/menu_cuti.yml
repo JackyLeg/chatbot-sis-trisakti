@@ -22,6 +22,8 @@ slots:
 responses:
   utter_ask_menu_cuti:
     - text: "Please select one of the following cuti options:"
+      translation:
+        id: "Silakan pilih salah satu opsi cuti berikut:"
       buttons:
         - title: "Prosedur Cuti"
           payload: Prosedur Cuti
@@ -34,17 +36,31 @@ responses:
 
   utter_ask_menu_cuti_confirmation:
     - text: "You have selected the option: {menu_cuti}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_cuti}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
         - title: "No"
           payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
 
   utter_menu_cuti_cancelled:
     - text: "Okay, let's try again. Please select one of the cuti options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi cuti."
 
   utter_menu_cuti_ok:
     - text: "You have successfully selected the cuti option: {menu_cuti}."
+      translation:
+        id: "Anda telah berhasil memilih opsi cuti: {menu_cuti}."
 
   utter_answer_prosedur_cuti:
     - text: |

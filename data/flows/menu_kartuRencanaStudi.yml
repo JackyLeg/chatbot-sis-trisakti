@@ -1,8 +1,9 @@
 flows:
   kartuRencanaStudi:
+      name: Kartu Rencana Studi
       description: |
         Help user with kartu rencana studi menus
-        User may type: KRS, krs, rencana, rencana studi, or kartu rencana studi
+        User may refer this as: "KRS", "krs", "rencana", "rencana studi", or "kartu rencana studi"
       steps:
         - id: ask_menu
           collect: menu_kartuRencanaStudi

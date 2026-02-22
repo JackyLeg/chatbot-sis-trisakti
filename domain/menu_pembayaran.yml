@@ -22,6 +22,8 @@ slots:
 responses:
   utter_ask_menu_pembayaran:
     - text: "Please select one of the following pembayaran options:"
+      translation:
+        id: "Silakan pilih salah satu opsi pembayaran berikut:"
       buttons:
         - title: "Prosedur Pembayaran"
           payload: Prosedur Pembayaran
@@ -34,17 +36,31 @@ responses:
 
   utter_ask_menu_pembayaran_confirmation:
     - text: "You have selected the option: {menu_pembayaran}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_pembayaran}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
+          translation:
+            id: 
+              title: "Ya"
+              payload: Ya, itu benar
         - title: "No"
           payload: No, I want to change it
+          translation:
+            id: 
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
 
   utter_menu_pembayaran_cancelled:
     - text: "Okay, let's try again. Please select one of the pembayaran options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi pembayaran."
 
   utter_menu_pembayaran_ok:
     - text: "You have successfully selected the pembayaran option: {menu_pembayaran}."
+      translation:
+        id: "Anda telah berhasil memilih opsi pembayaran: {menu_pembayaran}."
 
   utter_answer_prosedur_pembayaran:
     - text: |

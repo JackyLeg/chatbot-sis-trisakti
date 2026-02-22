@@ -14,5 +14,5 @@ class ActionHelloWorld(Action):
             domain: Dict[Text, Any]
             ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(template="utter_greet", name=tracker.get_slot("name"))
+        dispatcher.utter_message(response="utter_greet", name=tracker.get_slot("name"))
         return []

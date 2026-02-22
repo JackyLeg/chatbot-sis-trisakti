@@ -1,5 +1,6 @@
 flows:
   skpmFK:
+      name: SKPM FK
       description: Help user with skpmFK menus
       steps:
         - id: ask_menu

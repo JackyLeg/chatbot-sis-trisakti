@@ -1,8 +1,9 @@
 flows:
   kartuHasilStudi:
+      name: Kartu Hasil Studi
       description: |
         Help user with kartu hasil studi menus
-        User may type: KHS, khs, hasil, hasil studi, or kartu hasil studi
+        User may refer this as: "KHS", "khs", "hasil", "hasil studi", or "kartu hasil studi"
       steps:
         - id: ask_menu
           collect: menu_kartuHasilStudi

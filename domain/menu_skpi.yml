@@ -22,6 +22,8 @@ slots:
 responses:
   utter_ask_menu_skpi:
     - text: "Please select one of the following SKPI options:"
+      translation:
+        id: "Silakan pilih salah satu opsi SKPI berikut:"
       buttons:
         - title: "Prosedur SKPI"
           payload: Prosedur SKPI
@@ -34,17 +36,32 @@ responses:
 
   utter_ask_menu_skpi_confirmation:
     - text: "You have selected the option: {menu_skpi}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_skpi}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
+          translation:
+            id: 
+              title: "Ya"
+              payload: Ya, itu benar
         - title: "No"
           payload: No, I want to change it
+          translation:
+            id: 
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
 
   utter_menu_skpi_cancelled:
     - text: "Okay, let's try again. Please select one of the SKPI options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi SKPI."
 
   utter_menu_skpi_ok:
     - text: "You have successfully selected the SKPI option: {menu_skpi}."
+      translation:
+        id: "Anda telah berhasil memilih opsi SKPI: {menu_skpi}."
+
   utter_answer_prosedur_skpi:
     - text: |
         PROSEDUR PENGISIAN SKPI

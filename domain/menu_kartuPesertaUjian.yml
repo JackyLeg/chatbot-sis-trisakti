@@ -16,6 +16,8 @@ slots:
 responses:
   utter_ask_menu_kartuPesertaUjian:
     - text: "Please select one of the following kartu peserta ujian options:"
+      translation:
+        id: "Silakan pilih salah satu opsi kartu peserta ujian berikut:"
       buttons:
         - title: "Cek Kartu Peserta Ujian"
           payload: Cek Kartu Peserta Ujian

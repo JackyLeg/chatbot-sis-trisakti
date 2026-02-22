@@ -19,6 +19,8 @@ slots:
 responses:
   utter_ask_menu_tugasAkhir:
     - text: "Please select one of the following tugas akhir options:"
+      translation:
+        id: "Silakan pilih salah satu opsi tugas akhir berikut:"
       buttons:
         - title: "Pendaftaran Tugas Akhir"
           payload: Pendaftaran Tugas Akhir

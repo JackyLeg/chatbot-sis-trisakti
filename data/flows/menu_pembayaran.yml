@@ -1,5 +1,6 @@
 flows:
   pembayaran:
+      name: Pembayaran
       description: Help user with pembayaran menus
       steps:
         - id: ask_menu

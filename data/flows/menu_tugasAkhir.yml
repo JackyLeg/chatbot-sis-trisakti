@@ -1,5 +1,6 @@
 flows: 
   tugasAkhir:
+      name: Tugas Akhir
       description: Help user with tugas akhir menus
       steps:
         - collect: menu_tugasAkhir

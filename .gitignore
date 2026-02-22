@@ -1,7 +1,7 @@
 .python-version
 .rasa
 credentials.yml
-endpoints.yml
+
 .env
 /actions/__pycache__
 /actions/__init__.py

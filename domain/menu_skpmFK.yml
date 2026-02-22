@@ -22,6 +22,8 @@ slots:
 responses:
   utter_ask_menu_skpmFK:
     - text: "Please select one of the following SKPM FK options:"
+      translation:
+        id: "Silakan pilih salah satu opsi SKPM FK berikut:"
       buttons:
         - title: "Prosedur SKPM FK"
           payload: Prosedur SKPM FK
@@ -34,17 +36,32 @@ responses:
 
   utter_ask_menu_skpmFK_confirmation:
     - text: "You have selected the option: {menu_skpmFK}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_skpmFK}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
+          translation:
+            id: 
+              title: "Ya"
+              payload: Ya, itu benar
         - title: "No"
           payload: No, I want to change it
+          translation:
+            id: 
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
 
   utter_menu_skpmFK_cancelled:
     - text: "Okay, let's try again. Please select one of the SKPM FK options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi SKPM FK."
 
   utter_menu_skpmFK_ok:
     - text: "You have successfully selected the SKPM FK option: {menu_skpmFK}."
+      translation:
+        id: "Anda telah berhasil memilih opsi SKPM FK: {menu_skpmFK}."
+
   utter_answer_prosedur_skpmFK:
     - text: |
         Pengajuan SKPM-FK dilakukan melalui tahapan berikut:

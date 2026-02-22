@@ -12,5 +12,9 @@ slots:
 responses:
   utter_ask_name:
     - text: "What's your name?"
+      translation:
+        id: "Siapa nama Anda?"
   utter_greet:
     - text: "Hello {name}! How can I assist you today?"
+      translation:
+        id: "Halo {name}! Bagaimana saya bisa membantu Anda hari ini?"

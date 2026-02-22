@@ -1,5 +1,5 @@
 recipe: default.v1
-language: en
+language: id
 assistant_id: chatbot-sis-trisakti
 pipeline:
 - name: CompactLLMCommandGenerator

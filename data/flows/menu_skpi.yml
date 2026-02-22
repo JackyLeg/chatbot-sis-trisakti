@@ -1,5 +1,6 @@
 flows:
   skpi:
+      name: SKPI
       description: Help user with skpi menus
       steps:
         - id: ask_menu
