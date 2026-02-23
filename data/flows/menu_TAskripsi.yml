@@ -1,0 +1,53 @@
+flows:
+  TAskripsi:
+      name: TA Skripsi
+      description: Help user with TA Skripsi menus
+      steps:
+        - id: ask_menu
+          collect: menu_TAskripsi
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for TA Skripsi.
+            there are options like Prosedur TA Skripsi, Persyaratan TA Skripsi, Transaksi TA Skripsi, and Hasil TA Skripsi.
+            while bot not do utter_answer_batal_TAskripsi and if user gets their result, flow will continue to what user want to do next in this menu
+          next: 
+            - if: slots.menu_TAskripsi = "Batal"
+              then:
+                - action: utter_answer_batal_TAskripsi
+                  next: END
+            - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_TAskripsi_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_TAskripsi_confirmation is false
+            then:
+              - action: utter_menu_TAskripsi_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_TAskripsi
+          next:
+            - if: slots.return_value = "Prosedur TA Skripsi"
+              then: 
+                - action: utter_answer_prosedur_TAskripsi
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan TA Skripsi"
+              then: 
+                - action: utter_answer_persyaratan_TAskripsi
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi TA Skripsi"
+              then: 
+                - action: utter_answer_transaksi_TAskripsi
+                  next: ask_menu
+            - if: slots.return_value = "Hasil TA Skripsi"
+              then: 
+                - action: utter_answer_hasil_TAskripsi
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_TAskripsi
+                  next: ask_menu
+                  
+            

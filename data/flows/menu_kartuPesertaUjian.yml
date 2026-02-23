@@ -1,10 +1,52 @@
 flows:
   kartuPesertaUjian:
       name: Kartu Peserta Ujian
-      description: |
-        Help user with kartu peserta ujian menus
-        User may refer this as: "KPU", "kpu", or "kartu peserta ujian"
+      description: Help user with kartu peserta ujian menus
       steps:
-        - collect: menu_kartuPesertaUjian
-          description: User must select one of 3 options for kartu peserta ujian.
-        - action: menu_kartuPesertaUjian
+        - id: ask_menu
+          collect: menu_kartuPesertaUjian
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for kartu peserta ujian.
+            there are options like Prosedur Kartu Peserta Ujian, Persyaratan Kartu Peserta Ujian, Transaksi Kartu Peserta Ujian, and Hasil Kartu Peserta Ujian.
+            while bot not do utter_answer_batal_kartuPesertaUjian and if user gets their result, flow will continue to what user want to do next in this menu
+          next: 
+            - if: slots.menu_kartuPesertaUjian = "Batal"
+              then:
+                - action: utter_answer_batal_kartuPesertaUjian
+                  next: END
+            - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_kartuPesertaUjian_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_kartuPesertaUjian_confirmation is false
+            then:
+              - action: utter_menu_kartuPesertaUjian_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_kartuPesertaUjian
+          next:
+            - if: slots.return_value = "Prosedur Kartu Peserta Ujian"
+              then: 
+                - action: utter_answer_prosedur_kartuPesertaUjian
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Kartu Peserta Ujian"
+              then: 
+                - action: utter_answer_persyaratan_kartuPesertaUjian
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Kartu Peserta Ujian"
+              then: 
+                - action: utter_answer_transaksi_kartuPesertaUjian
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Kartu Peserta Ujian"
+              then: 
+                - action: utter_answer_hasil_kartuPesertaUjian
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_kartuPesertaUjian
+                  next: ask_menu
+            

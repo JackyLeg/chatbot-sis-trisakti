@@ -1,47 +1,47 @@
 version: "3.1"
 
 actions:
-- action_menu_kartuPesertaUjian
+- action_menu_fastTrackApp
 
 slots:
-  menu_kartuPesertaUjian:
+  menu_fastTrackApp:
     type: categorical
     values:
-      - Prosedur Kartu Peserta Ujian
-      - Persyaratan Kartu Peserta Ujian
-      - Transaksi Kartu Peserta Ujian
-      - Hasil Kartu Peserta Ujian
+      - Prosedur Fast Track App
+      - Persyaratan Fast Track App
+      - Transaksi Fast Track App
+      - Hasil Fast Track App
       - Batal
     mappings:
       - type: from_llm
 
-  menu_kartuPesertaUjian_confirmation:
+  menu_fastTrackApp_confirmation:
     type: bool
     mappings:
       - type: from_llm
 
 responses:
-  utter_ask_menu_kartuPesertaUjian:
-    - text: "Please select one of the following kartu peserta ujian options:"
+  utter_ask_menu_fastTrackApp:
+    - text: "Please select one of the following fast track app options:"
       translation:
-        id: "Silakan pilih salah satu opsi kartu peserta ujian berikut:"
+        id: "Silakan pilih salah satu opsi fast track app berikut:"
       buttons:
-        - title: "Prosedur Kartu Peserta Ujian"
-          payload: Prosedur Kartu Peserta Ujian
-        - title: "Persyaratan Kartu Peserta Ujian"
-          payload: Persyaratan Kartu Peserta Ujian
-        - title: "Transaksi Kartu Peserta Ujian"
-          payload: Transaksi Kartu Peserta Ujian
-        - title: "Hasil Kartu Peserta Ujian"
-          payload: Hasil Kartu Peserta Ujian
+        - title: "Prosedur Fast Track App"
+          payload: Prosedur Fast Track App
+        - title: "Persyaratan Fast Track App"
+          payload: Persyaratan Fast Track App
+        - title: "Transaksi Fast Track App"
+          payload: Transaksi Fast Track App
+        - title: "Hasil Fast Track App"
+          payload: Hasil Fast Track App
         - title: "Batal"
           payload: Batal
 
-  utter_ask_menu_kartuPesertaUjian_confirmation:
-    - condition: slots.menu_kartuPesertaUjian != "Batal"
-      text: "You have selected the option: {menu_kartuPesertaUjian}. Is that correct?"
+  utter_ask_menu_fastTrackApp_confirmation:
+    - condition: slots.menu_fastTrackApp != "Batal"
+      text: "You have selected the option: {menu_fastTrackApp}. Is that correct?"
       translation:
-        id: "Anda telah memilih opsi: {menu_kartuPesertaUjian}. Apakah itu benar?"
+        id: "Anda telah memilih opsi: {menu_fastTrackApp}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
@@ -55,22 +55,22 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_kartuPesertaUjian == "Batal"
+    - condition: slots.menu_fastTrackApp == "Batal"
       text: "Ok, process aborted."
       translation:
         id: "Baik, proses dibatalkan."
 
-  utter_menu_kartuPesertaUjian_cancelled:
-    - text: "Okay, let's try again. Please select one of the kartu peserta ujian options."
+  utter_menu_fastTrackApp_cancelled:
+    - text: "Okay, let's try again. Please select one of the fast track app options."
       translation:
-        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi kartu peserta ujian."
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi fast track app."
 
-  utter_menu_kartuPesertaUjian_ok:
-    - text: "You have successfully selected the kartu peserta ujian option: {menu_kartuPesertaUjian}."
+  utter_menu_fastTrackApp_ok:
+    - text: "You have successfully selected the fast track app option: {menu_fastTrackApp}."
       translation:
-        id: "Anda telah berhasil memilih opsi kartu peserta ujian: {menu_kartuPesertaUjian}."
+        id: "Anda telah berhasil memilih opsi fast track app: {menu_fastTrackApp}."
 
-  utter_answer_prosedur_kartuPesertaUjian:
+  utter_answer_prosedur_fastTrackApp:
     - text: |
         PROSEDUR CUTI AKADEMIK
         Cuti akademik adalah masa jeda studi yang tetap diperhitungkan dalam masa studi maksimal. Prosedur pengajuannya terbagi menjadi dua kategori:
@@ -90,7 +90,7 @@ responses:
         PROSEDUR AKTIF KEMBALI
         Mahasiswa wajib mengajukan surat permohonan aktif kembali kepada Dekan (diketahui Dosen Wali & Kaprodi) selambat-lambatnya 1 bulan sebelum masa cuti berakhir, serta menyelesaikan seluruh kewajiban administrasi dan keuangan.
 
-  utter_answer_persyaratan_kartuPesertaUjian:
+  utter_answer_persyaratan_fastTrackApp:
     - text: |
         PERSYARATAN CUTI AKADEMIK
         1. Syarat Umum
@@ -110,14 +110,14 @@ responses:
 
         *Catatan: Pastikan seluruh kewajiban administrasi keuangan pada semester sebelumnya telah lunas sebelum mengajukan permohonan.
 
-  utter_answer_transaksi_kartuPesertaUjian:
-    - text: "Silakan lengkapi data pengajuan kartu peserta ujian dan ajukan permohonan kartu peserta ujian."
+  utter_answer_transaksi_fastTrackApp:
+    - text: "Silakan lengkapi data pengajuan cuti akademik dan ajukan permohonan cuti."
 
-  utter_answer_hasil_kartuPesertaUjian:
-    - text: "Pengajuan kartu peserta ujian kamu telah diproses."
+  utter_answer_hasil_fastTrackApp:
+    - text: "Pengajuan cuti akademik kamu telah diproses."
 
-  utter_answer_batal_kartuPesertaUjian:
+  utter_answer_batal_fastTrackApp:
     - text: "Baik, proses dibatalkan."
 
-  utter_answer_error_kartuPesertaUjian:
+  utter_answer_error_fastTrackApp:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

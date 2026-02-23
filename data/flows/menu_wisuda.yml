@@ -3,6 +3,50 @@ flows:
       name: Wisuda
       description: Help user with wisuda menus
       steps:
-        - collect: menu_wisuda
-          description: User must select one of 2 options for wisuda.
-        - action: menu_wisuda
+        - id: ask_menu
+          collect: menu_wisuda
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for wisuda.
+            there are options like Prosedur Wisuda, Persyaratan Wisuda, Transaksi Wisuda, and Hasil Wisuda.
+            while bot not do utter_answer_batal_wisuda and if user gets their result, flow will continue to what user want to do next in this menu
+          next: 
+            - if: slots.menu_wisuda = "Batal"
+              then:
+                - action: utter_answer_batal_wisuda
+                  next: END
+            - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_wisuda_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_wisuda_confirmation is false
+            then:
+              - action: utter_menu_wisuda_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_wisuda
+          next:
+            - if: slots.return_value = "Prosedur Wisuda"
+              then: 
+                - action: utter_answer_prosedur_wisuda
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Wisuda"
+              then: 
+                - action: utter_answer_persyaratan_wisuda
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Wisuda"
+              then: 
+                - action: utter_answer_transaksi_wisuda
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Wisuda"
+              then: 
+                - action: utter_answer_hasil_wisuda
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_wisuda
+                  next: ask_menu
+            

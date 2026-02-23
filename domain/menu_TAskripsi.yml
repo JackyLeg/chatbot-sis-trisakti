@@ -1,47 +1,47 @@
 version: "3.1"
 
 actions:
-- action_menu_kartuPesertaUjian
+- action_menu_TAskripsi
 
 slots:
-  menu_kartuPesertaUjian:
+  menu_TAskripsi:
     type: categorical
     values:
-      - Prosedur Kartu Peserta Ujian
-      - Persyaratan Kartu Peserta Ujian
-      - Transaksi Kartu Peserta Ujian
-      - Hasil Kartu Peserta Ujian
+      - Prosedur TAskripsi
+      - Persyaratan TAskripsi
+      - Transaksi TAskripsi
+      - Hasil TAskripsi
       - Batal
     mappings:
       - type: from_llm
 
-  menu_kartuPesertaUjian_confirmation:
+  menu_TAskripsi_confirmation:
     type: bool
     mappings:
       - type: from_llm
 
 responses:
-  utter_ask_menu_kartuPesertaUjian:
-    - text: "Please select one of the following kartu peserta ujian options:"
+  utter_ask_menu_TAskripsi:
+    - text: "Please select one of the following TAskripsi options:"
       translation:
-        id: "Silakan pilih salah satu opsi kartu peserta ujian berikut:"
+        id: "Silakan pilih salah satu opsi TAskripsi berikut:"
       buttons:
-        - title: "Prosedur Kartu Peserta Ujian"
-          payload: Prosedur Kartu Peserta Ujian
-        - title: "Persyaratan Kartu Peserta Ujian"
-          payload: Persyaratan Kartu Peserta Ujian
-        - title: "Transaksi Kartu Peserta Ujian"
-          payload: Transaksi Kartu Peserta Ujian
-        - title: "Hasil Kartu Peserta Ujian"
-          payload: Hasil Kartu Peserta Ujian
+        - title: "Prosedur TAskripsi"
+          payload: Prosedur TAskripsi
+        - title: "Persyaratan TAskripsi"
+          payload: Persyaratan TAskripsi
+        - title: "Transaksi TAskripsi"
+          payload: Transaksi TAskripsi
+        - title: "Hasil TAskripsi"
+          payload: Hasil TAskripsi
         - title: "Batal"
           payload: Batal
 
-  utter_ask_menu_kartuPesertaUjian_confirmation:
-    - condition: slots.menu_kartuPesertaUjian != "Batal"
-      text: "You have selected the option: {menu_kartuPesertaUjian}. Is that correct?"
+  utter_ask_menu_TAskripsi_confirmation:
+    - condition: slots.menu_TAskripsi != "Batal"
+      text: "You have selected the option: {menu_TAskripsi}. Is that correct?"
       translation:
-        id: "Anda telah memilih opsi: {menu_kartuPesertaUjian}. Apakah itu benar?"
+        id: "Anda telah memilih opsi: {menu_TAskripsi}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
@@ -55,22 +55,22 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_kartuPesertaUjian == "Batal"
+    - condition: slots.menu_TAskripsi == "Batal"
       text: "Ok, process aborted."
       translation:
         id: "Baik, proses dibatalkan."
 
-  utter_menu_kartuPesertaUjian_cancelled:
-    - text: "Okay, let's try again. Please select one of the kartu peserta ujian options."
+  utter_menu_TAskripsi_cancelled:
+    - text: "Okay, let's try again. Please select one of the TAskripsi options."
       translation:
-        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi kartu peserta ujian."
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi TAskripsi."
 
-  utter_menu_kartuPesertaUjian_ok:
-    - text: "You have successfully selected the kartu peserta ujian option: {menu_kartuPesertaUjian}."
+  utter_menu_TAskripsi_ok:
+    - text: "You have successfully selected the TAskripsi option: {menu_TAskripsi}."
       translation:
-        id: "Anda telah berhasil memilih opsi kartu peserta ujian: {menu_kartuPesertaUjian}."
+        id: "Anda telah berhasil memilih opsi TAskripsi: {menu_TAskripsi}."
 
-  utter_answer_prosedur_kartuPesertaUjian:
+  utter_answer_prosedur_TAskripsi:
     - text: |
         PROSEDUR CUTI AKADEMIK
         Cuti akademik adalah masa jeda studi yang tetap diperhitungkan dalam masa studi maksimal. Prosedur pengajuannya terbagi menjadi dua kategori:
@@ -90,7 +90,7 @@ responses:
         PROSEDUR AKTIF KEMBALI
         Mahasiswa wajib mengajukan surat permohonan aktif kembali kepada Dekan (diketahui Dosen Wali & Kaprodi) selambat-lambatnya 1 bulan sebelum masa cuti berakhir, serta menyelesaikan seluruh kewajiban administrasi dan keuangan.
 
-  utter_answer_persyaratan_kartuPesertaUjian:
+  utter_answer_persyaratan_TAskripsi:
     - text: |
         PERSYARATAN CUTI AKADEMIK
         1. Syarat Umum
@@ -110,14 +110,14 @@ responses:
 
         *Catatan: Pastikan seluruh kewajiban administrasi keuangan pada semester sebelumnya telah lunas sebelum mengajukan permohonan.
 
-  utter_answer_transaksi_kartuPesertaUjian:
-    - text: "Silakan lengkapi data pengajuan kartu peserta ujian dan ajukan permohonan kartu peserta ujian."
+  utter_answer_transaksi_TAskripsi:
+    - text: "Silakan lengkapi data pengajuan TAskripsi dan ajukan permohonan TAskripsi."
 
-  utter_answer_hasil_kartuPesertaUjian:
-    - text: "Pengajuan kartu peserta ujian kamu telah diproses."
+  utter_answer_hasil_TAskripsi:
+    - text: "Pengajuan TAskripsi kamu telah diproses."
 
-  utter_answer_batal_kartuPesertaUjian:
+  utter_answer_batal_TAskripsi:
     - text: "Baik, proses dibatalkan."
 
-  utter_answer_error_kartuPesertaUjian:
+  utter_answer_error_TAskripsi:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

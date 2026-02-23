@@ -1,47 +1,47 @@
 version: "3.1"
 
 actions:
-- action_menu_kartuPesertaUjian
+- action_menu_MBoutboundNonPT
 
 slots:
-  menu_kartuPesertaUjian:
+  menu_MBoutboundNonPT:
     type: categorical
     values:
-      - Prosedur Kartu Peserta Ujian
-      - Persyaratan Kartu Peserta Ujian
-      - Transaksi Kartu Peserta Ujian
-      - Hasil Kartu Peserta Ujian
+      - Prosedur MB Outbound Non PT
+      - Persyaratan MB Outbound Non PT
+      - Transaksi MB Outbound Non PT
+      - Hasil MB Outbound Non PT
       - Batal
     mappings:
       - type: from_llm
 
-  menu_kartuPesertaUjian_confirmation:
+  menu_MBoutboundNonPT_confirmation:
     type: bool
     mappings:
       - type: from_llm
 
 responses:
-  utter_ask_menu_kartuPesertaUjian:
-    - text: "Please select one of the following kartu peserta ujian options:"
+  utter_ask_menu_MBoutboundNonPT:
+    - text: "Please select one of the following MB Outbound Non PT options:"
       translation:
-        id: "Silakan pilih salah satu opsi kartu peserta ujian berikut:"
+        id: "Silakan pilih salah satu opsi MB Outbound Non PT berikut:"
       buttons:
-        - title: "Prosedur Kartu Peserta Ujian"
-          payload: Prosedur Kartu Peserta Ujian
-        - title: "Persyaratan Kartu Peserta Ujian"
-          payload: Persyaratan Kartu Peserta Ujian
-        - title: "Transaksi Kartu Peserta Ujian"
-          payload: Transaksi Kartu Peserta Ujian
-        - title: "Hasil Kartu Peserta Ujian"
-          payload: Hasil Kartu Peserta Ujian
+        - title: "Prosedur MB Outbound Non PT"
+          payload: Prosedur MB Outbound Non PT
+        - title: "Persyaratan MB Outbound Non PT"
+          payload: Persyaratan MB Outbound Non PT
+        - title: "Transaksi MB Outbound Non PT"
+          payload: Transaksi MB Outbound Non PT
+        - title: "Hasil MB Outbound Non PT"
+          payload: Hasil MB Outbound Non PT
         - title: "Batal"
           payload: Batal
 
-  utter_ask_menu_kartuPesertaUjian_confirmation:
-    - condition: slots.menu_kartuPesertaUjian != "Batal"
-      text: "You have selected the option: {menu_kartuPesertaUjian}. Is that correct?"
+  utter_ask_menu_MBoutboundNonPT_confirmation:
+    - condition: slots.menu_MBoutboundNonPT != "Batal"
+      text: "You have selected the option: {menu_MBoutboundNonPT}. Is that correct?"
       translation:
-        id: "Anda telah memilih opsi: {menu_kartuPesertaUjian}. Apakah itu benar?"
+        id: "Anda telah memilih opsi: {menu_MBoutboundNonPT}. Apakah itu benar?"
       buttons:
         - title: "Yes"
           payload: Yes, that's correct
@@ -55,22 +55,22 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_kartuPesertaUjian == "Batal"
+    - condition: slots.menu_MBoutboundNonPT == "Batal"
       text: "Ok, process aborted."
       translation:
         id: "Baik, proses dibatalkan."
 
-  utter_menu_kartuPesertaUjian_cancelled:
-    - text: "Okay, let's try again. Please select one of the kartu peserta ujian options."
+  utter_menu_MBoutboundNonPT_cancelled:
+    - text: "Okay, let's try again. Please select one of the MB Outbound Non PT options."
       translation:
-        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi kartu peserta ujian."
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi MB Outbound Non PT."
 
-  utter_menu_kartuPesertaUjian_ok:
-    - text: "You have successfully selected the kartu peserta ujian option: {menu_kartuPesertaUjian}."
+  utter_menu_MBoutboundNonPT_ok:
+    - text: "You have successfully selected the MB Outbound Non PT option: {menu_MBoutboundNonPT}."
       translation:
-        id: "Anda telah berhasil memilih opsi kartu peserta ujian: {menu_kartuPesertaUjian}."
+        id: "Anda telah berhasil memilih opsi MB Outbound Non PT: {menu_MBoutboundNonPT}."
 
-  utter_answer_prosedur_kartuPesertaUjian:
+  utter_answer_prosedur_MBoutboundNonPT:
     - text: |
         PROSEDUR CUTI AKADEMIK
         Cuti akademik adalah masa jeda studi yang tetap diperhitungkan dalam masa studi maksimal. Prosedur pengajuannya terbagi menjadi dua kategori:
@@ -90,7 +90,7 @@ responses:
         PROSEDUR AKTIF KEMBALI
         Mahasiswa wajib mengajukan surat permohonan aktif kembali kepada Dekan (diketahui Dosen Wali & Kaprodi) selambat-lambatnya 1 bulan sebelum masa cuti berakhir, serta menyelesaikan seluruh kewajiban administrasi dan keuangan.
 
-  utter_answer_persyaratan_kartuPesertaUjian:
+  utter_answer_persyaratan_MBoutboundNonPT:
     - text: |
         PERSYARATAN CUTI AKADEMIK
         1. Syarat Umum
@@ -110,14 +110,14 @@ responses:
 
         *Catatan: Pastikan seluruh kewajiban administrasi keuangan pada semester sebelumnya telah lunas sebelum mengajukan permohonan.
 
-  utter_answer_transaksi_kartuPesertaUjian:
-    - text: "Silakan lengkapi data pengajuan kartu peserta ujian dan ajukan permohonan kartu peserta ujian."
+  utter_answer_transaksi_MBoutboundNonPT:
+    - text: "Silakan lengkapi data pengajuan MB Outbound Non PT dan ajukan permohonan MB Outbound Non PT."
 
-  utter_answer_hasil_kartuPesertaUjian:
-    - text: "Pengajuan kartu peserta ujian kamu telah diproses."
+  utter_answer_hasil_MBoutboundNonPT:
+    - text: "Pengajuan MB Outbound Non PT kamu telah diproses."
 
-  utter_answer_batal_kartuPesertaUjian:
+  utter_answer_batal_MBoutboundNonPT:
     - text: "Baik, proses dibatalkan."
 
-  utter_answer_error_kartuPesertaUjian:
+  utter_answer_error_MBoutboundNonPT:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

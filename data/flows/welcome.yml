@@ -1,7 +1,0 @@
-# flows:
-#   welcome:
-#     description: Greet the user when they first connect and introduce the bot's capabilities
-#     steps:
-#       - action: utter_welcome
-
-#   # Add your other flows here

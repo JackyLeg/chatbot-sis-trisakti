@@ -1,0 +1,52 @@
+flows:
+  majoringApplication:
+      name: Majoring Application
+      description: Help user with majoring application menus
+      steps:
+        - id: ask_menu
+          collect: menu_majoringApplication
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for majoring application.
+            there are options like Prosedur Majoring Application, Persyaratan Majoring Application, Transaksi Majoring Application, and Hasil Majoring Application.
+            while bot not do utter_answer_batal_majoringApplication and if user gets their result, flow will continue to what user want to do next in this menu
+          next: 
+            - if: slots.menu_majoringApplication = "Batal"
+              then:
+                - action: utter_answer_batal_majoringApplication
+                  next: END
+            - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_majoringApplication_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_majoringApplication_confirmation is false
+            then:
+              - action: utter_menu_majoringApplication_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_majoringApplication
+          next:
+            - if: slots.return_value = "Prosedur Majoring Application"
+              then: 
+                - action: utter_answer_prosedur_majoringApplication
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Majoring Application"
+              then: 
+                - action: utter_answer_persyaratan_majoringApplication
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Majoring Application"
+              then: 
+                - action: utter_answer_transaksi_majoringApplication
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Majoring Application"
+              then: 
+                - action: utter_answer_hasil_majoringApplication
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_majoringApplication
+                  next: ask_menu
+            

@@ -1,0 +1,52 @@
+flows:
+  graduationProcess:
+      name: Graduation Process
+      description: Help user with graduation process menus
+      steps:
+        - id: ask_menu
+          collect: menu_graduationProcess
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for graduation process.
+            there are options like Prosedur Graduation Process, Persyaratan Graduation Process, Transaksi Graduation Process, and Hasil Graduation Process.
+            while bot not do utter_answer_batal_graduationProcess and if user gets their result, flow will continue to what user want to do next in this menu
+          next: 
+            - if: slots.menu_graduationProcess = "Batal"
+              then:
+                - action: utter_answer_batal_graduationProcess
+                  next: END
+            - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_graduationProcess_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_graduationProcess_confirmation is false
+            then:
+              - action: utter_menu_graduationProcess_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_graduationProcess
+          next:
+            - if: slots.return_value = "Prosedur Graduation Process"
+              then: 
+                - action: utter_answer_prosedur_graduationProcess
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Graduation Process"
+              then: 
+                - action: utter_answer_persyaratan_graduationProcess
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Graduation Process"
+              then: 
+                - action: utter_answer_transaksi_graduationProcess
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Graduation Process"
+              then: 
+                - action: utter_answer_hasil_graduationProcess
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_graduationProcess
+                  next: ask_menu
+            

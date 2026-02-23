@@ -1,8 +1,52 @@
-flows: 
+flows:
   tugasAkhir:
       name: Tugas Akhir
       description: Help user with tugas akhir menus
       steps:
-        - collect: menu_tugasAkhir
-          description: User must select one of 6 options for tugas akhir.
-        - action: menu_tugasAkhir
+        - id: ask_menu
+          collect: menu_tugasAkhir
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for tugas akhir.
+            there are options like Prosedur Tugas Akhir, Persyaratan Tugas Akhir, Transaksi Tugas Akhir, and Hasil Tugas Akhir.
+            while bot not do utter_answer_batal_tugasAkhir and if user gets their result, flow will continue to what user want to do next in this menu
+          next:  
+            - if: slots.menu_tugasAkhir = "Batal"
+              then:
+                - action: utter_answer_batal_tugasAkhir
+                  next: END
+            - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_tugasAkhir_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_tugasAkhir_confirmation is false
+            then:
+              - action: utter_menu_tugasAkhir_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_tugasAkhir
+          next:
+            - if: slots.return_value = "Prosedur Tugas Akhir"
+              then: 
+                - action: utter_answer_prosedur_tugasAkhir
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Tugas Akhir"
+              then: 
+                - action: utter_answer_persyaratan_tugasAkhir
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Tugas Akhir"
+              then: 
+                - action: utter_answer_transaksi_tugasAkhir
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Tugas Akhir"
+              then: 
+                - action: utter_answer_hasil_tugasAkhir
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_tugasAkhir
+                  next: ask_menu
+            

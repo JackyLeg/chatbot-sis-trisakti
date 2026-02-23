@@ -1,0 +1,52 @@
+flows:
+  konversi:
+      name: Konversi
+      description: Help user with konversi menus
+      steps:
+        - id: ask_menu
+          collect: menu_konversi
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for konversi.
+            there are options like Prosedur Konversi, Persyaratan Konversi, Transaksi Konversi, and Hasil Konversi.
+            while bot not do utter_answer_batal_konversi and if user gets their result, flow will continue to what user want to do next in this menu
+          next: 
+            - if: slots.menu_konversi = "Batal"
+              then:
+                - action: utter_answer_batal_konversi
+                  next: END
+            - else: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_konversi_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_konversi_confirmation is false
+            then:
+              - action: utter_menu_konversi_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_konversi
+          next:
+            - if: slots.return_value = "Prosedur Konversi"
+              then: 
+                - action: utter_answer_prosedur_konversi
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Konversi"
+              then: 
+                - action: utter_answer_persyaratan_konversi
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Konversi"
+              then: 
+                - action: utter_answer_transaksi_konversi
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Konversi"
+              then: 
+                - action: utter_answer_hasil_konversi
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_konversi
+                  next: ask_menu
+            
