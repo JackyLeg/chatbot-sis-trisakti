@@ -28,8 +28,6 @@ class MenuPembayaran(Action):
                 return [SlotSet("return_value", "Transaksi Pembayaran")]
             case "Hasil Pembayaran":
                 return [SlotSet("return_value", "Hasil Pembayaran")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
 

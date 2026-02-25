@@ -28,8 +28,6 @@ class MenuTAskripsi(Action):
                 return [SlotSet("return_value", "Transaksi TAskripsi")]
             case "Hasil TAskripsi":
                 return [SlotSet("return_value", "Hasil TAskripsi")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

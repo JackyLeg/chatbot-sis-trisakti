@@ -11,7 +11,6 @@ slots:
       - Persyaratan Kartu Peserta Ujian
       - Transaksi Kartu Peserta Ujian
       - Hasil Kartu Peserta Ujian
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi Kartu Peserta Ujian
         - title: "Hasil Kartu Peserta Ujian"
           payload: Hasil Kartu Peserta Ujian
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_kartuPesertaUjian_confirmation:
-    - condition: slots.menu_kartuPesertaUjian != "Batal"
-      text: "You have selected the option: {menu_kartuPesertaUjian}. Is that correct?"
+    - text: "You have selected the option: {menu_kartuPesertaUjian}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_kartuPesertaUjian}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_kartuPesertaUjian == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_kartuPesertaUjian_cancelled:
     - text: "Okay, let's try again. Please select one of the kartu peserta ujian options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_kartuPesertaUjian:
     - text: "Pengajuan kartu peserta ujian kamu telah diproses."
-
-  utter_answer_batal_kartuPesertaUjian:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_kartuPesertaUjian:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

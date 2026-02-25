@@ -28,8 +28,6 @@ class MenuFastTrackAPP(Action):
                 return [SlotSet("return_value", "Transaksi FastTrackAPP")]
             case "Hasil FastTrackAPP":
                 return [SlotSet("return_value", "Hasil FastTrackAPP")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

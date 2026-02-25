@@ -11,7 +11,6 @@ slots:
       - Persyaratan TAskripsi
       - Transaksi TAskripsi
       - Hasil TAskripsi
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi TAskripsi
         - title: "Hasil TAskripsi"
           payload: Hasil TAskripsi
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_TAskripsi_confirmation:
-    - condition: slots.menu_TAskripsi != "Batal"
-      text: "You have selected the option: {menu_TAskripsi}. Is that correct?"
+    - text: "You have selected the option: {menu_TAskripsi}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_TAskripsi}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_TAskripsi == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_TAskripsi_cancelled:
     - text: "Okay, let's try again. Please select one of the TAskripsi options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_TAskripsi:
     - text: "Pengajuan TAskripsi kamu telah diproses."
-
-  utter_answer_batal_TAskripsi:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_TAskripsi:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

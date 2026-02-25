@@ -11,7 +11,6 @@ slots:
       - Persyaratan Cuti
       - Transaksi Cuti
       - Hasil Cuti
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi Cuti
         - title: "Hasil Cuti"
           payload: Hasil Cuti
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_cuti_confirmation:
-    - condition: slots.menu_cuti != "Batal"
-      text: "You have selected the option: {menu_cuti}. Is that correct?"
+    - text: "You have selected the option: {menu_cuti}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_cuti}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_cuti == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_cuti_cancelled:
     - text: "Okay, let's try again. Please select one of the cuti options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_cuti:
     - text: "Pengajuan cuti akademik kamu telah diproses."
-
-  utter_answer_batal_cuti:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_cuti:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

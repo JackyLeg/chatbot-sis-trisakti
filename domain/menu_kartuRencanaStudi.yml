@@ -11,7 +11,6 @@ slots:
       - Persyaratan KRS
       - Transaksi KRS
       - Hasil KRS
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi KRS
         - title: "Hasil KRS"
           payload: Hasil KRS
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_kartuRencanaStudi_confirmation:
-    - condition: slots.menu_kartuRencanaStudi != "Batal"
-      text: "You have selected the option: {menu_kartuRencanaStudi}. Is that correct?"
+    - text: "You have selected the option: {menu_kartuRencanaStudi}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_kartuRencanaStudi}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id: 
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_kartuRencanaStudi == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_kartuRencanaStudi_cancelled:
     - text: "Okay, let's try again. Please select one of the kartu rencana studi options."
@@ -124,9 +116,6 @@ responses:
 
   utter_answer_hasil_krs:
     - text: "Pengajuan KRS kamu sudah diproses."
-
-  utter_answer_batal_krs:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_krs:
     - text: "Maaf, menu tidak ditemukan."

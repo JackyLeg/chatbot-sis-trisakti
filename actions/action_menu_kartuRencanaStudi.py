@@ -28,8 +28,6 @@ class MenuKartuRencanaStudi(Action):
                 return [SlotSet("return_value", "Transaksi KRS")]
             case "Hasil KRS":
                 return [SlotSet("return_value", "Hasil KRS")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

@@ -12,12 +12,7 @@ flows:
           description: |
             User must select one of 4 options for kartu hasil studi.
             There are options like Prosedur KHS, Persyaratan KHS, Transaksi KHS, and Hasil KHS.
-          next: 
-            - if: slots.menu_kartuHasilStudi = "Batal"
-              then:
-                - action: utter_answer_batal_khs
-                  next: END
-            - else: menu_confirmation
+          next: menu_confirmation
 
         - id: menu_confirmation
           collect: menu_kartuHasilStudi_confirmation

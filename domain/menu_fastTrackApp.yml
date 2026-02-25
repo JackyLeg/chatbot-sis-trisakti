@@ -11,7 +11,6 @@ slots:
       - Persyaratan Fast Track App
       - Transaksi Fast Track App
       - Hasil Fast Track App
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi Fast Track App
         - title: "Hasil Fast Track App"
           payload: Hasil Fast Track App
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_fastTrackApp_confirmation:
-    - condition: slots.menu_fastTrackApp != "Batal"
-      text: "You have selected the option: {menu_fastTrackApp}. Is that correct?"
+    - text: "You have selected the option: {menu_fastTrackApp}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_fastTrackApp}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_fastTrackApp == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_fastTrackApp_cancelled:
     - text: "Okay, let's try again. Please select one of the fast track app options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_fastTrackApp:
     - text: "Pengajuan cuti akademik kamu telah diproses."
-
-  utter_answer_batal_fastTrackApp:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_fastTrackApp:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

@@ -28,8 +28,6 @@ class MenuKonversi(Action):
                 return [SlotSet("return_value", "Transaksi Konversi")]
             case "Hasil Konversi":
                 return [SlotSet("return_value", "Hasil Konversi")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

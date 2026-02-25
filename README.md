@@ -6,3 +6,5 @@ rasa inspect<br>
 
 git clone<br>
 git pull<br>
+
+docker compose up

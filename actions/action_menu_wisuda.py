@@ -28,8 +28,6 @@ class MenuWisuda(Action):
                 return [SlotSet("return_value", "Transaksi Wisuda")]
             case "Hasil Wisuda":
                 return [SlotSet("return_value", "Hasil Wisuda")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

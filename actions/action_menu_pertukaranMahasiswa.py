@@ -28,8 +28,6 @@ class MenuPertukaranMahasiswa(Action):
                 return [SlotSet("return_value", "Transaksi Pertukaran Mahasiswa")]
             case "Hasil Pertukaran Mahasiswa":
                 return [SlotSet("return_value", "Hasil Pertukaran Mahasiswa")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

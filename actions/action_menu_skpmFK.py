@@ -28,8 +28,6 @@ class MenuSKPMFK(Action):
                 return [SlotSet("return_value", "Transaksi SKPM FK")]
             case "Hasil SKPM FK":
                 return [SlotSet("return_value", "Hasil SKPM FK")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
 

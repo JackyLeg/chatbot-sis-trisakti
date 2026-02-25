@@ -10,12 +10,7 @@ flows:
             User must select one of 4 options for pembayaran.
             there are options like Prosedur Pembayaran, Persyaratan Pembayaran, Transaksi Pembayaran, and Hasil Pembayaran.
             while bot not do utter_answer_batal_pembayaran and if user gets their result, flow will continue to what user want to do next in this menu
-          next: 
-            - if: slots.menu_pembayaran = "Batal"
-              then:
-                - action: utter_answer_batal_pembayaran
-                  next: END
-            - else: menu_confirmation
+          next: menu_confirmation
 
         - id: menu_confirmation
           collect: menu_pembayaran_confirmation

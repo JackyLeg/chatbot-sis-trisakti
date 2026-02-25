@@ -28,8 +28,6 @@ class MenuKartuPesertaUjian(Action):
                 return [SlotSet("return_value", "Transaksi Kartu Peserta Ujian")]
             case "Hasil Kartu Peserta Ujian":
                 return [SlotSet("return_value", "Hasil Kartu Peserta Ujian")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

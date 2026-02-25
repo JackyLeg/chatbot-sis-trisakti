@@ -28,8 +28,6 @@ class MenuTugasAkhir(Action):
                 return [SlotSet("return_value", "Transaksi Tugas Akhir")]
             case "Hasil Tugas Akhir":
                 return [SlotSet("return_value", "Hasil Tugas Akhir")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

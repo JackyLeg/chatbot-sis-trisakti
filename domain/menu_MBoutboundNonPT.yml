@@ -11,7 +11,6 @@ slots:
       - Persyaratan MB Outbound Non PT
       - Transaksi MB Outbound Non PT
       - Hasil MB Outbound Non PT
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi MB Outbound Non PT
         - title: "Hasil MB Outbound Non PT"
           payload: Hasil MB Outbound Non PT
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_MBoutboundNonPT_confirmation:
-    - condition: slots.menu_MBoutboundNonPT != "Batal"
-      text: "You have selected the option: {menu_MBoutboundNonPT}. Is that correct?"
+    - text: "You have selected the option: {menu_MBoutboundNonPT}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_MBoutboundNonPT}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_MBoutboundNonPT == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_MBoutboundNonPT_cancelled:
     - text: "Okay, let's try again. Please select one of the MB Outbound Non PT options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_MBoutboundNonPT:
     - text: "Pengajuan MB Outbound Non PT kamu telah diproses."
-
-  utter_answer_batal_MBoutboundNonPT:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_MBoutboundNonPT:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

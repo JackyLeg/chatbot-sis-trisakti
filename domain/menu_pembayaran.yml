@@ -11,7 +11,6 @@ slots:
       - Persyaratan Pembayaran
       - Transaksi Pembayaran
       - Hasil Pembayaran
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi Pembayaran
         - title: "Hasil Pembayaran"
           payload: Hasil Pembayaran
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_pembayaran_confirmation:
-    - condition: slots.menu_pembayaran != "Batal"
-      text: "You have selected the option: {menu_pembayaran}. Is that correct?"
+    - text: "You have selected the option: {menu_pembayaran}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_pembayaran}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id: 
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_pembayaran == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_pembayaran_cancelled:
     - text: "Okay, let's try again. Please select one of the pembayaran options."
@@ -97,9 +89,6 @@ responses:
     - text: |
         Pembayaran kamu berhasil diproses.
         Status keuangan kamu telah diperbarui.
-      
-  utter_answer_batal_pembayaran:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_pembayaran:
     - text: "Maaf, menu tidak ditemukan."

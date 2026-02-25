@@ -11,7 +11,6 @@ slots:
       - Persyaratan Pertukaran Mahasiswa
       - Transaksi Pertukaran Mahasiswa
       - Hasil Pertukaran Mahasiswa
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi Pertukaran Mahasiswa
         - title: "Hasil Pertukaran Mahasiswa"
           payload: Hasil Pertukaran Mahasiswa
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_pertukaranMahasiswa_confirmation:
-    - condition: slots.menu_pertukaranMahasiswa != "Batal"
-      text: "You have selected the option: {menu_pertukaranMahasiswa}. Is that correct?"
+    - text: "You have selected the option: {menu_pertukaranMahasiswa}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_pertukaranMahasiswa}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_pertukaranMahasiswa == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_pertukaranMahasiswa_cancelled:
     - text: "Okay, let's try again. Please select one of the pertukaran mahasiswa options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_pertukaranMahasiswa:
     - text: "Pengajuan pertukaran mahasiswa kamu telah diproses."
-
-  utter_answer_batal_pertukaranMahasiswa:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_pertukaranMahasiswa:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

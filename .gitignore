@@ -10,3 +10,5 @@ credentials.yml
 rasapro_env
 endpoints.yml
 output.json
+rasa-2.0.2.tgz
+telegram.txt

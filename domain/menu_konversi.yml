@@ -11,7 +11,6 @@ slots:
       - Persyaratan Konversi
       - Transaksi Konversi
       - Hasil Konversi
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi Konversi
         - title: "Hasil Konversi"
           payload: Hasil Konversi
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_konversi_confirmation:
-    - condition: slots.menu_konversi != "Batal"
-      text: "You have selected the option: {menu_konversi}. Is that correct?"
+    - text: "You have selected the option: {menu_konversi}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_konversi}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_konversi == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_konversi_cancelled:
     - text: "Okay, let's try again. Please select one of the konversi options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_konversi:
     - text: "Pengajuan konversi kamu telah diproses."
-
-  utter_answer_batal_konversi:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_konversi:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

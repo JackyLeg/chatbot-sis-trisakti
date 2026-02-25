@@ -11,7 +11,6 @@ slots:
       - Persyaratan Majoring Application
       - Transaksi Majoring Application
       - Hasil Majoring Application
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi Majoring Application
         - title: "Hasil Majoring Application"
           payload: Hasil Majoring Application
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_majoringApplication_confirmation:
-    - condition: slots.menu_majoringApplication != "Batal"
-      text: "You have selected the option: {menu_majoringApplication}. Is that correct?"
+    - text: "You have selected the option: {menu_majoringApplication}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_majoringApplication}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_majoringApplication == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_majoringApplication_cancelled:
     - text: "Okay, let's try again. Please select one of the majoring application options."
@@ -115,9 +107,6 @@ responses:
 
   utter_answer_hasil_majoringApplication:
     - text: "Pengajuan majoring application kamu telah diproses."
-
-  utter_answer_batal_majoringApplication:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_majoringApplication:
     - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

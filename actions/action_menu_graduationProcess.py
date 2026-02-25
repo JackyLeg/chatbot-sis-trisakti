@@ -28,8 +28,6 @@ class MenuGraduationProcess(Action):
                 return [SlotSet("return_value", "Transaksi Graduation Process")]
             case "Hasil Graduation Process":
                 return [SlotSet("return_value", "Hasil Graduation Process")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

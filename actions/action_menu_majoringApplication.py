@@ -28,8 +28,6 @@ class MenuMajoringApplication(Action):
                 return [SlotSet("return_value", "Transaksi Majoring Application")]
             case "Hasil Majoring Application":
                 return [SlotSet("return_value", "Hasil Majoring Application")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

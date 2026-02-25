@@ -11,7 +11,6 @@ slots:
       - Persyaratan SKPI
       - Transaksi SKPI
       - Hasil SKPI
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi SKPI
         - title: "Hasil SKPI"
           payload: Hasil SKPI
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_skpi_confirmation:
-    - condition: slots.menu_skpi != "Batal"
-      text: "You have selected the option: {menu_skpi}. Is that correct?"
+    - text: "You have selected the option: {menu_skpi}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_skpi}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id: 
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_skpi == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_skpi_cancelled:
     - text: "Okay, let's try again. Please select one of the SKPI options."
@@ -102,9 +94,6 @@ responses:
     - text: |
         Pengajuan SKPI anda sedang diproses.
         Anda dapat melihat status dan hasil SKPI melalui sistem.
-
-  utter_answer_batal_skpi:
-    - text: "Baik, proses dibatalkan."
     
   utter_answer_error_skpi:
     - text: "Maaf, menu tidak ditemukan."

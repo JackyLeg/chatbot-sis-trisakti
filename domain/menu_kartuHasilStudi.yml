@@ -11,7 +11,6 @@ slots:
       - Persyaratan KHS
       - Transaksi KHS
       - Hasil KHS
-      - Batal
     mappings:
       - type: from_llm
 
@@ -34,12 +33,9 @@ responses:
           payload: Transaksi KHS
         - title: "Hasil KHS"
           payload: Hasil KHS
-        - title: "Batal"
-          payload: Batal
 
   utter_ask_menu_kartuHasilStudi_confirmation:
-    - condition: slots.menu_kartuHasilStudi != "Batal"
-      text: "You have selected the option: {menu_kartuHasilStudi}. Is that correct?"
+    - text: "You have selected the option: {menu_kartuHasilStudi}. Is that correct?"
       translation:
         id: "Anda telah memilih opsi: {menu_kartuHasilStudi}. Apakah itu benar?"
       buttons:
@@ -55,10 +51,6 @@ responses:
             id:
               title: "Tidak"
               payload: Tidak, saya ingin mengubahnya
-    - condition: slots.menu_kartuHasilStudi == "Batal"
-      text: "Ok, process aborted."
-      translation:
-        id: "Baik, proses dibatalkan."
 
   utter_menu_kartuHasilStudi_cancelled:
     - text: "Okay, let's try again. Please select one of the kartu hasil studi options."
@@ -102,9 +94,6 @@ responses:
     - text: |
         Berikut adalah nilai mata kuliah kamu pada semester yang dipilih.
         Kamu juga dapat melihat rekap nilai dalam bentuk Kartu Hasil Studi (KHS).
-
-  utter_answer_batal_khs:
-    - text: "Baik, proses dibatalkan."
 
   utter_answer_error_khs:
     - text: "Maaf, menu tidak ditemukan."

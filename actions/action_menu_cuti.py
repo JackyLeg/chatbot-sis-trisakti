@@ -28,8 +28,6 @@ class MenuCuti(Action):
                 return [SlotSet("return_value", "Transaksi Cuti")]
             case "Hasil Cuti":
                 return [SlotSet("return_value", "Hasil Cuti")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             

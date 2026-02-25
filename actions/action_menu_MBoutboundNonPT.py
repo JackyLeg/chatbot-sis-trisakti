@@ -28,8 +28,6 @@ class MenuMBOutboundNonPT(Action):
                 return [SlotSet("return_value", "Transaksi MBOutboundNonPT")]
             case "Hasil MBOutboundNonPT":
                 return [SlotSet("return_value", "Hasil MBOutboundNonPT")]
-            case "Batal":
-                return [SlotSet("return_value", "Batal")]
             case _:
                 return []
             
