@@ -1,0 +1,40 @@
+from re import match
+from typing import Any, Dict, List, Text
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
+from rasa_sdk.executor import CollectingDispatcher
+
+class MenuTranskrip(Action):
+    def name(self) -> Text:
+        return "action_menu_transkrip"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message(response = "utter_menu_transkrip_ok")
+        pilihan_menu = tracker.get_slot("menu_transkrip")
+        
+        match pilihan_menu:
+            case "Prosedur Transkrip":
+                return [SlotSet("return_value", "Prosedur Transkrip")]
+            case "Persyaratan Transkrip":
+                return [
+                    SlotSet("return_value", "Persyaratan Transkrip"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
+            case "Transaksi Transkrip":
+                return [SlotSet("return_value", "Transaksi Transkrip")]
+            case "Hasil Transkrip":
+                return [SlotSet("return_value", "Hasil Transkrip")]
+            case _:
+                return []
+            
+        if tracker.get_slot("menu_transkrip_confirmation") == "Yes, that's correct":
+            return [SlotSet("menu_transkrip_confirmation", True)]
+        else:
+            return [SlotSet("menu_transkrip_confirmation", False)]

@@ -23,7 +23,10 @@ class MenuGraduationProcess(Action):
             case "Prosedur Graduation Process":
                 return [SlotSet("return_value", "Prosedur Graduation Process")]
             case "Persyaratan Graduation Process":
-                return [SlotSet("return_value", "Persyaratan Graduation Process")]
+                return [
+                    SlotSet("return_value", "Persyaratan Graduation Process"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Graduation Process":
                 return [SlotSet("return_value", "Transaksi Graduation Process")]
             case "Hasil Graduation Process":

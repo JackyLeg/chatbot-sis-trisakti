@@ -31,8 +31,8 @@ responses:
           payload: Persyaratan Pembayaran
         - title: "Transaksi Pembayaran"
           payload: Transaksi Pembayaran
-        - title: "Hasil Pembayaran"
-          payload: Hasil Pembayaran
+        - title: "Status Pembayaran"
+          payload: Status Pembayaran
 
   utter_ask_menu_pembayaran_confirmation:
     - text: "You have selected the option: {menu_pembayaran}. Is that correct?"
@@ -75,6 +75,33 @@ responses:
         4. Pembayaran: Gunakan nomor Virtual Account yang tertera untuk membayar melalui ATM, Teller, atau Mobile Banking BNI.
 
   utter_answer_persyaratan_pembayaran:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FH)
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FEB)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FK)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FKG)
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FTSP)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FTI)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FTKE)
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FALTL)
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN PEMBAYARAN (FSRD)
     - text: |
         PERSYARATAN PEMBAYARAN
         - Identitas Pembayaran: Mahasiswa wajib memiliki Nomor Induk Mahasiswa (NIM) aktif.
@@ -85,7 +112,7 @@ responses:
   utter_answer_transaksi_pembayaran:
     - text: "Silakan lakukan pembayaran sesuai nominal dan metode yang tersedia."
 
-  utter_answer_hasil_pembayaran:
+  utter_answer_status_pembayaran:
     - text: |
         Pembayaran kamu berhasil diproses.
         Status keuangan kamu telah diperbarui.

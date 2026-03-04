@@ -15,3 +15,16 @@ telegram.txt
 .config
 .keras
 .cache
+.vscode
+
+
+/data/flows/easter_eggs.yml
+/domain/easter_eggs.yml
+/actions/action_easter_eggs.py
+/actions/apiapi.py
+/actions/api_helper.py
+api_helper.py
+apiapi.py
+
+/assets/
+index.html

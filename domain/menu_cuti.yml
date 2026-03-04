@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_cuti
+- action_menu_cuti: {send_domain: true}
 
 slots:
   menu_cuti:
@@ -16,6 +16,21 @@ slots:
 
   menu_cuti_confirmation:
     type: bool
+    mappings:
+      - type: from_llm
+
+  fakultas:
+    type: categorical
+    values:
+      - Fakultas Hukum
+      - Fakultas Ekonomi dan Bisnis
+      - Fakultas Kedokteran
+      - Fakultas Kedokteran Gigi
+      - Fakultas Teknik Sipil dan Perencanaan
+      - Fakultas Teknologi Industri
+      - Fakultas Teknologi Kebumian dan Energi
+      - Fakultas Arsitektur Lanskap dan Teknologi Lingkungan
+      - Fakultas Seni Rupa dan Desain
     mappings:
       - type: from_llm
 
@@ -83,6 +98,42 @@ responses:
         Mahasiswa wajib mengajukan surat permohonan aktif kembali kepada Dekan (diketahui Dosen Wali & Kaprodi) selambat-lambatnya 1 bulan sebelum masa cuti berakhir, serta menyelesaikan seluruh kewajiban administrasi dan keuangan.
 
   utter_answer_persyaratan_cuti:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FH)
+
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FEB)
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FK)
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FKG)
+
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FTSP)
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FTI)
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FTKE)
+
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FALTL)
+
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN CUTI AKADEMIK (FSRD)
+
     - text: |
         PERSYARATAN CUTI AKADEMIK
         1. Syarat Umum

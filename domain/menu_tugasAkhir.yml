@@ -64,27 +64,38 @@ responses:
 
   utter_answer_prosedur_tugasAkhir:
     - text: |
-        PROSEDUR CUTI AKADEMIK
-        Cuti akademik adalah masa jeda studi yang tetap diperhitungkan dalam masa studi maksimal. Prosedur pengajuannya terbagi menjadi dua kategori:
-        1. Cuti Akademik Terencana
-          Diajukan atas permintaan sendiri, alasan sakit, atau tugas negara/universitas.
-          - Waktu: Selambat-lambatnya 1 bulan setelah perkuliahan dimulai.
-          - Syarat Utama: Telah menempuh minimal 2 semester akademik.
-          - Alur Dokumen: Mengajukan surat permohonan kepada Dekan yang ditandatangani mahasiswa & orang tua/wali (mencantumkan identitas lengkap, alasan, dan durasi cuti).
-          - Kondisi Khusus: 
-            * Sakit: Jika sakit ≥ 1 bulan (4 kali tatap muka), dapat diajukan segera pada semester berjalan dengan melampirkan Surat Keterangan Rawat Inap.
-            * Tugas Negara/Universitas: Melampirkan surat tugas dari Wakil Rektor Bidang Kemahasiswaan.
-        2. Cuti Akademik Tidak Terencana
-          Diberikan secara otomatis jika mahasiswa tidak melakukan daftar ulang/KRS hingga batas waktu yang ditentukan.
-          - Dapat diberikan maksimal 2 semester berturut-turut.
-          - Jika setelah masa tersebut mahasiswa tetap tidak mendaftar ulang, maka status dinyatakan Putus Studi (DO).
-
-        PROSEDUR AKTIF KEMBALI
-        Mahasiswa wajib mengajukan surat permohonan aktif kembali kepada Dekan (diketahui Dosen Wali & Kaprodi) selambat-lambatnya 1 bulan sebelum masa cuti berakhir, serta menyelesaikan seluruh kewajiban administrasi dan keuangan.
-
+        PROSEDUR TUGAS AKHIR
+        
   utter_answer_persyaratan_tugasAkhir:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FH)
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FEB)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FK)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FKG)
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FTSP)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FTI)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FTKE)
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FALTL)
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN TUGAS AKHIR (FSRD)
     - text: |
-        PERSYARATAN CUTI AKADEMIK
+        PERSYARATAN TUGAS AKHIR
         1. Syarat Umum
           - Masa Studi: Telah mengikuti kegiatan akademik minimal 2 semester.
               Durasi Maksimal: Program D4, S1, dan S3: Maksimal 4 semester.

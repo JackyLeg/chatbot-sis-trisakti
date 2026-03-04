@@ -1,0 +1,107 @@
+version: "3.1"
+
+actions:
+- action_menu_transkrip
+
+slots:
+  menu_transkrip:
+    type: categorical
+    values:
+      - Prosedur Transkrip
+      - Persyaratan Transkrip
+      - Transaksi Transkrip
+      - Hasil Transkrip
+    mappings:
+      - type: from_llm
+
+  menu_transkrip_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_transkrip:
+    - text: "Please select one of the following transcript options:"
+      translation:
+        id: "Silakan pilih salah satu opsi transkrip berikut:"
+      buttons:
+        - title: "Prosedur Transkrip"
+          payload: Prosedur Transkrip
+        - title: "Persyaratan Transkrip"
+          payload: Persyaratan Transkrip
+        - title: "Transaksi Transkrip"
+          payload: Transaksi Transkrip
+        - title: "Hasil Transkrip"
+          payload: Hasil Transkrip
+
+  utter_ask_menu_transkrip_confirmation:
+    - text: "You have selected the option: {menu_transkrip}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_transkrip}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_transkrip_cancelled:
+    - text: "Okay, let's try again. Please select one of the transcript options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi transkrip."
+
+  utter_menu_transkrip_ok:
+    - text: "You have successfully selected the transcript option: {menu_transkrip}."
+      translation:
+        id: "Anda telah berhasil memilih opsi transkrip: {menu_transkrip}."
+
+  utter_answer_prosedur_transkrip:
+    - text: |
+        PROSEDUR TRANSKRIP
+
+  utter_answer_persyaratan_transkrip:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN TRANSKRIP (FH)
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN TRANSKRIP (FEB)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN TRANSKRIP (FK)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN TRANSKRIP (FKG)
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN TRANSKRIP (FTSP)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN TRANSKRIP (FTI)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN TRANSKRIP (FTKE)
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN TRANSKRIP (FALTL)
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN TRANSKRIP (FSRD)
+    - text: |
+        PERSYARATAN TRANSKRIP
+
+  utter_answer_transaksi_transkrip:
+    - text: "TRANSAKSI TRANSKRIP"
+
+  utter_answer_hasil_transkrip:
+    - text: "HASIL TRANSKRIP"
+
+  utter_answer_error_transkrip:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

@@ -23,11 +23,14 @@ class MenuPembayaran(Action):
             case "Prosedur Pembayaran":
                 return [SlotSet("return_value", "Prosedur Pembayaran")]
             case "Persyaratan Pembayaran":
-                return [SlotSet("return_value", "Persyaratan Pembayaran")]
+                return [
+                    SlotSet("return_value", "Persyaratan Pembayaran"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Pembayaran":
                 return [SlotSet("return_value", "Transaksi Pembayaran")]
-            case "Hasil Pembayaran":
-                return [SlotSet("return_value", "Hasil Pembayaran")]
+            case "Status Pembayaran":
+                return [SlotSet("return_value", "Status Pembayaran")]
             case _:
                 return []
 

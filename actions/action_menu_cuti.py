@@ -8,7 +8,7 @@ from rasa_sdk.executor import CollectingDispatcher
 class MenuCuti(Action):
     def name(self) -> Text:
         return "action_menu_cuti"
-
+    
     def run(
         self,
         dispatcher: CollectingDispatcher,
@@ -21,9 +21,16 @@ class MenuCuti(Action):
         
         match pilihan_menu:
             case "Prosedur Cuti":
+                message = {
+                    "context": "cuti"
+                }
+                dispatcher.utter_message(json_message=message)
                 return [SlotSet("return_value", "Prosedur Cuti")]
             case "Persyaratan Cuti":
-                return [SlotSet("return_value", "Persyaratan Cuti")]
+                return [
+                    SlotSet("return_value", "Persyaratan Cuti"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Cuti":
                 return [SlotSet("return_value", "Transaksi Cuti")]
             case "Hasil Cuti":

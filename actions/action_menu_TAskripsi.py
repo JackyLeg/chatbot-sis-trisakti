@@ -23,7 +23,10 @@ class MenuTAskripsi(Action):
             case "Prosedur TAskripsi":
                 return [SlotSet("return_value", "Prosedur TAskripsi")]
             case "Persyaratan TAskripsi":
-                return [SlotSet("return_value", "Persyaratan TAskripsi")]
+                return [
+                    SlotSet("return_value", "Persyaratan TAskripsi"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi TAskripsi":
                 return [SlotSet("return_value", "Transaksi TAskripsi")]
             case "Hasil TAskripsi":

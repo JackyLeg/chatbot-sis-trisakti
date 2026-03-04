@@ -23,7 +23,10 @@ class MenuKonversi(Action):
             case "Prosedur Konversi":
                 return [SlotSet("return_value", "Prosedur Konversi")]
             case "Persyaratan Konversi":
-                return [SlotSet("return_value", "Persyaratan Konversi")]
+                return [
+                    SlotSet("return_value", "Persyaratan Konversi"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Konversi":
                 return [SlotSet("return_value", "Transaksi Konversi")]
             case "Hasil Konversi":

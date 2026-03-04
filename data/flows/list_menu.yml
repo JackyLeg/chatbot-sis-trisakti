@@ -1,0 +1,48 @@
+flows:
+  list_menu:
+    description: list menu options for users
+    name: list menu options
+    steps:
+      - id: ask_menu
+        collect: list_menu
+        ask_before_filling: true
+        description: |
+          user may type "berikan daftar menu", "tampilkan menu", "list menu", "menu list", "show menu", "menu apa saja yang tersedia" to see the list of menu options
+          if user select one of the menu options, bot will link to the corresponding flow for that menu
+        next:
+          - if: slots.list_menu = "Menu Pembayaran"
+            then: 
+              - link: "pembayaran"
+          - if: slots.list_menu = "Menu KRS"
+            then: 
+              - link: "kartuRencanaStudi"
+          - if: slots.list_menu = "Menu KPU"
+            then: 
+              - link: "kartuPesertaUjian"
+          - if: slots.list_menu = "Menu KHS"
+            then: 
+              - link: "kartuHasilStudi"
+          - if: slots.list_menu = "Menu Cuti"
+            then: 
+              - link: "cuti"
+          - if: slots.list_menu = "Menu SKPI"
+            then: 
+              - link: "skpi"
+          - if: slots.list_menu = "Menu Tugas Akhir" 
+            then: 
+              - link: "tugasAkhir"
+          - if: slots.list_menu = "Menu TA Skripsi"
+            then: 
+              - link: "TAskripsi"
+          - if: slots.list_menu = "Menu Wisuda"
+            then: 
+              - link: "wisuda"
+          - if: slots.list_menu = "Menu Konversi"
+            then: 
+              - link: "konversi"
+          - if: slots.list_menu = "Menu Pertukaran Mahasiswa"
+            then: 
+              - link: "pertukaranMahasiswa"
+          - else: 
+              - action: "utter_answer_error_list_menu"
+                next: ask_menu

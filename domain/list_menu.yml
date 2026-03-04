@@ -1,0 +1,55 @@
+version: "3.1"
+
+slots:
+  list_menu:
+    type: categorical
+    values:
+      - Menu Pembayaran
+      - Menu KRS
+      - Menu KPU
+      - Menu KHS
+      - Menu Cuti
+      - Menu SKPI
+      - Menu Tugas Akhir
+      - Menu TA Skripsi
+      - Menu Wisuda
+      - Menu Konversi
+      - Menu Pertukaran Mahasiswa
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_list_menu:
+    - text: "Here are the available menu options:"
+      translation:
+        id: "Berikut adalah opsi menu yang tersedia:"
+      buttons:
+        - title: "Menu Pembayaran"
+          payload: Menu Pembayaran
+        - title: "Menu KRS"
+          payload: Menu KRS
+        - title: "Menu KPU"
+          payload: Menu KPU
+        - title: "Menu KHS"
+          payload: Menu KHS
+        - title: "Menu Cuti"
+          payload: Menu Cuti
+        - title: "Menu SKPI"
+          payload: Menu SKPI
+        - title: "Menu Tugas Akhir"
+          payload: Menu Tugas Akhir
+        - title: "Menu TA Skripsi"
+          payload: Menu TA Skripsi
+        - title: "Menu Wisuda"
+          payload: Menu Wisuda
+        - title: "Menu Konversi"
+          payload: Menu Konversi
+        - title: "Menu Konversi"
+          payload: Menu Konversi
+        - title: "Menu Pertukaran Mahasiswa"
+          payload: Menu Pertukaran Mahasiswa
+
+  utter_answer_error_list_menu:
+    - text: "Sorry, I didn't understand that. Please select a valid menu option."
+      translation:
+        id: "Maaf, saya tidak mengerti. Silakan pilih opsi menu yang valid."

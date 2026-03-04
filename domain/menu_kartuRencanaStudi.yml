@@ -92,6 +92,42 @@ responses:
           b. Mahasiswa baru bisa mengisi KRS setelah Dosen Pembimbing Akademik/Dosen Wali merespon permintaan perwalian.
 
   utter_answer_persyaratan_krs:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN KRS (FH)
+
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN KRS (FEB)
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN KRS (FK)
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN KRS (FKG)
+
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN KRS (FTSP)
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN KRS (FTI)
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN KRS (FTKE)
+
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN KRS (FALTL)
+
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN KRS (FSRD)
+
     - text: |
         PERSYARATAN PENGISIAN KARTU RENCANA STUDI (KRS):
         Untuk dapat melakukan pengisian Kartu Rencana Studi (KRS), mahasiswa wajib memenuhi persyaratan administratif dan akademik sebagai berikut:
@@ -108,9 +144,10 @@ responses:
           - Mahasiswa jalur Pindahan, Transfer Kredit, atau RPL tetap wajib mengikuti prosedur pengisian mandiri.
 
         *Catatan: Pastikan Anda telah menyelesaikan pembayaran BPP tepat waktu agar sinkronisasi status pada portal student.trisakti.ac.id tidak terhambat.
-
+        ;krs
   utter_answer_transaksi_krs:
-    - text: |
+    - id: "transaksi_krs"
+      text: |
         Silakan pilih mata kuliah yang akan kamu ambil pada semester ini.
         Setelah selesai, ajukan KRS untuk diproses oleh Dosen Pembimbing Akademik. (Tombol Pengisian KRS)
 

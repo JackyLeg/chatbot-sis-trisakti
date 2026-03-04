@@ -1,0 +1,107 @@
+version: "3.1"
+
+actions:
+- action_menu_konseling
+
+slots:
+  menu_konseling:
+    type: categorical
+    values:
+      - Prosedur Konseling
+      - Persyaratan Konseling
+      - Transaksi Konseling
+      - Hasil Konseling
+    mappings:
+      - type: from_llm
+
+  menu_konseling_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_konseling:
+    - text: "Please select one of the following konseling options:"
+      translation:
+        id: "Silakan pilih salah satu opsi konseling berikut:"
+      buttons:
+        - title: "Prosedur Konseling"
+          payload: Prosedur Konseling
+        - title: "Persyaratan Konseling"
+          payload: Persyaratan Konseling
+        - title: "Transaksi Konseling"
+          payload: Transaksi Konseling
+        - title: "Hasil Konseling"
+          payload: Hasil Konseling
+
+  utter_ask_menu_konseling_confirmation:
+    - text: "You have selected the option: {menu_konseling}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_konseling}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_konseling_cancelled:
+    - text: "Okay, let's try again. Please select one of the konseling options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi konseling."
+
+  utter_menu_konseling_ok:
+    - text: "You have successfully selected the konseling option: {menu_konseling}."
+      translation:
+        id: "Anda telah berhasil memilih opsi konseling: {menu_konseling}."
+
+  utter_answer_prosedur_konseling:
+    - text: |
+        PROSEDUR KONSELING
+
+  utter_answer_persyaratan_konseling:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN KONSELING (FH)
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN KONSELING (FEB)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN KONSELING (FK)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN KONSELING (FKG)
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN KONSELING (FTSP)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN KONSELING (FTI)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN KONSELING (FTKE)
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN KONSELING (FALTL)
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN KONSELING (FSRD)
+    - text: |
+        PERSYARATAN KONSELING
+
+  utter_answer_transaksi_konseling:
+    - text: "Silakan lengkapi data pengajuan konseling dan ajukan permohonan konseling."
+
+  utter_answer_hasil_konseling:
+    - text: "Pengajuan konseling kamu telah diproses."
+
+  utter_answer_error_konseling:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

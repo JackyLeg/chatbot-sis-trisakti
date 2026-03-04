@@ -23,7 +23,10 @@ class MenuKartuRencanaStudi(Action):
             case "Prosedur KRS":
                 return [SlotSet("return_value", "Prosedur KRS")]
             case "Persyaratan KRS":
-                return [SlotSet("return_value", "Persyaratan KRS")]
+                return [
+                    SlotSet("return_value", "Persyaratan KRS"),
+                    SlotSet("fakultas", None)
+                    ]
             case "Transaksi KRS":
                 return [SlotSet("return_value", "Transaksi KRS")]
             case "Hasil KRS":

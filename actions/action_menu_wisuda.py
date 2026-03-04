@@ -23,7 +23,10 @@ class MenuWisuda(Action):
             case "Prosedur Wisuda":
                 return [SlotSet("return_value", "Prosedur Wisuda")]
             case "Persyaratan Wisuda":
-                return [SlotSet("return_value", "Persyaratan Wisuda")]
+                return [
+                    SlotSet("return_value", "Persyaratan Wisuda"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Wisuda":
                 return [SlotSet("return_value", "Transaksi Wisuda")]
             case "Hasil Wisuda":

@@ -23,7 +23,10 @@ class MenuMajoringApplication(Action):
             case "Prosedur Majoring Application":
                 return [SlotSet("return_value", "Prosedur Majoring Application")]
             case "Persyaratan Majoring Application":
-                return [SlotSet("return_value", "Persyaratan Majoring Application")]
+                return [
+                    SlotSet("return_value", "Persyaratan Majoring Application"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Majoring Application":
                 return [SlotSet("return_value", "Transaksi Majoring Application")]
             case "Hasil Majoring Application":

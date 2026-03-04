@@ -23,9 +23,10 @@ class MenuKartuHasilStudi(Action):
             case "Prosedur KHS":
                 return [SlotSet("return_value", "Prosedur KHS")]
             case "Persyaratan KHS":
-                return [SlotSet("return_value", "Persyaratan KHS")]
-            case "Transaksi KHS":
-                return [SlotSet("return_value", "Transaksi KHS")]
+                return [
+                    SlotSet("return_value", "Persyaratan KHS"),
+                    SlotSet("fakultas", None)
+                    ]
             case "Hasil KHS":
                 return [SlotSet("return_value", "Hasil KHS")]
             case _:

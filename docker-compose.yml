@@ -7,6 +7,9 @@ services:
       - .:/app
     command:
       - 'run'
+      - '--enable-api'
+      - '--cors'
+      - '*'
     ports:
       - '5005:5005'
     env_file:
@@ -44,7 +47,7 @@ services:
     command:
       - 'run'
       - 'actions'
-    ports: 
+    ports:
       - '5055:5055'
     env_file:
       - .env

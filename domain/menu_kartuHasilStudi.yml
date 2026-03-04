@@ -9,7 +9,6 @@ slots:
     values:
       - Prosedur KHS
       - Persyaratan KHS
-      - Transaksi KHS
       - Hasil KHS
     mappings:
       - type: from_llm
@@ -29,8 +28,6 @@ responses:
           payload: Prosedur KHS
         - title: "Persyaratan KHS"
           payload: Persyaratan KHS
-        - title: "Transaksi KHS"
-          payload: Transaksi KHS
         - title: "Hasil KHS"
           payload: Hasil KHS
 
@@ -76,8 +73,37 @@ responses:
               2) Kartu Hasil Studi, menampilkan nilai yang diperoleh tiap semester
               3) Passed Transcript, menampilkan nilai yang lulus saja
               4) All Transcript, menampilkan seluruh nilai yang sudah ditempuh. Baik KHS maupun transkrip dapat diunduh dalam format pdf
+      custom:
+        context: "khs"
               
   utter_answer_persyaratan_khs:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FH)
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FEB)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FK)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FKG)
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FTSP)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FTI)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FTKE)
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FALTL)
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FSRD)
     - text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS)
           Agar KHS dapat diakses dan diunduh, mahasiswa wajib memenuhi ketentuan berikut:
@@ -86,10 +112,9 @@ responses:
           - Administrasi Keuangan: Pastikan seluruh kewajiban administrasi keuangan semester berjalan telah terselesaikan (sesuai kebijakan Fakultas masing-masing untuk membuka akses nilai).
           
           *Catatan: Jika nilai mata kuliah tertentu belum muncul, pastikan Anda telah mengisi kuesioner evaluasi dosen (jika diwajibkan) atau silakan hubungi Sekretariat Program Studi.
+      custom:
+        context: "khs"
           
-  utter_answer_transaksi_khs:
-    - text: "Silakan pilih semester untuk melihat nilai mata kuliah yang telah kamu tempuh."
-
   utter_answer_hasil_khs:
     - text: |
         Berikut adalah nilai mata kuliah kamu pada semester yang dipilih.

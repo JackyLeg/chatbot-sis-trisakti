@@ -23,7 +23,10 @@ class MenuPertukaranMahasiswa(Action):
             case "Prosedur Pertukaran Mahasiswa":
                 return [SlotSet("return_value", "Prosedur Pertukaran Mahasiswa")]
             case "Persyaratan Pertukaran Mahasiswa":
-                return [SlotSet("return_value", "Persyaratan Pertukaran Mahasiswa")]
+                return [
+                    SlotSet("return_value", "Persyaratan Pertukaran Mahasiswa"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Pertukaran Mahasiswa":
                 return [SlotSet("return_value", "Transaksi Pertukaran Mahasiswa")]
             case "Hasil Pertukaran Mahasiswa":

@@ -23,7 +23,10 @@ class MenuKartuPesertaUjian(Action):
             case "Prosedur Kartu Peserta Ujian":
                 return [SlotSet("return_value", "Prosedur Kartu Peserta Ujian")]
             case "Persyaratan Kartu Peserta Ujian":
-                return [SlotSet("return_value", "Persyaratan Kartu Peserta Ujian")]
+                return [
+                    SlotSet("return_value", "Persyaratan Kartu Peserta Ujian"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Kartu Peserta Ujian":
                 return [SlotSet("return_value", "Transaksi Kartu Peserta Ujian")]
             case "Hasil Kartu Peserta Ujian":

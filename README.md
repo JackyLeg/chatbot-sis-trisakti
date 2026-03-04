@@ -7,4 +7,7 @@ rasa inspect<br>
 git clone<br>
 git pull<br>
 
-docker compose up
+install docker<br>
+docker compose up<br>
+docker will use port 5005 for assistant, 5006 for action server, 5007 for assistant-inspect<br>
+"docker compose down" to stop the containers and remove the containers<br>

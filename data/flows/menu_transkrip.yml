@@ -1,0 +1,47 @@
+flows:
+  transkrip:
+      name: Transkrip
+      description: Help user with transkrip menus
+      steps:
+        - id: ask_menu
+          collect: menu_transkrip
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for transkrip.
+            there are options like Prosedur Transkrip, Persyaratan Transkrip, Transaksi Transkrip, and Hasil Transkrip.
+            while bot not do utter_answer_batal_transkrip and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_transkrip_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_transkrip_confirmation is false
+            then:
+              - action: utter_menu_transkrip_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_transkrip
+          next:
+            - if: slots.return_value = "Prosedur Transkrip"
+              then: 
+                - action: utter_answer_prosedur_transkrip
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Transkrip"
+              then: 
+                - action: utter_answer_persyaratan_transkrip
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Transkrip"
+              then: 
+                - action: utter_answer_transaksi_transkrip
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Transkrip"
+              then: 
+                - action: utter_answer_hasil_transkrip
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_transkrip
+                  next: ask_menu
+            

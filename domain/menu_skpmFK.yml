@@ -70,6 +70,33 @@ responses:
           3. SKPM-FK ditetapkan dan dapat diakses oleh mahasiswa.
 
   utter_answer_persyaratan_skpmFK:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FH)
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FEB)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FK)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FKG)
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FTSP)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FTI)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FTKE)
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FALTL)
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN PENGISIAN SKPM-FK (FSRD)
     - text: |
         Persyaratan pengisian SKPM-FK yang harus dipenuhi mahasiswa adalah:
         - Status Mahasiswa Aktif

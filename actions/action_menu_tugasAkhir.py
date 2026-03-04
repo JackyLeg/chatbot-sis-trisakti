@@ -23,7 +23,10 @@ class MenuTugasAkhir(Action):
             case "Prosedur Tugas Akhir":
                 return [SlotSet("return_value", "Prosedur Tugas Akhir")]
             case "Persyaratan Tugas Akhir":
-                return [SlotSet("return_value", "Persyaratan Tugas Akhir")]
+                return [
+                    SlotSet("return_value", "Persyaratan Tugas Akhir"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi Tugas Akhir":
                 return [SlotSet("return_value", "Transaksi Tugas Akhir")]
             case "Hasil Tugas Akhir":

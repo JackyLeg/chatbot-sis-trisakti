@@ -77,6 +77,33 @@ responses:
         4. Semua kegiatan wajib diisi dalam Bahasa Indonesia dan Bahasa Inggris sesuai kolom yang tersedia.
 
   utter_answer_persyaratan_skpi:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FH)
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FEB)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FK)
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FKG)
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FTSP)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FTI)
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FTKE)
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FALTL)
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PERSYARATAN PENGISIAN SKPI (FSRD)
     - text: |
         PERSYARATAN PENGISIAN SKPI
         Setiap kegiatan yang diinput wajib dilengkapi bukti pendukung, seperti:

@@ -23,7 +23,10 @@ class MenuSKPMFK(Action):
             case "Prosedur SKPM FK":
                 return [SlotSet("return_value", "Prosedur SKPM FK")]
             case "Persyaratan SKPM FK":
-                return [SlotSet("return_value", "Persyaratan SKPM FK")]
+                return [
+                    SlotSet("return_value", "Persyaratan SKPM FK"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi SKPM FK":
                 return [SlotSet("return_value", "Transaksi SKPM FK")]
             case "Hasil SKPM FK":

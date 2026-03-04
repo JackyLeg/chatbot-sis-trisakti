@@ -23,7 +23,10 @@ class MenuSKPI(Action):
             case "Prosedur SKPI":
                 return [SlotSet("return_value", "Prosedur SKPI")]
             case "Persyaratan SKPI":
-                return [SlotSet("return_value", "Persyaratan SKPI")]
+                return [
+                    SlotSet("return_value", "Persyaratan SKPI"),
+                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    ]
             case "Transaksi SKPI":
                 return [SlotSet("return_value", "Transaksi SKPI")]
             case "Hasil SKPI":

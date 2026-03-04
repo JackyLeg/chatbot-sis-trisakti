@@ -10,8 +10,8 @@ flows:
           collect: menu_kartuHasilStudi
           ask_before_filling: true
           description: |
-            User must select one of 4 options for kartu hasil studi.
-            There are options like Prosedur KHS, Persyaratan KHS, Transaksi KHS, and Hasil KHS.
+            User must select one of 3 options for kartu hasil studi.
+            There are options like Prosedur KHS, Persyaratan KHS, and Hasil KHS.
           next: menu_confirmation
 
         - id: menu_confirmation
@@ -34,10 +34,6 @@ flows:
             - if: slots.return_value = "Persyaratan KHS"
               then: 
                 - action: utter_answer_persyaratan_khs
-                  next: ask_menu
-            - if: slots.return_value = "Transaksi KHS"
-              then: 
-                - action: utter_answer_transaksi_khs
                   next: ask_menu
             - if: slots.return_value = "Hasil KHS"
               then: 
