@@ -38,3 +38,8 @@ responses:
           - Pembayaran/Keuangan
           - Hasil Studi (KHS atau Transkrip)
           - dan banyak lagi!
+
+  utter_imabot:
+    - text: "I am Imabot, your assistant for navigating the student portal."
+      translation:
+        id: "Saya adalah UsaktiBot, asisten Anda untuk menavigasi portal mahasiswa."

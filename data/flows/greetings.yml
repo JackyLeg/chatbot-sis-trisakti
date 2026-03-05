@@ -9,6 +9,15 @@ flows:
       - action: hello_world
   
   provide_capabilities:
-    description: explain what the assistant can do and what features are available
+    description: |
+      explain what the assistant can do and what features are available to users, 
+      user may ask "what can you do?" or "apa yang bisa kamu lakukan?"
     steps:
       - action: utter_provide_info
+    
+  provide_introduction:
+    description: |
+      introduce the assistant and its purpose, 
+      user may ask "who are you?" or "siapa kamu?"
+    steps:
+      - action: utter_imabot
