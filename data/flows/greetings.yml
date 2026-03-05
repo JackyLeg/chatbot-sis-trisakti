@@ -1,9 +1,14 @@
 flows:
   greetings:
     description: greet users when they start a conversation
-    name: greet users
+    persisted_slots:
+      - name
     steps:
-      - collect: "name"
-        description: "the name of the user"
+      - collect: name
+        description: the name of the user
       - action: hello_world
-
+  
+  provide_capabilities:
+    description: explain what the assistant can do and what features are available
+    steps:
+      - action: utter_provide_info

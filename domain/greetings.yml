@@ -11,10 +11,30 @@ slots:
 
 responses:
   utter_ask_name:
-    - text: "What's your name?"
+    - text: "May I know your name?"
       translation:
         id: "Siapa nama Anda?"
+
   utter_greet:
-    - text: "Hello {name}! How can I assist you today?"
+    - text: "Hello, {name}! How can I assist you today?"
       translation:
-        id: "Halo {name}! Bagaimana saya bisa membantu Anda hari ini?"
+        id: "Halo, {name}! Bagaimana saya bisa membantu Anda hari ini?"
+
+  utter_provide_info:
+    - text: |
+        I can help you with information about menus on [student.trisakti.ac.id](https://student.trisakti.ac.id/).
+        You can ask me about:
+        - Academic leave
+        - Study card
+        - Payment
+        - Study results
+        - And many more!
+      translation:
+        id: |
+          Saya dapat memberikan informasi tentang menu di [student.trisakti.ac.id](https://student.trisakti.ac.id/). 
+          Anda dapat bertanya kepada saya tentang:
+          - Cuti Akademik
+          - Kartu Rencana Studi (KRS)
+          - Pembayaran/Keuangan
+          - Hasil Studi (KHS atau Transkrip)
+          - dan banyak lagi!
