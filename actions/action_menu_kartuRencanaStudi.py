@@ -34,8 +34,3 @@ class MenuKartuRencanaStudi(Action):
                 return [SlotSet("return_value", "Hasil KRS")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_kartuRencanaStudi_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_kartuRencanaStudi_confirmation", True)]
-        else:
-            return [SlotSet("menu_kartuRencanaStudi_confirmation", False)]

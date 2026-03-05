@@ -34,9 +34,3 @@ class MenuMBOutboundNonPT(Action):
                 return [SlotSet("return_value", "Hasil MBOutboundNonPT")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_MBOutboundNonPT_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_MBOutboundNonPT_confirmation", True)]
-        else:
-            return [SlotSet("menu_MBOutboundNonPT_confirmation", False)]
-        

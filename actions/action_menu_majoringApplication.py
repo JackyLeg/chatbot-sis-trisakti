@@ -34,9 +34,3 @@ class MenuMajoringApplication(Action):
                 return [SlotSet("return_value", "Hasil Majoring Application")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_majoringApplication_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_majoringApplication_confirmation", True)]
-        else:
-            return [SlotSet("menu_majoringApplication_confirmation", False)]
-        

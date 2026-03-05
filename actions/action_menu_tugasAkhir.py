@@ -34,9 +34,3 @@ class MenuTugasAkhir(Action):
                 return [SlotSet("return_value", "Hasil Tugas Akhir")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_tugasAkhir_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_tugasAkhir_confirmation", True)]
-        else:
-            return [SlotSet("menu_tugasAkhir_confirmation", False)]
-        

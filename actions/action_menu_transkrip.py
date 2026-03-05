@@ -34,8 +34,3 @@ class MenuTranskrip(Action):
                 return [SlotSet("return_value", "Hasil Transkrip")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_transkrip_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_transkrip_confirmation", True)]
-        else:
-            return [SlotSet("menu_transkrip_confirmation", False)]

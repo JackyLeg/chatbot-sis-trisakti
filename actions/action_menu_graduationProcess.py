@@ -35,9 +35,3 @@ class MenuGraduationProcess(Action):
                 return [SlotSet("return_value", "Hasil Graduation Process")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_graduationProcess_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_graduationProcess_confirmation", True)]
-        else:
-            return [SlotSet("menu_graduationProcess_confirmation", False)]
-        

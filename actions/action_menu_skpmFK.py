@@ -34,8 +34,3 @@ class MenuSKPMFK(Action):
                 return [SlotSet("return_value", "Hasil SKPM FK")]
             case _:
                 return []
-
-        if tracker.get_slot("menu_skpmFK_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_skpmFK_confirmation", True)]
-        else:
-            return [SlotSet("menu_skpmFK_confirmation", False)]

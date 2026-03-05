@@ -34,8 +34,3 @@ class MenuPembayaran(Action):
                 return [SlotSet("return_value", "Status Pembayaran")]
             case _:
                 return []
-
-        if tracker.get_slot("menu_pembayaran_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_pembayaran_confirmation", True)]
-        else:
-            return [SlotSet("menu_pembayaran_confirmation", False)]

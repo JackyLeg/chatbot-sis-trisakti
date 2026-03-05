@@ -34,9 +34,3 @@ class MenuPertukaranMahasiswa(Action):
                 return [SlotSet("return_value", "Hasil Pertukaran Mahasiswa")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_pertukaranMahasiswa_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_pertukaranMahasiswa_confirmation", True)]
-        else:
-            return [SlotSet("menu_pertukaranMahasiswa_confirmation", False)]
-        

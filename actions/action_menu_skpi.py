@@ -34,8 +34,3 @@ class MenuSKPI(Action):
                 return [SlotSet("return_value", "Hasil SKPI")]
             case _:
                 return []
-
-        if tracker.get_slot("menu_skpi_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_skpi_confirmation", True)]
-        else:
-            return [SlotSet("menu_skpi_confirmation", False)]

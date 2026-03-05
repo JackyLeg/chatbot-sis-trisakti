@@ -34,9 +34,3 @@ class MenuTAskripsi(Action):
                 return [SlotSet("return_value", "Hasil TAskripsi")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_TAskripsi_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_TAskripsi_confirmation", True)]
-        else:
-            return [SlotSet("menu_TAskripsi_confirmation", False)]
-        

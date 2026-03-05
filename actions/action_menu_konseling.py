@@ -36,9 +36,3 @@ class MenuKonseling(Action):
                 return [SlotSet("return_value", "Hasil Konseling")]
             case _:
                 return []
-            
-        if tracker.get_slot("menu_konseling_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_konseling_confirmation", True)]
-        else:
-            return [SlotSet("menu_konseling_confirmation", False)]
-        
