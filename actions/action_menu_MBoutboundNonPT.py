@@ -21,7 +21,8 @@ class MenuMBOutboundNonPT(Action):
         
         match pilihan_menu:
             case "Prosedur MBOutboundNonPT":
-                return [SlotSet("return_value", "Prosedur MBOutboundNonPT")]
+                return [SlotSet("return_value", "Prosedur MBOutboundNonPT"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan MBOutboundNonPT":
                 return [
                     SlotSet("return_value", "Persyaratan MBOutboundNonPT"),

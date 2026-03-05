@@ -21,7 +21,8 @@ class MenuGraduationProcess(Action):
         
         match pilihan_menu:
             case "Prosedur Graduation Process":
-                return [SlotSet("return_value", "Prosedur Graduation Process")]
+                return [SlotSet("return_value", "Prosedur Graduation Process"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Graduation Process":
                 return [
                     SlotSet("return_value", "Persyaratan Graduation Process"),

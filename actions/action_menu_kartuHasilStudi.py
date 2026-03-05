@@ -21,7 +21,8 @@ class MenuKartuHasilStudi(Action):
 
         match pilihan_menu:
             case "Prosedur KHS":
-                return [SlotSet("return_value", "Prosedur KHS")]
+                return [SlotSet("return_value", "Prosedur KHS"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan KHS":
                 return [
                     SlotSet("return_value", "Persyaratan KHS"),

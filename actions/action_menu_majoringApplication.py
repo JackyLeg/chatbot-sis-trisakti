@@ -21,7 +21,8 @@ class MenuMajoringApplication(Action):
         
         match pilihan_menu:
             case "Prosedur Majoring Application":
-                return [SlotSet("return_value", "Prosedur Majoring Application")]
+                return [SlotSet("return_value", "Prosedur Majoring Application"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Majoring Application":
                 return [
                     SlotSet("return_value", "Persyaratan Majoring Application"),

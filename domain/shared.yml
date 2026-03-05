@@ -5,3 +5,18 @@ slots:
     type: any
     mappings:
       - type: controlled
+
+  fakultas:
+    type: categorical
+    values:
+      - Fakultas Hukum
+      - Fakultas Ekonomi dan Bisnis
+      - Fakultas Kedokteran
+      - Fakultas Kedokteran Gigi
+      - Fakultas Teknik Sipil dan Perencanaan
+      - Fakultas Teknologi Industri
+      - Fakultas Teknologi Kebumian dan Energi
+      - Fakultas Arsitektur Lanskap dan Teknologi Lingkungan
+      - Fakultas Seni Rupa dan Desain
+    mappings:
+      - type: from_llm

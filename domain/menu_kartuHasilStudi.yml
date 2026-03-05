@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_kartuHasilStudi
+- action_menu_kartuHasilStudi: {send_domain: true}
 
 slots:
   menu_kartuHasilStudi:
@@ -59,7 +59,61 @@ responses:
       translation:
         id: "Anda telah berhasil memilih opsi kartu hasil studi: {menu_kartuHasilStudi}."
 
-  utter_answer_prosedur_khs:
+  utter_answer_prosedur_kartuHasilStudi:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FH)
+      custom:
+        context: "kartuHasilStudi"
+
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FEB)
+      custom:
+        context: "kartuHasilStudi"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FK)
+      custom:
+        context: "kartuHasilStudi"
+        
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FKG)
+      custom:
+        context: "kartuHasilStudi"
+
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FTSP)
+      custom:
+        context: "kartuHasilStudi"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FTI)
+      custom:
+        context: "kartuHasilStudi"
+        
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FTKE)
+      custom:
+        context: "kartuHasilStudi"
+
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FALTL)
+      custom:
+        context: "kartuHasilStudi"
+
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS) (FSRD)
+      custom:
+        context: "kartuHasilStudi"
+
     - text: |
         PROSEDUR MENGAKSES KARTU HASIL STUDI (KHS)
           1. Penerbitan: KHS diterbitkan secara resmi oleh Universitas pada setiap akhir semester setelah masa penilaian dosen berakhir.
@@ -74,36 +128,63 @@ responses:
               3) Passed Transcript, menampilkan nilai yang lulus saja
               4) All Transcript, menampilkan seluruh nilai yang sudah ditempuh. Baik KHS maupun transkrip dapat diunduh dalam format pdf
       custom:
-        context: "khs"
+        context: "kartuHasilStudi"
               
-  utter_answer_persyaratan_khs:
+  utter_answer_persyaratan_kartuHasilStudi:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FH)
+      custom:
+        context: "kartuHasilStudi"
+
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FEB)
+      custom:
+        context: "kartuHasilStudi"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FK)
+      custom:
+        context: "kartuHasilStudi"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FKG)
+      custom:
+        context: "kartuHasilStudi"
+
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FTSP)
+      custom:
+        context: "kartuHasilStudi"
+
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FTI)
+      custom:
+        context: "kartuHasilStudi"
+        
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FTKE)
+      custom:
+        context: "kartuHasilStudi"
+
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FALTL)
+      custom:
+        context: "kartuHasilStudi"
+
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS) (FSRD)
+      custom:
+        context: "kartuHasilStudi"
+
     - text: |
         PERSYARATAN MENGAKSES KARTU HASIL STUDI (KHS)
           Agar KHS dapat diakses dan diunduh, mahasiswa wajib memenuhi ketentuan berikut:
@@ -113,12 +194,12 @@ responses:
           
           *Catatan: Jika nilai mata kuliah tertentu belum muncul, pastikan Anda telah mengisi kuesioner evaluasi dosen (jika diwajibkan) atau silakan hubungi Sekretariat Program Studi.
       custom:
-        context: "khs"
+        context: "kartuHasilStudi"
           
-  utter_answer_hasil_khs:
+  utter_answer_hasil_kartuHasilStudi:
     - text: |
         Berikut adalah nilai mata kuliah kamu pada semester yang dipilih.
         Kamu juga dapat melihat rekap nilai dalam bentuk Kartu Hasil Studi (KHS).
 
-  utter_answer_error_khs:
+  utter_answer_error_kartuHasilStudi:
     - text: "Maaf, menu tidak ditemukan."

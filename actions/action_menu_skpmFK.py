@@ -21,7 +21,8 @@ class MenuSKPMFK(Action):
         
         match pilihan_menu:
             case "Prosedur SKPM FK":
-                return [SlotSet("return_value", "Prosedur SKPM FK")]
+                return [SlotSet("return_value", "Prosedur SKPM FK"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan SKPM FK":
                 return [
                     SlotSet("return_value", "Persyaratan SKPM FK"),

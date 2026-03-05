@@ -9,5 +9,5 @@ git pull<br>
 
 install docker<br>
 docker compose up<br>
-docker will use port 5005 for assistant, 5006 for action server, 5007 for assistant-inspect<br>
+docker will use port 5005 for assistant, 5055 for action server, 5006 for assistant-inspect<br>
 "docker compose down" to stop the containers and remove the containers<br>

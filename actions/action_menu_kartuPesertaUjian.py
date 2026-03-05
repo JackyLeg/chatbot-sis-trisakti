@@ -21,7 +21,8 @@ class MenuKartuPesertaUjian(Action):
         
         match pilihan_menu:
             case "Prosedur Kartu Peserta Ujian":
-                return [SlotSet("return_value", "Prosedur Kartu Peserta Ujian")]
+                return [SlotSet("return_value", "Prosedur Kartu Peserta Ujian"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Kartu Peserta Ujian":
                 return [
                     SlotSet("return_value", "Persyaratan Kartu Peserta Ujian"),

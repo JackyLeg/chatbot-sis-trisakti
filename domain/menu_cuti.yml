@@ -19,21 +19,6 @@ slots:
     mappings:
       - type: from_llm
 
-  fakultas:
-    type: categorical
-    values:
-      - Fakultas Hukum
-      - Fakultas Ekonomi dan Bisnis
-      - Fakultas Kedokteran
-      - Fakultas Kedokteran Gigi
-      - Fakultas Teknik Sipil dan Perencanaan
-      - Fakultas Teknologi Industri
-      - Fakultas Teknologi Kebumian dan Energi
-      - Fakultas Arsitektur Lanskap dan Teknologi Lingkungan
-      - Fakultas Seni Rupa dan Desain
-    mappings:
-      - type: from_llm
-
 responses:
   utter_ask_menu_cuti:
     - text: "Please select one of the following cuti options:"
@@ -78,6 +63,60 @@ responses:
         id: "Anda telah berhasil memilih opsi cuti: {menu_cuti}."
 
   utter_answer_prosedur_cuti:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FH)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FEB)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FK)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FKG)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FTSP)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FTI)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FTKE)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FALTL)
+      custom:
+        context: "cuti"
+
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PROSEDUR CUTI AKADEMIK (FSRD)
+      custom:
+        context: "cuti"
+
     - text: |
         PROSEDUR CUTI AKADEMIK
         Cuti akademik adalah masa jeda studi yang tetap diperhitungkan dalam masa studi maksimal. Prosedur pengajuannya terbagi menjadi dua kategori:
@@ -96,43 +135,63 @@ responses:
 
         PROSEDUR AKTIF KEMBALI
         Mahasiswa wajib mengajukan surat permohonan aktif kembali kepada Dekan (diketahui Dosen Wali & Kaprodi) selambat-lambatnya 1 bulan sebelum masa cuti berakhir, serta menyelesaikan seluruh kewajiban administrasi dan keuangan.
-
+      custom:
+        context: "cuti"
+        
   utter_answer_persyaratan_cuti:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FH)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FEB)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FK)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FKG)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FTSP)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FTI)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FTKE)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FALTL)
+      custom:
+        context: "cuti"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN CUTI AKADEMIK (FSRD)
+      custom:
+        context: "cuti"
 
     - text: |
         PERSYARATAN CUTI AKADEMIK
@@ -152,6 +211,8 @@ responses:
           - Cuti Tidak Terencana: Untuk aktif kembali, mahasiswa wajib melampirkan Laporan Kronologis Kejadian yang ditandatangani orang tua/wali dan Dosen Wali, serta menyelesaikan seluruh kewajiban administrasi keuangan.
 
         *Catatan: Pastikan seluruh kewajiban administrasi keuangan pada semester sebelumnya telah lunas sebelum mengajukan permohonan.
+      custom:
+        context: "cuti"
 
   utter_answer_transaksi_cuti:
     - text: "Silakan lengkapi data pengajuan cuti akademik dan ajukan permohonan cuti."

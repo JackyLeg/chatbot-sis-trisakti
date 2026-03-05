@@ -21,7 +21,8 @@ class MenuSKPI(Action):
         
         match pilihan_menu:
             case "Prosedur SKPI":
-                return [SlotSet("return_value", "Prosedur SKPI")]
+                return [SlotSet("return_value", "Prosedur SKPI"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan SKPI":
                 return [
                     SlotSet("return_value", "Persyaratan SKPI"),

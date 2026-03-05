@@ -21,7 +21,8 @@ class MenuPertukaranMahasiswa(Action):
         
         match pilihan_menu:
             case "Prosedur Pertukaran Mahasiswa":
-                return [SlotSet("return_value", "Prosedur Pertukaran Mahasiswa")]
+                return [SlotSet("return_value", "Prosedur Pertukaran Mahasiswa"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Pertukaran Mahasiswa":
                 return [
                     SlotSet("return_value", "Persyaratan Pertukaran Mahasiswa"),

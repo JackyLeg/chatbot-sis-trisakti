@@ -21,7 +21,8 @@ class MenuTAskripsi(Action):
         
         match pilihan_menu:
             case "Prosedur TAskripsi":
-                return [SlotSet("return_value", "Prosedur TAskripsi")]
+                return [SlotSet("return_value", "Prosedur TAskripsi"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan TAskripsi":
                 return [
                     SlotSet("return_value", "Persyaratan TAskripsi"),

@@ -29,21 +29,21 @@ flows:
           next:
             - if: slots.return_value = "Prosedur KRS"
               then: 
-                - action: utter_answer_prosedur_krs
+                - action: utter_answer_prosedur_kartuRencanaStudi
                   next: ask_menu
             - if: slots.return_value = "Persyaratan KRS"
               then: 
-                - action: utter_answer_persyaratan_krs
+                - action: utter_answer_persyaratan_kartuRencanaStudi
                   next: ask_menu
             - if: slots.return_value = "Transaksi KRS"
               then: 
-                - action: utter_answer_transaksi_krs
+                - action: utter_answer_transaksi_kartuRencanaStudi
                   next: ask_menu
             - if: slots.return_value = "Hasil KRS"
               then: 
-                - action: utter_answer_hasil_krs
+                - action: utter_answer_hasil_kartuRencanaStudi
                   next: ask_menu
             - else: 
-                - action: utter_answer_error_krs
+                - action: utter_answer_error_kartuRencanaStudi
                   next: ask_menu
 

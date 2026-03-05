@@ -21,7 +21,8 @@ class MenuTugasAkhir(Action):
         
         match pilihan_menu:
             case "Prosedur Tugas Akhir":
-                return [SlotSet("return_value", "Prosedur Tugas Akhir")]
+                return [SlotSet("return_value", "Prosedur Tugas Akhir"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Tugas Akhir":
                 return [
                     SlotSet("return_value", "Persyaratan Tugas Akhir"),

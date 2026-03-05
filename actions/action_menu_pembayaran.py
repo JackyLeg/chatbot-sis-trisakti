@@ -21,7 +21,8 @@ class MenuPembayaran(Action):
         
         match pilihan_menu:
             case "Prosedur Pembayaran":
-                return [SlotSet("return_value", "Prosedur Pembayaran")]
+                return [SlotSet("return_value", "Prosedur Pembayaran"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Pembayaran":
                 return [
                     SlotSet("return_value", "Persyaratan Pembayaran"),

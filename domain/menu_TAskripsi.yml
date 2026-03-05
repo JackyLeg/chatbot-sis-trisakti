@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_TAskripsi
+- action_menu_TAskripsi: {send_domain: true}
 
 slots:
   menu_TAskripsi:
@@ -63,39 +63,124 @@ responses:
         id: "Anda telah berhasil memilih opsi TAskripsi: {menu_TAskripsi}."
 
   utter_answer_prosedur_TAskripsi:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FH)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FEB)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FK)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FKG)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FTSP)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FTI)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FTKE)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FALTL)
+      custom:
+        context: "TAskripsi"
+
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PROSEDUR PENGISIAN SKPI (FSRD)
+      custom:
+        context: "TAskripsi"
+
     - text: |
         PROSEDUR TA SKRIPSI
+      custom:
+        context: "TAskripsi"
         
   utter_answer_persyaratan_TAskripsi:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FH)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FEB)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FK)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FKG)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FTSP)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FTI)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FTKE)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FALTL)
+      custom:
+        context: "TAskripsi"
+
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FSRD)
+      custom:
+        context: "TAskripsi"
+
     - text: |
         PERSYARATAN TA SKRIPSI
+      custom:
+        context: "TAskripsi"
         
   utter_answer_transaksi_TAskripsi:
     - text: "Silakan lengkapi data pengajuan TAskripsi dan ajukan permohonan TAskripsi."

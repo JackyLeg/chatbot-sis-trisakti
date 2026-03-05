@@ -21,7 +21,8 @@ class MenuTranskrip(Action):
         
         match pilihan_menu:
             case "Prosedur Transkrip":
-                return [SlotSet("return_value", "Prosedur Transkrip")]
+                return [SlotSet("return_value", "Prosedur Transkrip"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Transkrip":
                 return [
                     SlotSet("return_value", "Persyaratan Transkrip"),

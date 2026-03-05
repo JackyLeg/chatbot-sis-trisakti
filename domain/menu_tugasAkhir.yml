@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_tugasAkhir
+- action_menu_tugasAkhir: {send_domain: true}
 
 slots:
   menu_tugasAkhir:
@@ -63,37 +63,120 @@ responses:
         id: "Anda telah berhasil memilih opsi tugas akhir: {menu_tugasAkhir}."
 
   utter_answer_prosedur_tugasAkhir:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FH)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FEB)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FK)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FKG)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FTSP)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FTI)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FTKE)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FALTL)
+      custom:
+        context: "tugasAkhir"
+
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PROSEDUR TUGAS AKHIR (FSRD)
+      custom:
+        context: "tugasAkhir"
+
     - text: |
         PROSEDUR TUGAS AKHIR
+      custom:
+        context: "tugasAkhir"
         
   utter_answer_persyaratan_tugasAkhir:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN TUGAS AKHIR (FH)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN TUGAS AKHIR (FEB)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN TUGAS AKHIR (FK)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN TUGAS AKHIR (FKG)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN TUGAS AKHIR (FTSP)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN TUGAS AKHIR (FTI)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN TUGAS AKHIR (FTKE)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN TUGAS AKHIR (FALTL)
+      custom:
+        context: "tugasAkhir"
+
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN TUGAS AKHIR (FSRD)
+      custom:
+        context: "tugasAkhir"
+
     - text: |
         PERSYARATAN TUGAS AKHIR
         1. Syarat Umum
@@ -112,6 +195,8 @@ responses:
           - Cuti Tidak Terencana: Untuk aktif kembali, mahasiswa wajib melampirkan Laporan Kronologis Kejadian yang ditandatangani orang tua/wali dan Dosen Wali, serta menyelesaikan seluruh kewajiban administrasi keuangan.
 
         *Catatan: Pastikan seluruh kewajiban administrasi keuangan pada semester sebelumnya telah lunas sebelum mengajukan permohonan.
+      custom:
+        context: "tugasAkhir"
 
   utter_answer_transaksi_tugasAkhir:
     - text: "Silakan lengkapi data pengajuan tugas akhir dan ajukan permohonan tugas akhir."

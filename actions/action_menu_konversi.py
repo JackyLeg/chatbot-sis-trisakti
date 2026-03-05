@@ -21,7 +21,8 @@ class MenuKonversi(Action):
         
         match pilihan_menu:
             case "Prosedur Konversi":
-                return [SlotSet("return_value", "Prosedur Konversi")]
+                return [SlotSet("return_value", "Prosedur Konversi"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Konversi":
                 return [
                     SlotSet("return_value", "Persyaratan Konversi"),

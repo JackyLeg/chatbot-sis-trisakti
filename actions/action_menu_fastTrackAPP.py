@@ -21,9 +21,11 @@ class MenuFastTrackApp(Action):
         
         match pilihan_menu:
             case "Prosedur FastTrackApp":
-                return [SlotSet("return_value", "Prosedur FastTrackApp")]
+                return [SlotSet("return_value", "Prosedur FastTrackApp"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan FastTrackApp":
-                return [SlotSet("return_value", "Persyaratan FastTrackApp")]
+                return [SlotSet("return_value", "Persyaratan FastTrackApp"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Transaksi FastTrackApp":
                 return [SlotSet("return_value", "Transaksi FastTrackApp")]
             case "Hasil FastTrackApp":

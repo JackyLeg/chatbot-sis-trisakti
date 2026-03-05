@@ -21,7 +21,8 @@ class MenuWisuda(Action):
         
         match pilihan_menu:
             case "Prosedur Wisuda":
-                return [SlotSet("return_value", "Prosedur Wisuda")]
+                return [SlotSet("return_value", "Prosedur Wisuda"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Wisuda":
                 return [
                     SlotSet("return_value", "Persyaratan Wisuda"),

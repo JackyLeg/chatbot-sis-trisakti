@@ -21,7 +21,8 @@ class MenuKartuRencanaStudi(Action):
         
         match pilihan_menu:
             case "Prosedur KRS":
-                return [SlotSet("return_value", "Prosedur KRS")]
+                return [SlotSet("return_value", "Prosedur KRS"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan KRS":
                 return [
                     SlotSet("return_value", "Persyaratan KRS"),

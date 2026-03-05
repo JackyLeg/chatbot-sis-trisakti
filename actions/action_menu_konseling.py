@@ -21,7 +21,8 @@ class MenuKonseling(Action):
         
         match pilihan_menu:
             case "Prosedur Konseling":
-                return [SlotSet("return_value", "Prosedur Konseling")]
+                return [SlotSet("return_value", "Prosedur Konseling"),
+                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
             case "Persyaratan Konseling":
                 return [
                     SlotSet("return_value", "Persyaratan Konseling"),

@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_pembayaran
+- action_menu_pembayaran: {send_domain: true}
 
 slots:
   menu_pembayaran:
@@ -63,6 +63,60 @@ responses:
         id: "Anda telah berhasil memilih opsi pembayaran: {menu_pembayaran}."
 
   utter_answer_prosedur_pembayaran:
+    - condition: "slots.fakultas = 'Fakultas Hukum'"
+      text: |
+        PROSEDUR PEMBAYARAN (FH)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
+      text: |
+        PROSEDUR PEMBAYARAN (FEB)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
+      text: |
+        PROSEDUR PEMBAYARAN (FK)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
+      text: |
+        PROSEDUR PEMBAYARAN (FKG)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
+      text: |
+        PROSEDUR PEMBAYARAN (FTSP)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
+      text: |
+        PROSEDUR PEMBAYARAN (FTI)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
+      text: |
+        PROSEDUR PEMBAYARAN (FTKE)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
+      text: |
+        PROSEDUR PEMBAYARAN (FALTL)
+      custom:
+        context: "pembayaran"
+
+    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
+      text: |
+        PROSEDUR PEMBAYARAN (FSRD)
+      custom:
+        context: "pembayaran"
+
     - text: |
         PROSEDUR PEMBAYARAN
         Pembayaran dilakukan menggunakan sistem Virtual Account (VA) Bank BNI yang dapat diakses melalui portal mahasiswa. Berikut langkah-langkahnya:
@@ -73,41 +127,72 @@ responses:
           - Payment: Informasi pembayaran yang telah diverifikasi.
         3. Generate Tagihan: Klik tombol Hitung Single VA untuk memunculkan total tagihan yang harus dibayarkan.
         4. Pembayaran: Gunakan nomor Virtual Account yang tertera untuk membayar melalui ATM, Teller, atau Mobile Banking BNI.
+      custom:
+        context: "pembayaran"
 
   utter_answer_persyaratan_pembayaran:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN PEMBAYARAN (FH)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN PEMBAYARAN (FEB)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN PEMBAYARAN (FK)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN PEMBAYARAN (FKG)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN PEMBAYARAN (FTSP)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN PEMBAYARAN (FTI)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN PEMBAYARAN (FTKE)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN PEMBAYARAN (FALTL)
+      custom:
+        context: "pembayaran"
+
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN PEMBAYARAN (FSRD)
+      custom:
+        context: "pembayaran"
+
     - text: |
         PERSYARATAN PEMBAYARAN
         - Identitas Pembayaran: Mahasiswa wajib memiliki Nomor Induk Mahasiswa (NIM) aktif.
         - Kode Virtual Account: Format pembayaran menggunakan kode 8741 + NIM (Contoh: 8741060002xxxx).
         - Verifikasi Data: Pastikan nominal yang muncul pada layar ATM/Aplikasi perbankan sesuai dengan jumlah yang tertera di tab Invoice portal mahasiswa.
         - Metode Transaksi: Pembayaran hanya dianggap sah jika dilakukan melalui saluran resmi yang terintegrasi dengan sistem Virtual Account Bank BNI.
+      custom:
+        context: "pembayaran"
 
   utter_answer_transaksi_pembayaran:
     - text: "Silakan lakukan pembayaran sesuai nominal dan metode yang tersedia."

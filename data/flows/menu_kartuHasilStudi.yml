@@ -29,16 +29,16 @@ flows:
           next:
             - if: slots.return_value = "Prosedur KHS"
               then: 
-                - action: utter_answer_prosedur_khs
+                - action: utter_answer_prosedur_kartuHasilStudi
                   next: ask_menu
             - if: slots.return_value = "Persyaratan KHS"
               then: 
-                - action: utter_answer_persyaratan_khs
+                - action: utter_answer_persyaratan_kartuHasilStudi
                   next: ask_menu
             - if: slots.return_value = "Hasil KHS"
               then: 
-                - action: utter_answer_hasil_khs
+                - action: utter_answer_hasil_kartuHasilStudi
                   next: ask_menu
             - else: 
-                - action: utter_answer_error_khs
+                - action: utter_answer_error_kartuHasilStudi
                   next: ask_menu
