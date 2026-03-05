@@ -19,7 +19,7 @@ class MenuCuti(Action):
         dispatcher.utter_message(response = "utter_menu_cuti_ok")
         pilihan_menu = tracker.get_slot("menu_cuti")
         dispatcher.utter_message(json_message={"context": "cuti"})
-        fakultas = "Fakultas Teknologi Industri"
+        fakultas = "" #default value, will be set in the next action
         
         match pilihan_menu:
             case "Prosedur Cuti":

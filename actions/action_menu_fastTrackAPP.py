@@ -19,7 +19,7 @@ class MenuFastTrackApp(Action):
         dispatcher.utter_message(response = "utter_menu_fastTrackApp_ok")
         pilihan_menu = tracker.get_slot("menu_fastTrackApp")
         dispatcher.utter_message(json_message={"context": "fastTrackApp"})
-        fakultas = "Fakultas Teknologi Industri"
+        fakultas = "Fakultas Teknologi Industri" #default value= ""
         
         match pilihan_menu:
             case "Prosedur FastTrackApp":
