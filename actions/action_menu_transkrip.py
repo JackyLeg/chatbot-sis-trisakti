@@ -18,16 +18,16 @@ class MenuTranskrip(Action):
         
         dispatcher.utter_message(response = "utter_menu_transkrip_ok")
         pilihan_menu = tracker.get_slot("menu_transkrip")
+        dispatcher.utter_message(json_message={"context": "transkrip"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Transkrip":
                 return [SlotSet("return_value", "Prosedur Transkrip"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Transkrip":
-                return [
-                    SlotSet("return_value", "Persyaratan Transkrip"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan Transkrip"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Transkrip":
                 return [SlotSet("return_value", "Transaksi Transkrip")]
             case "Hasil Transkrip":

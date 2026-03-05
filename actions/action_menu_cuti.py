@@ -18,17 +18,16 @@ class MenuCuti(Action):
         
         dispatcher.utter_message(response = "utter_menu_cuti_ok")
         pilihan_menu = tracker.get_slot("menu_cuti")
+        dispatcher.utter_message(json_message={"context": "cuti"})
         fakultas = "Fakultas Teknologi Industri"
-
+        
         match pilihan_menu:
             case "Prosedur Cuti":
                 return [SlotSet("return_value", "Prosedur Cuti"),
-                        SlotSet("fakultas", fakultas)
-                        ]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Cuti":
                 return [SlotSet("return_value", "Persyaratan Cuti"),
-                        SlotSet("fakultas", fakultas)
-                        ]
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Cuti":
                 return [SlotSet("return_value", "Transaksi Cuti")]
             case "Hasil Cuti":
@@ -36,8 +35,8 @@ class MenuCuti(Action):
             case _:
                 return []
             
-        if tracker.get_slot("menu_cuti_confirmation") == "Yes, that's correct":
-            return [SlotSet("menu_cuti_confirmation", True)]
-        else:
-            return [SlotSet("menu_cuti_confirmation", False)]
+        # if tracker.get_slot("menu_cuti_confirmation") == "Yes, that's correct":
+        #     return [SlotSet("menu_cuti_confirmation", True)]
+        # else:
+        #     return [SlotSet("menu_cuti_confirmation", False)]
         

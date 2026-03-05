@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_pertukaranMahasiswa: {send_domain: true}
+- action_menu_pertukaranMahasiswa
 
 slots:
   menu_pertukaranMahasiswa:
@@ -66,121 +66,81 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FH)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FEB)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FK)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FKG)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FTSP)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FTI)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FTKE)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FALTL)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR PERTUKARAN MAHASISWA (FSRD)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - text: |
         PROSEDUR PERTUKARAN MAHASISWA
-      custom:
-        context: "pertukaranMahasiswa"
         
   utter_answer_persyaratan_pertukaranMahasiswa:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FH)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FEB)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FK)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FKG)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FTSP)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FTI)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FTKE)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FALTL)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN PERTUKARAN MAHASISWA (FSRD)
-      custom:
-        context: "pertukaranMahasiswa"
 
     - text: |
         PERSYARATAN PERTUKARAN MAHASISWA
-      custom:
-        context: "pertukaranMahasiswa"
         
   utter_answer_transaksi_pertukaranMahasiswa:
     - text: "Silakan lengkapi data pengajuan pertukaran mahasiswa dan ajukan permohonan pertukaran mahasiswa."

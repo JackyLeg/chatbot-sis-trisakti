@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_kartuPesertaUjian: {send_domain: true}
+- action_menu_kartuPesertaUjian
 
 slots:
   menu_kartuPesertaUjian:
@@ -66,121 +66,81 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR KPU (FH)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR KPU (FEB)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR KPU (FK)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR KPU (FKG)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR KPU (FTSP)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR KPU (FTI)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR KPU (FTKE)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR KPU (FALTL)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR KPU (FSRD)
-      custom:
-        context: "kartuPesertaUjian"
 
     - text: |
         PROSEDUR KPU
-      custom:
-        context: "kartuPesertaUjian"
         
   utter_answer_persyaratan_kartuPesertaUjian:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN KPU (FH)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN KPU (FEB)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN KPU (FK)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN KPU (FKG)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN KPU (FTSP)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN KPU (FTI)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN KPU (FTKE)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN KPU (FALTL)
-      custom:
-        context: "kartuPesertaUjian"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN KPU (FSRD)
-      custom:
-        context: "kartuPesertaUjian"
 
     - text: |
         PERSYARATAN KPU
-      custom:
-        context: "kartuPesertaUjian"
         
   utter_answer_transaksi_kartuPesertaUjian:
     - text: "Silakan lengkapi data pengajuan kartu peserta ujian dan ajukan permohonan kartu peserta ujian."

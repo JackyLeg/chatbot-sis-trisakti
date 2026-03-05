@@ -18,16 +18,16 @@ class MenuSKPI(Action):
 
         dispatcher.utter_message(response = "utter_menu_skpi_ok")
         pilihan_menu = tracker.get_slot("menu_skpi")
+        dispatcher.utter_message(json_message={"context": "skpi"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur SKPI":
                 return [SlotSet("return_value", "Prosedur SKPI"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan SKPI":
-                return [
-                    SlotSet("return_value", "Persyaratan SKPI"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan SKPI"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi SKPI":
                 return [SlotSet("return_value", "Transaksi SKPI")]
             case "Hasil SKPI":

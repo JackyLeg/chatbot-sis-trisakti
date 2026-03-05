@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_transkrip: {send_domain: true}
+- action_menu_transkrip
 
 slots:
   menu_transkrip:
@@ -66,119 +66,79 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR TRANSKRIP (FH)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR TRANSKRIP (FEB)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR TRANSKRIP (FK)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR TRANSKRIP (FKG)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR TRANSKRIP (FTSP)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR TRANSKRIP (FTI)
-      custom:
-        context: "transkrip"
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR TRANSKRIP (FTKE)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR TRANSKRIP (FALTL)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR TRANSKRIP (FSRD)
-      custom:
-        context: "transkrip"
 
     - text: |
         PROSEDUR TRANSKRIP
-      custom:
-        context: "transkrip"
 
   utter_answer_persyaratan_transkrip:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN TRANSKRIP (FH)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN TRANSKRIP (FEB)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN TRANSKRIP (FK)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN TRANSKRIP (FKG)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN TRANSKRIP (FTSP)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN TRANSKRIP (FTI)
-      custom:
-        context: "transkrip"
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN TRANSKRIP (FTKE)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN TRANSKRIP (FALTL)
-      custom:
-        context: "transkrip"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN TRANSKRIP (FSRD)
-      custom:
-        context: "transkrip"
 
     - text: |
         PERSYARATAN TRANSKRIP
-      custom:
-        context: "transkrip"
 
   utter_answer_transaksi_transkrip:
     - text: "TRANSAKSI TRANSKRIP"

@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_graduationProcess: {send_domain: true}
+- action_menu_graduationProcess
 
 slots:
   menu_graduationProcess:
@@ -66,116 +66,78 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR GRADUATION PROCESS (FH)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR GRADUATION PROCESS (FEB)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR GRADUATION PROCESS (FK)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR GRADUATION PROCESS (FKG)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR GRADUATION PROCESS (FTSP)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR GRADUATION PROCESS (FTI)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR GRADUATION PROCESS (FTKE)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR GRADUATION PROCESS (FALTL)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR GRADUATION PROCESS (FSRD)
-      custom:
-        context: "graduationProcess"
 
     - text: |
         PROSEDUR GRADUATION PROCESS
-      custom:
-        context: "graduationProcess"
         
   utter_answer_persyaratan_graduationProcess:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FH)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FEB)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FK)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FKG)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FTSP)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FTI)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FTKE)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FALTL)
-      custom:
-        context: "graduationProcess"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN GRADUATION PROCESS (FSRD)
-      custom:
-        context: "graduationProcess"
 
     - text: |
         PERSYARATAN GRADUATION PROCESS
@@ -195,8 +157,6 @@ responses:
           - Cuti Tidak Terencana: Untuk aktif kembali, mahasiswa wajib melampirkan Laporan Kronologis Kejadian yang ditandatangani orang tua/wali dan Dosen Wali, serta menyelesaikan seluruh kewajiban administrasi keuangan.
 
         *Catatan: Pastikan seluruh kewajiban administrasi keuangan pada semester sebelumnya telah lunas sebelum mengajukan permohonan.
-      custom:
-        context: "graduationProcess"
 
   utter_answer_transaksi_graduationProcess:
     - text: "Silakan lengkapi data pengajuan proses kelulusan dan ajukan permohonan kelulusan."

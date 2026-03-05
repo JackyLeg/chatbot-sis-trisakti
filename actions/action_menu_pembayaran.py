@@ -18,16 +18,16 @@ class MenuPembayaran(Action):
 
         dispatcher.utter_message(response = "utter_menu_pembayaran_ok")
         pilihan_menu = tracker.get_slot("menu_pembayaran")
+        dispatcher.utter_message(json_message={"context": "pembayaran"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Pembayaran":
                 return [SlotSet("return_value", "Prosedur Pembayaran"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Pembayaran":
-                return [
-                    SlotSet("return_value", "Persyaratan Pembayaran"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan Pembayaran"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Pembayaran":
                 return [SlotSet("return_value", "Transaksi Pembayaran")]
             case "Status Pembayaran":

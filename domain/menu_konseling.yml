@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_konseling: {send_domain: true}
+- action_menu_konseling
 
 slots:
   menu_konseling:
@@ -66,121 +66,81 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR KONSELING (FH)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR KONSELING (FEB)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR KONSELING (FK)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR KONSELING (FKG)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR KONSELING (FTSP)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR KONSELING (FTI)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR KONSELING (FTKE)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR KONSELING (FALTL)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR KONSELING (FSRD)
-      custom:
-        context: "konseling"
 
     - text: |
         PROSEDUR KONSELING
-      custom:
-        context: "konseling"
 
   utter_answer_persyaratan_konseling:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN KONSELING (FH)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN KONSELING (FEB)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN KONSELING (FK)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN KONSELING (FKG)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN KONSELING (FTSP)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN KONSELING (FTI)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN KONSELING (FTKE)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN KONSELING (FALTL)
-      custom:
-        context: "konseling"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN KONSELING (FSRD)
-      custom:
-        context: "konseling"
 
     - text: |
         PERSYARATAN KONSELING
-      custom:
-        context: "konseling"
 
   utter_answer_transaksi_konseling:
     - text: "Silakan lengkapi data pengajuan konseling dan ajukan permohonan konseling."

@@ -18,14 +18,17 @@ class MenuFastTrackApp(Action):
         
         dispatcher.utter_message(response = "utter_menu_fastTrackApp_ok")
         pilihan_menu = tracker.get_slot("menu_fastTrackApp")
+        dispatcher.utter_message(json_message={"context": "fastTrackApp"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur FastTrackApp":
+                
                 return [SlotSet("return_value", "Prosedur FastTrackApp"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan FastTrackApp":
                 return [SlotSet("return_value", "Persyaratan FastTrackApp"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi FastTrackApp":
                 return [SlotSet("return_value", "Transaksi FastTrackApp")]
             case "Hasil FastTrackApp":

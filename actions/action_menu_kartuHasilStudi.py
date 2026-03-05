@@ -18,16 +18,16 @@ class MenuKartuHasilStudi(Action):
 
         dispatcher.utter_message(response = "utter_menu_kartuHasilStudi_ok")
         pilihan_menu = tracker.get_slot("menu_kartuHasilStudi")
+        dispatcher.utter_message(json_message={"context": "kartuHasilStudi"})
+        fakultas = "Fakultas Teknologi Industri"
 
         match pilihan_menu:
             case "Prosedur KHS":
                 return [SlotSet("return_value", "Prosedur KHS"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan KHS":
-                return [
-                    SlotSet("return_value", "Persyaratan KHS"),
-                    SlotSet("fakultas", None)
-                    ]
+                return [SlotSet("return_value", "Persyaratan KHS"),
+                        SlotSet("fakultas", fakultas)]
             case "Hasil KHS":
                 return [SlotSet("return_value", "Hasil KHS")]
             case _:

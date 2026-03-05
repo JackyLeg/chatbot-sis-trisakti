@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_skpmFK: {send_domain: true}
+- action_menu_skpmFK
 
 slots:
   menu_skpmFK:
@@ -66,126 +66,86 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FH)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FEB)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FK)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FKG)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FTSP)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FTI)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FTKE)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FALTL)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR PENGISIAN SKPM-FK (FSRD)
-      custom:
-        context: "skpmFK"
 
     - text: |
         Pengajuan SKPM-FK dilakukan melalui tahapan berikut:
           1. Mahasiswa melengkapi data dan dokumen pendukung SKPM-FK.
           2. Program Studi/Fakultas melakukan verifikasi data SKPM-FK.
           3. SKPM-FK ditetapkan dan dapat diakses oleh mahasiswa.
-      custom:
-        context: "skpmFK"
 
   utter_answer_persyaratan_skpmFK:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FH)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FEB)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FK)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FKG)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FTSP)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FTI)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FTKE)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FALTL)
-      custom:
-        context: "skpmFK"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN PENGISIAN SKPM-FK (FSRD)
-      custom:
-        context: "skpmFK"
 
     - text: |
         Persyaratan pengisian SKPM-FK yang harus dipenuhi mahasiswa adalah:
         - Status Mahasiswa Aktif
         - Data kegiatan pendukung (organisasi, prestasi, sertifikasi) tersedia
-      custom:
-        context: "skpmFK"
 
   utter_answer_transaksi_skpmFK:
     - text: "Silakan lengkapi dan ajukan data SKPM-FK sesuai dengan kegiatan yang telah anda ikuti."

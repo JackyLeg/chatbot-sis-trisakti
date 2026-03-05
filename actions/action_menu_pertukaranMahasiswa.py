@@ -18,16 +18,16 @@ class MenuPertukaranMahasiswa(Action):
         
         dispatcher.utter_message(response = "utter_menu_pertukaranMahasiswa_ok")
         pilihan_menu = tracker.get_slot("menu_pertukaranMahasiswa")
+        dispatcher.utter_message(json_message={"context": "pertukaranMahasiswa"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Pertukaran Mahasiswa":
                 return [SlotSet("return_value", "Prosedur Pertukaran Mahasiswa"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Pertukaran Mahasiswa":
-                return [
-                    SlotSet("return_value", "Persyaratan Pertukaran Mahasiswa"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan Pertukaran Mahasiswa"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Pertukaran Mahasiswa":
                 return [SlotSet("return_value", "Transaksi Pertukaran Mahasiswa")]
             case "Hasil Pertukaran Mahasiswa":

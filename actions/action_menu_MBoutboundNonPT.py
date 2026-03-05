@@ -18,16 +18,16 @@ class MenuMBOutboundNonPT(Action):
         
         dispatcher.utter_message(response = "utter_menu_MBOutboundNonPT_ok")
         pilihan_menu = tracker.get_slot("menu_MBOutboundNonPT")
+        dispatcher.utter_message(json_message={"context": "MBOutboundNonPT"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur MBOutboundNonPT":
                 return [SlotSet("return_value", "Prosedur MBOutboundNonPT"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan MBOutboundNonPT":
-                return [
-                    SlotSet("return_value", "Persyaratan MBOutboundNonPT"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan MBOutboundNonPT"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi MBOutboundNonPT":
                 return [SlotSet("return_value", "Transaksi MBOutboundNonPT")]
             case "Hasil MBOutboundNonPT":

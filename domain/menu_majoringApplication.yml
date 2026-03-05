@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_majoringApplication: {send_domain: true}
+- action_menu_majoringApplication
 
 slots:
   menu_majoringApplication:
@@ -66,121 +66,81 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR MAJORING APPLICATION (FH)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR MAJORING APPLICATION (FEB)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR MAJORING APPLICATION (FK)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR MAJORING APPLICATION (FKG)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR MAJORING APPLICATION (FTSP)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR MAJORING APPLICATION (FTI)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR MAJORING APPLICATION (FTKE)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR MAJORING APPLICATION (FALTL)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR MAJORING APPLICATION (FSRD)
-      custom:
-        context: "majoringApplication"
 
     - text: |
         PROSEDUR MAJORING APPLICATION
-      custom:
-        context: "majoringApplication"
         
   utter_answer_persyaratan_majoringApplication:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FH)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FEB)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FK)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FKG)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FTSP)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FTI)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FTKE)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FALTL)
-      custom:
-        context: "majoringApplication"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN MAJORING APPLICATION (FSRD)
-      custom:
-        context: "majoringApplication"
 
     - text: |
         PERSYARATAN MAJORING APPLICATION
-      custom:
-        context: "majoringApplication"
         
   utter_answer_transaksi_majoringApplication:
     - text: "Silakan lengkapi data pengajuan majoring application dan ajukan permohonan majoring application."

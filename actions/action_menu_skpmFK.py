@@ -18,16 +18,16 @@ class MenuSKPMFK(Action):
 
         dispatcher.utter_message(response = "utter_menu_skpmFK_ok")
         pilihan_menu = tracker.get_slot("menu_skpmFK")
+        dispatcher.utter_message(json_message={"context": "cuti"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur SKPM FK":
                 return [SlotSet("return_value", "Prosedur SKPM FK"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan SKPM FK":
-                return [
-                    SlotSet("return_value", "Persyaratan SKPM FK"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan SKPM FK"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi SKPM FK":
                 return [SlotSet("return_value", "Transaksi SKPM FK")]
             case "Hasil SKPM FK":

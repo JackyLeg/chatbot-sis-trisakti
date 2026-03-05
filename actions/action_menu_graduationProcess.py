@@ -18,16 +18,17 @@ class MenuGraduationProcess(Action):
         
         dispatcher.utter_message(response = "utter_menu_graduationProcess_ok")
         pilihan_menu = tracker.get_slot("menu_graduationProcess")
+        dispatcher.utter_message(json_message={"context": "graduationProcess"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Graduation Process":
+                dispatcher.utter_message(json_message={"context": "graduationProcess"})
                 return [SlotSet("return_value", "Prosedur Graduation Process"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Graduation Process":
-                return [
-                    SlotSet("return_value", "Persyaratan Graduation Process"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan Graduation Process"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Graduation Process":
                 return [SlotSet("return_value", "Transaksi Graduation Process")]
             case "Hasil Graduation Process":

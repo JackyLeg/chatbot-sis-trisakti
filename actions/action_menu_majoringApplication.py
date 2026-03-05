@@ -18,16 +18,16 @@ class MenuMajoringApplication(Action):
         
         dispatcher.utter_message(response = "utter_menu_majoringApplication_ok")
         pilihan_menu = tracker.get_slot("menu_majoringApplication")
+        dispatcher.utter_message(json_message={"context": "majoringApplication"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Majoring Application":
                 return [SlotSet("return_value", "Prosedur Majoring Application"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Majoring Application":
-                return [
-                    SlotSet("return_value", "Persyaratan Majoring Application"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan Majoring Application"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Majoring Application":
                 return [SlotSet("return_value", "Transaksi Majoring Application")]
             case "Hasil Majoring Application":

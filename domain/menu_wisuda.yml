@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_wisuda: {send_domain: true}
+- action_menu_wisuda
 
 slots:
   menu_wisuda:
@@ -66,121 +66,81 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR WISUDA (FH)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR WISUDA (FEB)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR WISUDA (FK)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR WISUDA (FKG)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR WISUDA (FTSP)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR WISUDA (FTI)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR WISUDA (FTKE)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR WISUDA (FALTL)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR WISUDA (FSRD)
-      custom:
-        context: "wisuda"
 
     - text: |
         PROSEDUR WISUDA
-      custom:
-        context: "wisuda"
         
   utter_answer_persyaratan_wisuda:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN WISUDA (FH)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN WISUDA (FEB)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN WISUDA (FK)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN WISUDA (FKG)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN WISUDA (FTSP)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN WISUDA (FTI)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN WISUDA (FTKE)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN WISUDA (FALTL)
-      custom:
-        context: "wisuda"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN WISUDA (FSRD)
-      custom:
-        context: "wisuda"
 
     - text: |
         PERSYARATAN WISUDA
-      custom:
-        context: "wisuda"
         
   utter_answer_transaksi_wisuda:
     - text: "Silakan lengkapi data pengajuan wisuda dan ajukan permohonan wisuda."

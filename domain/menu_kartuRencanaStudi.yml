@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_kartuRencanaStudi: {send_domain: true}
+- action_menu_kartuRencanaStudi
 
 slots:
   menu_kartuRencanaStudi:
@@ -66,56 +66,38 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR KRS (FH)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR KRS (FEB)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR KRS (FK)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR KRS (FKG)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR KRS (FTSP)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR KRS (FTI)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR KRS (FTKE)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR KRS (FALTL)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR KRS (FSRD)
-      custom:
-        context: "kartuRencanaStudi"
 
     - text: |
         PROSEDUR PENGISIAN KARTU RENCANA STUDI (KRS):
@@ -144,63 +126,43 @@ responses:
         Catatan :
           a. Sebelum mengisi KRS mahasiswa wajib melakukan proses perwalian
           b. Mahasiswa baru bisa mengisi KRS setelah Dosen Pembimbing Akademik/Dosen Wali merespon permintaan perwalian.
-      custom:
-        context: "kartuRencanaStudi"
 
   utter_answer_persyaratan_kartuRencanaStudi:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN KRS (FH)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN KRS (FEB)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN KRS (FK)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN KRS (FKG)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN KRS (FTSP)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN KRS (FTI)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN KRS (FTKE)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN KRS (FALTL)
-      custom:
-        context: "kartuRencanaStudi"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN KRS (FSRD)
-      custom:
-        context: "kartuRencanaStudi"
 
     - text: |
         PERSYARATAN PENGISIAN KARTU RENCANA STUDI (KRS):
@@ -218,8 +180,6 @@ responses:
           - Mahasiswa jalur Pindahan, Transfer Kredit, atau RPL tetap wajib mengikuti prosedur pengisian mandiri.
 
         *Catatan: Pastikan Anda telah menyelesaikan pembayaran BPP tepat waktu agar sinkronisasi status pada portal student.trisakti.ac.id tidak terhambat.
-      custom:
-        context: "kartuRencanaStudi"
 
   utter_answer_transaksi_kartuRencanaStudi:
     - id: "transaksi_krs"

@@ -18,16 +18,16 @@ class MenuKartuRencanaStudi(Action):
 
         dispatcher.utter_message(response = "utter_menu_kartuRencanaStudi_ok")
         pilihan_menu = tracker.get_slot("menu_kartuRencanaStudi")
+        dispatcher.utter_message(json_message={"context": "kartuRencanaStudi"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur KRS":
                 return [SlotSet("return_value", "Prosedur KRS"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan KRS":
-                return [
-                    SlotSet("return_value", "Persyaratan KRS"),
-                    SlotSet("fakultas", None)
-                    ]
+                return [SlotSet("return_value", "Persyaratan KRS"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi KRS":
                 return [SlotSet("return_value", "Transaksi KRS")]
             case "Hasil KRS":

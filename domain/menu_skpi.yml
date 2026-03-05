@@ -1,7 +1,7 @@
 version: "3.1"
 
 actions:
-- action_menu_skpi: {send_domain: true}
+- action_menu_skpi
 
 slots:
   menu_skpi:
@@ -66,56 +66,38 @@ responses:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PROSEDUR PENGISIAN SKPI (FH)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PROSEDUR PENGISIAN SKPI (FEB)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PROSEDUR PENGISIAN SKPI (FK)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PROSEDUR PENGISIAN SKPI (FKG)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PROSEDUR PENGISIAN SKPI (FTSP)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PROSEDUR PENGISIAN SKPI (FTI)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PROSEDUR PENGISIAN SKPI (FTKE)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PROSEDUR PENGISIAN SKPI (FALTL)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PROSEDUR PENGISIAN SKPI (FSRD)
-      custom:
-        context: "skpi"
 
     - text: |
         PROSEDUR PENGISIAN SKPI
@@ -129,63 +111,43 @@ responses:
           - Pembentukan Karakter → Kegiatan pengembangan diri (PKM, UKM, seminar, workshop, dll).
           - Praktek Profesional → Magang, PKL, atau kegiatan penerapan ilmu di dunia kerja.
         4. Semua kegiatan wajib diisi dalam Bahasa Indonesia dan Bahasa Inggris sesuai kolom yang tersedia.
-      custom:
-        context: "skpi"
 
   utter_answer_persyaratan_skpi:
     - condition: "slots.fakultas = 'Fakultas Hukum'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FH)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FEB)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FK)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FKG)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FTSP)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FTI)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FTKE)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FALTL)
-      custom:
-        context: "skpi"
 
     - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
       text: |
         PERSYARATAN PENGISIAN SKPI (FSRD)
-      custom:
-        context: "skpi"
 
     - text: |
         PERSYARATAN PENGISIAN SKPI
@@ -196,8 +158,6 @@ responses:
           - Dokumen resmi lainnya
         Data harus diisi lengkap dan benar pada masing-masing kategori.
         Pengisian dilakukan dalam dua bahasa (Indonesia & Inggris).
-      custom:
-        context: "skpi"
 
   utter_answer_transaksi_skpi:
     - text: "Silakan lengkapi dan ajukan data SKPI sesuai dengan kegiatan yang telah anda ikuti."

@@ -18,16 +18,16 @@ class MenuWisuda(Action):
         
         dispatcher.utter_message(response = "utter_menu_wisuda_ok")
         pilihan_menu = tracker.get_slot("menu_wisuda")
+        dispatcher.utter_message(json_message={"context": "wisuda"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Wisuda":
                 return [SlotSet("return_value", "Prosedur Wisuda"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Wisuda":
-                return [
-                    SlotSet("return_value", "Persyaratan Wisuda"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan Wisuda"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Wisuda":
                 return [SlotSet("return_value", "Transaksi Wisuda")]
             case "Hasil Wisuda":

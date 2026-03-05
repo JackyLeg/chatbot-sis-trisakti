@@ -18,15 +18,17 @@ class MenuKonseling(Action):
         
         dispatcher.utter_message(response = "utter_menu_konseling_ok")
         pilihan_menu = tracker.get_slot("menu_konseling")
+        dispatcher.utter_message(json_message={"context": "konseling"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Konseling":
                 return [SlotSet("return_value", "Prosedur Konseling"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Konseling":
                 return [
                     SlotSet("return_value", "Persyaratan Konseling"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
+                    SlotSet("fakultas", fakultas)
                     ]
             case "Transaksi Konseling":
                 return [SlotSet("return_value", "Transaksi Konseling")]

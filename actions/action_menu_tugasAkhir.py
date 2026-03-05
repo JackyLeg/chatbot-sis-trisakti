@@ -18,16 +18,16 @@ class MenuTugasAkhir(Action):
         
         dispatcher.utter_message(response = "utter_menu_tugasAkhir_ok")
         pilihan_menu = tracker.get_slot("menu_tugasAkhir")
+        dispatcher.utter_message(json_message={"context": "cuti"})
+        fakultas = "Fakultas Teknologi Industri"
         
         match pilihan_menu:
             case "Prosedur Tugas Akhir":
                 return [SlotSet("return_value", "Prosedur Tugas Akhir"),
-                        SlotSet("fakultas", "Fakultas Teknologi Industri")]
+                        SlotSet("fakultas", fakultas)]
             case "Persyaratan Tugas Akhir":
-                return [
-                    SlotSet("return_value", "Persyaratan Tugas Akhir"),
-                    SlotSet("fakultas", "Fakultas Teknologi Industri")
-                    ]
+                return [SlotSet("return_value", "Persyaratan Tugas Akhir"),
+                        SlotSet("fakultas", fakultas)]
             case "Transaksi Tugas Akhir":
                 return [SlotSet("return_value", "Transaksi Tugas Akhir")]
             case "Hasil Tugas Akhir":
