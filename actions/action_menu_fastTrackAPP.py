@@ -21,12 +21,12 @@ class MenuFastTrackApp(Action):
         pilihan_menu = tracker.get_slot("menu_fastTrackApp")
         dispatcher.utter_message(json_message={"context": "fastTrackApp"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuFastTrackApp(Action):
         
         match pilihan_menu:
             case "Prosedur FastTrackApp":
-                if fetch_peraturan_api("fastTrackApp_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "fastTrackApp_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur FastTrackApp")]
             case "Persyaratan FastTrackApp":
-                if fetch_peraturan_api("fastTrackApp_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "fastTrackApp_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan FastTrackApp")]
             case "Transaksi FastTrackApp":

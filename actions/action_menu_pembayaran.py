@@ -21,12 +21,12 @@ class MenuPembayaran(Action):
         pilihan_menu = tracker.get_slot("menu_pembayaran")
         dispatcher.utter_message(json_message={"context": "pembayaran"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuPembayaran(Action):
         
         match pilihan_menu:
             case "Prosedur Pembayaran":
-                if fetch_peraturan_api("pembayaran_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "pembayaran_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur Pembayaran")]
             case "Persyaratan Pembayaran":
-                if fetch_peraturan_api("pembayaran_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "pembayaran_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan Pembayaran")]
             case "Transaksi Pembayaran":

@@ -21,12 +21,12 @@ class MenuGraduationProcess(Action):
         pilihan_menu = tracker.get_slot("menu_graduationProcess")
         dispatcher.utter_message(json_message={"context": "graduationProcess"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuGraduationProcess(Action):
         
         match pilihan_menu:
             case "Prosedur Graduation Process":
-                if fetch_peraturan_api("graduationProcess_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "graduationProcess_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur Graduation Process")]
             case "Persyaratan Graduation Process":
-                if fetch_peraturan_api("graduationProcess_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "graduationProcess_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan Graduation Process")]
             case "Transaksi Graduation Process":

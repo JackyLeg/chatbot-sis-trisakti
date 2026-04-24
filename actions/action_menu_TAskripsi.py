@@ -21,12 +21,12 @@ class MenuTAskripsi(Action):
         pilihan_menu = tracker.get_slot("menu_TAskripsi")
         dispatcher.utter_message(json_message={"context": "TAskripsi"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuTAskripsi(Action):
         
         match pilihan_menu:
             case "Prosedur TAskripsi":
-                if fetch_peraturan_api("TAskripsi_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "TAskripsi_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur TAskripsi")]
             case "Persyaratan TAskripsi":
-                if fetch_peraturan_api("TAskripsi_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "TAskripsi_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan TAskripsi")]
             case "Transaksi TAskripsi":

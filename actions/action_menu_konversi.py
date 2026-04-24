@@ -21,12 +21,12 @@ class MenuKonversi(Action):
         pilihan_menu = tracker.get_slot("menu_konversi")
         dispatcher.utter_message(json_message={"context": "konversi"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuKonversi(Action):
         
         match pilihan_menu:
             case "Prosedur Konversi":
-                if fetch_peraturan_api("konversi_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "konversi_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur Konversi")]
             case "Persyaratan Konversi":
-                if fetch_peraturan_api("konversi_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "konversi_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan Konversi")]
             case "Transaksi Konversi":

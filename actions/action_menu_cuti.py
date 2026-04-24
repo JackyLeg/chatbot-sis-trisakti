@@ -23,14 +23,15 @@ class MenuCuti(Action):
         
         # Ambil identitas user untuk cek status login. 
         # (Silakan ubah "npm" menjadi nama slot yang sesuai di project ini jika berbeda)
-        id_login = tracker.get_slot("npm")
+        # id_login = tracker.get_slot("npm")
         # Jika ingin test dengan data dummy/hardcode "241150", jalankan line berikut:
         # id_login = tracker.get_slot("npm") or "241150"
         
-        def fetch_peraturan_api(context_name: str) -> bool:
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -53,13 +54,13 @@ class MenuCuti(Action):
             case "Prosedur Cuti":
                 # Panggil API dengan context_name "cuti_prosedur"
                 # API akan selalu dipanggil walaupun belum login (id_login == ""). 
-                if fetch_peraturan_api("cuti_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "cuti_prosedur"):
                     return [] 
                     
                 # Fallback slot (jika API down / error / tidak ada keluaran teks)
                 return [SlotSet("return_value", "Prosedur Cuti")]
             case "Persyaratan Cuti":
-                if fetch_peraturan_api("cuti_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "cuti_persyaratan"):
                     return [] 
                     
                 # Fallback slot (jika API down / error / tidak ada keluaran teks)

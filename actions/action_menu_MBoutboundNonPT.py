@@ -21,12 +21,12 @@ class MenuMBOutboundNonPT(Action):
         pilihan_menu = tracker.get_slot("menu_MBOutboundNonPT")
         dispatcher.utter_message(json_message={"context": "MBOutboundNonPT"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuMBOutboundNonPT(Action):
         
         match pilihan_menu:
             case "Prosedur MBOutboundNonPT":
-                if fetch_peraturan_api("MBOutboundNonPT_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "MBOutboundNonPT_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur MBOutboundNonPT")]
             case "Persyaratan MBOutboundNonPT":
-                if fetch_peraturan_api("MBOutboundNonPT_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "MBOutboundNonPT_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan MBOutboundNonPT")]
             case "Transaksi MBOutboundNonPT":

@@ -21,12 +21,12 @@ class MenuMajoringApplication(Action):
         pilihan_menu = tracker.get_slot("menu_majoringApplication")
         dispatcher.utter_message(json_message={"context": "majoringApplication"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuMajoringApplication(Action):
         
         match pilihan_menu:
             case "Prosedur Majoring Application":
-                if fetch_peraturan_api("majoringApplication_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "majoringApplication_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur Majoring Application")]
             case "Persyaratan Majoring Application":
-                if fetch_peraturan_api("majoringApplication_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "majoringApplication_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan Majoring Application")]
             case "Transaksi Majoring Application":

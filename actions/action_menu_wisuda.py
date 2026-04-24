@@ -21,12 +21,12 @@ class MenuWisuda(Action):
         pilihan_menu = tracker.get_slot("menu_wisuda")
         dispatcher.utter_message(json_message={"context": "wisuda"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuWisuda(Action):
         
         match pilihan_menu:
             case "Prosedur Wisuda":
-                if fetch_peraturan_api("wisuda_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "wisuda_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur Wisuda")]
             case "Persyaratan Wisuda":
-                if fetch_peraturan_api("wisuda_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "wisuda_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan Wisuda")]
             case "Transaksi Wisuda":

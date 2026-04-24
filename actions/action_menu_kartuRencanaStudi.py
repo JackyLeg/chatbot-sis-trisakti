@@ -21,12 +21,13 @@ class MenuKartuRencanaStudi(Action):
         pilihan_menu = tracker.get_slot("menu_kartuRencanaStudi")
         dispatcher.utter_message(json_message={"context": "kartuRencanaStudi"})
         
-        id_login = tracker.get_slot("npm")
+        # id_login = tracker.get_slot("npm")
         
-        def fetch_peraturan_api(context_name: str) -> bool:
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender, # 241150
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +49,11 @@ class MenuKartuRencanaStudi(Action):
         
         match pilihan_menu:
             case "Prosedur KRS":
-                if fetch_peraturan_api("kartuRencanaStudi_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "krs"):
                     return []
                 return [SlotSet("return_value", "Prosedur KRS")]
             case "Persyaratan KRS":
-                if fetch_peraturan_api("kartuRencanaStudi_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "krs"):
                     return []
                 return [SlotSet("return_value", "Persyaratan KRS")]
             case "Transaksi KRS":

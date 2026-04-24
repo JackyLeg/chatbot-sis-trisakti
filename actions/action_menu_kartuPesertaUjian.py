@@ -21,12 +21,12 @@ class MenuKartuPesertaUjian(Action):
         pilihan_menu = tracker.get_slot("menu_kartuPesertaUjian")
         dispatcher.utter_message(json_message={"context": "kartuPesertaUjian"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,11 +48,11 @@ class MenuKartuPesertaUjian(Action):
 
         match pilihan_menu:
             case "Prosedur Kartu Peserta Ujian":
-                if fetch_peraturan_api("kartuPesertaUjian_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "kartuPesertaUjian_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur Kartu Peserta Ujian")]
             case "Persyaratan Kartu Peserta Ujian":
-                if fetch_peraturan_api("kartuPesertaUjian_persyaratan"):
+                if fetch_peraturan_api(tracker.sender_id, "kartuPesertaUjian_persyaratan"):
                     return []
                 return [SlotSet("return_value", "Persyaratan Kartu Peserta Ujian")]
             case "Transaksi Kartu Peserta Ujian":

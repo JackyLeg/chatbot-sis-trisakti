@@ -21,12 +21,12 @@ class MenuKonseling(Action):
         pilihan_menu = tracker.get_slot("menu_konseling")
         dispatcher.utter_message(json_message={"context": "konseling"})
         
-        id_login = tracker.get_slot("npm")
-        
-        def fetch_peraturan_api(context_name: str) -> bool:
+        # id_login = tracker.get_slot("npm")
+        def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
+                
                 payload = {
-                    "IdLogin": id_login or "",
+                    "IdLogin": sender,
                     "context": context_name
                 }
                 response = requests.post(
@@ -48,7 +48,7 @@ class MenuKonseling(Action):
         
         match pilihan_menu:
             case "Prosedur Konseling":
-                if fetch_peraturan_api("konseling_prosedur"):
+                if fetch_peraturan_api(tracker.sender_id, "konseling_prosedur"):
                     return []
                 return [SlotSet("return_value", "Prosedur Konseling")]
             case "Persyaratan Konseling":
