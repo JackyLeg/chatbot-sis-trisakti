@@ -63,42 +63,6 @@ responses:
         id: "Anda telah berhasil memilih opsi pembayaran: {menu_pembayaran}."
 
   utter_answer_prosedur_pembayaran:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PROSEDUR PEMBAYARAN (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PROSEDUR PEMBAYARAN (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PROSEDUR PEMBAYARAN (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PROSEDUR PEMBAYARAN (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PROSEDUR PEMBAYARAN (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PROSEDUR PEMBAYARAN (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PROSEDUR PEMBAYARAN (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PROSEDUR PEMBAYARAN (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PROSEDUR PEMBAYARAN (FSRD)
-
     - text: |
         PROSEDUR PEMBAYARAN
         Pembayaran dilakukan menggunakan sistem Virtual Account (VA) Bank BNI yang dapat diakses melalui portal mahasiswa. Berikut langkah-langkahnya:
@@ -111,42 +75,6 @@ responses:
         4. Pembayaran: Gunakan nomor Virtual Account yang tertera untuk membayar melalui ATM, Teller, atau Mobile Banking BNI.
 
   utter_answer_persyaratan_pembayaran:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PERSYARATAN PEMBAYARAN (FSRD)
-
     - text: |
         PERSYARATAN PEMBAYARAN
         - Identitas Pembayaran: Mahasiswa wajib memiliki Nomor Induk Mahasiswa (NIM) aktif.

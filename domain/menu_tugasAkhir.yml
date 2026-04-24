@@ -63,82 +63,10 @@ responses:
         id: "Anda telah berhasil memilih opsi tugas akhir: {menu_tugasAkhir}."
 
   utter_answer_prosedur_tugasAkhir:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PROSEDUR TUGAS AKHIR (FSRD)
-
     - text: |
         PROSEDUR TUGAS AKHIR
         
   utter_answer_persyaratan_tugasAkhir:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PERSYARATAN TUGAS AKHIR (FSRD)
-
     - text: |
         PERSYARATAN TUGAS AKHIR
         1. Syarat Umum

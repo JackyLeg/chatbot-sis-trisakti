@@ -63,82 +63,10 @@ responses:
         id: "Anda telah berhasil memilih opsi konversi: {menu_konversi}."
 
   utter_answer_prosedur_konversi:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PROSEDUR KONVERSI (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PROSEDUR KONVERSI (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PROSEDUR KONVERSI (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PROSEDUR KONVERSI (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PROSEDUR KONVERSI (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PROSEDUR KONVERSI (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PROSEDUR KONVERSI (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PROSEDUR KONVERSI (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PROSEDUR KONVERSI (FSRD)
-
     - text: |
         PROSEDUR KONVERSI
         
   utter_answer_persyaratan_konversi:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PERSYARATAN KONVERSI (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PERSYARATAN KONVERSI (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PERSYARATAN KONVERSI (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PERSYARATAN KONVERSI (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PERSYARATAN KONVERSI (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PERSYARATAN KONVERSI (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PERSYARATAN KONVERSI (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PERSYARATAN KONVERSI (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PERSYARATAN KONVERSI (FSRD)
-
     - text: |
         PERSYARATAN KONVERSI
         

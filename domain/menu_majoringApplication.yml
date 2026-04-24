@@ -63,82 +63,10 @@ responses:
         id: "Anda telah berhasil memilih opsi majoring application: {menu_majoringApplication}."
 
   utter_answer_prosedur_majoringApplication:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PROSEDUR MAJORING APPLICATION (FSRD)
-
     - text: |
         PROSEDUR MAJORING APPLICATION
         
   utter_answer_persyaratan_majoringApplication:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PERSYARATAN MAJORING APPLICATION (FSRD)
-
     - text: |
         PERSYARATAN MAJORING APPLICATION
         

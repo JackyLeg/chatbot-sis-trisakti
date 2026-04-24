@@ -63,82 +63,10 @@ responses:
         id: "Anda telah berhasil memilih opsi konseling: {menu_konseling}."
 
   utter_answer_prosedur_konseling:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PROSEDUR KONSELING (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PROSEDUR KONSELING (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PROSEDUR KONSELING (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PROSEDUR KONSELING (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PROSEDUR KONSELING (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PROSEDUR KONSELING (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PROSEDUR KONSELING (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PROSEDUR KONSELING (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PROSEDUR KONSELING (FSRD)
-
     - text: |
         PROSEDUR KONSELING
 
   utter_answer_persyaratan_konseling:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PERSYARATAN KONSELING (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PERSYARATAN KONSELING (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PERSYARATAN KONSELING (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PERSYARATAN KONSELING (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PERSYARATAN KONSELING (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PERSYARATAN KONSELING (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PERSYARATAN KONSELING (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PERSYARATAN KONSELING (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PERSYARATAN KONSELING (FSRD)
-
     - text: |
         PERSYARATAN KONSELING
 

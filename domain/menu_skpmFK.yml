@@ -63,42 +63,6 @@ responses:
         id: "Anda telah berhasil memilih opsi SKPM FK: {menu_skpmFK}."
 
   utter_answer_prosedur_skpmFK:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PROSEDUR PENGISIAN SKPM-FK (FSRD)
-
     - text: |
         Pengajuan SKPM-FK dilakukan melalui tahapan berikut:
           1. Mahasiswa melengkapi data dan dokumen pendukung SKPM-FK.
@@ -106,42 +70,6 @@ responses:
           3. SKPM-FK ditetapkan dan dapat diakses oleh mahasiswa.
 
   utter_answer_persyaratan_skpmFK:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PERSYARATAN PENGISIAN SKPM-FK (FSRD)
-
     - text: |
         Persyaratan pengisian SKPM-FK yang harus dipenuhi mahasiswa adalah:
         - Status Mahasiswa Aktif

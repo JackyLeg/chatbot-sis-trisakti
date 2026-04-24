@@ -63,42 +63,6 @@ responses:
         id: "Anda telah berhasil memilih opsi kartu rencana studi: {menu_kartuRencanaStudi}."
 
   utter_answer_prosedur_kartuRencanaStudi:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PROSEDUR KRS (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PROSEDUR KRS (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PROSEDUR KRS (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PROSEDUR KRS (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PROSEDUR KRS (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PROSEDUR KRS (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PROSEDUR KRS (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PROSEDUR KRS (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PROSEDUR KRS (FSRD)
-
     - text: |
         PROSEDUR PENGISIAN KARTU RENCANA STUDI (KRS):
         KRS wajib diisi oleh mahasiswa setiap awal semester melalui portal student.trisakti.ac.id untuk mendapatkan hak mengikuti kegiatan akademik. Berikut adalah langkah-langkahnya:
@@ -128,42 +92,6 @@ responses:
           b. Mahasiswa baru bisa mengisi KRS setelah Dosen Pembimbing Akademik/Dosen Wali merespon permintaan perwalian.
 
   utter_answer_persyaratan_kartuRencanaStudi:
-    - condition: "slots.fakultas = 'Fakultas Hukum'"
-      text: |
-        PERSYARATAN KRS (FH)
-
-    - condition: "slots.fakultas = 'Fakultas Ekonomi dan Bisnis'"
-      text: |
-        PERSYARATAN KRS (FEB)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran'"
-      text: |
-        PERSYARATAN KRS (FK)
-
-    - condition: "slots.fakultas = 'Fakultas Kedokteran Gigi'"
-      text: |
-        PERSYARATAN KRS (FKG)
-
-    - condition: "slots.fakultas = 'Fakultas Teknik Sipil dan Perencanaan'"
-      text: |
-        PERSYARATAN KRS (FTSP)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Industri'"
-      text: |
-        PERSYARATAN KRS (FTI)
-
-    - condition: "slots.fakultas = 'Fakultas Teknologi Kebumian dan Energi'"
-      text: |
-        PERSYARATAN KRS (FTKE)
-
-    - condition: "slots.fakultas = 'Fakultas Arsitektur Lanskap dan Teknologi Lingkungan'"
-      text: |
-        PERSYARATAN KRS (FALTL)
-
-    - condition: "slots.fakultas = 'Fakultas Seni Rupa dan Desain'"
-      text: |
-        PERSYARATAN KRS (FSRD)
-
     - text: |
         PERSYARATAN PENGISIAN KARTU RENCANA STUDI (KRS):
         Untuk dapat melakukan pengisian Kartu Rencana Studi (KRS), mahasiswa wajib memenuhi persyaratan administratif dan akademik sebagai berikut:
