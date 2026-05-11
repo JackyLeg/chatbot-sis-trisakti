@@ -77,13 +77,7 @@ rasa inspect
 Clone the project from GitHub:
 
 ```bash
-git clone <repository-url>
-```
-
-Example:
-
-```bash
-git clone https://github.com/username/project-name.git
+git clone https://github.com/JackyLeg/chatbot-sis-trisakti.git
 ```
 
 ---
