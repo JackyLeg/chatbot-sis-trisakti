@@ -13,61 +13,61 @@ flows:
                 ask_before_filling: true
                 description: "Meminta user Dosen Wali untuk memilih menu"
                 next:
-                  - if: slots.list_menu == "Menu absensiKelas"
+                  - if: slots.list_menu == "Absensi Kelas"
                     then:
                       - link: "absensiKelas"
-                  - if: slots.list_menu == "Menu absensiUjian"
+                  - if: slots.list_menu == "Absensi Ujian"
                     then:
                       - link: "absensiUjian"
-                  - if: slots.list_menu == "Menu bimbinganDiktisaintekBerdampak"
+                  - if: slots.list_menu == "Bimbingan Diktisaintek Berdampak"
                     then:
                       - link: "bimbinganDiktisaintekBerdampak"
-                  - if: slots.list_menu == "Menu bimbinganKerjaPraktek"
+                  - if: slots.list_menu == "Bimbingan Kerja Praktek"
                     then:
                       - link: "bimbinganKerjaPraktek"
-                  - if: slots.list_menu == "Menu bimbinganSkripsi"
+                  - if: slots.list_menu == "Bimbingan Skripsi"
                     then:
                       - link: "bimbinganSkripsi"
-                  - if: slots.list_menu == "Menu bkd"
+                  - if: slots.list_menu == "BKD"
                     then:
                       - link: "bkd"
-                  - if: slots.list_menu == "Menu daftarMahasiswaPerKelas"
+                  - if: slots.list_menu == "Daftar Mahasiswa Per Kelas"
                     then:
                       - link: "daftarMahasiswaPerKelas"
-                  - if: slots.list_menu == "Menu evaluasiKelas"
+                  - if: slots.list_menu == "Evaluasi Kelas"
                     then:
                       - link: "evaluasiKelas"
-                  - if: slots.list_menu == "Menu melihatHonor"
+                  - if: slots.list_menu == "Melihat Honor"
                     then:
                       - link: "melihatHonor"
-                  - if: slots.list_menu == "Menu membuatSoalUjian"
+                  - if: slots.list_menu == "Membuat Soal Ujian"
                     then:
                       - link: "membuatSoalUjian"
-                  - if: slots.list_menu == "Menu mentoringDosen"
+                  - if: slots.list_menu == "Mentoring Dosen"
                     then:
                       - link: "mentoringDosen"
-                  - if: slots.list_menu == "Menu pelaporanPdpt"
+                  - if: slots.list_menu == "Pelaporan PDPT"
                     then:
                       - link: "pelaporanPdpt"
-                  - if: slots.list_menu == "Menu pengisianNilai"
+                  - if: slots.list_menu == "Pengisian Nilai"
                     then:
                       - link: "pengisianNilai"
-                  - if: slots.list_menu == "Menu portofolio"
+                  - if: slots.list_menu == "Portofolio"
                     then:
                       - link: "portofolio"
-                  - if: slots.list_menu == "Menu rps"
+                  - if: slots.list_menu == "RPS"
                     then:
                       - link: "rps"
-                  - if: slots.list_menu == "Menu bimbinganAkademik"
+                  - if: slots.list_menu == "Bimbingan Akademik"
                     then:
                       - link: "bimbinganAkademik"
-                  - if: slots.list_menu == "Menu biodataMahasiswa"
+                  - if: slots.list_menu == "Biodata Mahasiswa"
                     then:
                       - link: "biodataMahasiswa"
-                  - if: slots.list_menu == "Menu persetujuanPengambilanKrs"
+                  - if: slots.list_menu == "Persetujuan Pengambilan KRS"
                     then:
                       - link: "persetujuanPengambilanKrs"
-                  - if: slots.list_menu == "Menu persetujuanPengisianKrs"
+                  - if: slots.list_menu == "Persetujuan Pengisian KRS"
                     then:
                       - link: "persetujuanPengisianKrs"
                   - else:
@@ -82,49 +82,49 @@ flows:
                 ask_before_filling: true
                 description: "Meminta user Dosen untuk memilih menu"
                 next:
-                  - if: slots.list_menu == "Menu absensiKelas"
+                  - if: slots.list_menu == "Absensi Kelas"
                     then:
                       - link: "absensiKelas"
-                  - if: slots.list_menu == "Menu absensiUjian"
+                  - if: slots.list_menu == "Absensi Ujian"
                     then:
                       - link: "absensiUjian"
-                  - if: slots.list_menu == "Menu bimbinganDiktisaintekBerdampak"
+                  - if: slots.list_menu == "Bimbingan Diktisaintek Berdampak"
                     then:
                       - link: "bimbinganDiktisaintekBerdampak"
-                  - if: slots.list_menu == "Menu bimbinganKerjaPraktek"
+                  - if: slots.list_menu == "Bimbingan Kerja Praktek"
                     then:
                       - link: "bimbinganKerjaPraktek"
-                  - if: slots.list_menu == "Menu bimbinganSkripsi"
+                  - if: slots.list_menu == "Bimbingan Skripsi"
                     then:
                       - link: "bimbinganSkripsi"
-                  - if: slots.list_menu == "Menu bkd"
+                  - if: slots.list_menu == "BKD"
                     then:
                       - link: "bkd"
-                  - if: slots.list_menu == "Menu daftarMahasiswaPerKelas"
+                  - if: slots.list_menu == "Daftar Mahasiswa Per Kelas"
                     then:
                       - link: "daftarMahasiswaPerKelas"
-                  - if: slots.list_menu == "Menu evaluasiKelas"
+                  - if: slots.list_menu == "Evaluasi Kelas"
                     then:
                       - link: "evaluasiKelas"
-                  - if: slots.list_menu == "Menu melihatHonor"
+                  - if: slots.list_menu == "Melihat Honor"
                     then:
                       - link: "melihatHonor"
-                  - if: slots.list_menu == "Menu membuatSoalUjian"
+                  - if: slots.list_menu == "Membuat Soal Ujian"
                     then:
                       - link: "membuatSoalUjian"
-                  - if: slots.list_menu == "Menu mentoringDosen"
+                  - if: slots.list_menu == "Mentoring Dosen"
                     then:
                       - link: "mentoringDosen"
-                  - if: slots.list_menu == "Menu pelaporanPdpt"
+                  - if: slots.list_menu == "Pelaporan PDPT"
                     then:
                       - link: "pelaporanPdpt"
-                  - if: slots.list_menu == "Menu pengisianNilai"
+                  - if: slots.list_menu == "Pengisian Nilai"
                     then:
                       - link: "pengisianNilai"
-                  - if: slots.list_menu == "Menu portofolio"
+                  - if: slots.list_menu == "Portofolio"
                     then:
                       - link: "portofolio"
-                  - if: slots.list_menu == "Menu rps"
+                  - if: slots.list_menu == "RPS"
                     then:
                       - link: "rps"
                   - else:
@@ -138,58 +138,58 @@ flows:
                 ask_before_filling: true
                 description: "Meminta user Mahasiswa untuk memilih menu"
                 next:
-                  - if: slots.list_menu == "Menu MBoutboundNonPT"
+                  - if: slots.list_menu == "MB Outbound Non PT"
                     then:
                       - link: "MBoutboundNonPT"
-                  - if: slots.list_menu == "Menu TAskripsi"
+                  - if: slots.list_menu == "TA Skripsi"
                     then:
                       - link: "TAskripsi"
-                  - if: slots.list_menu == "Menu cuti"
+                  - if: slots.list_menu == "Cuti"
                     then:
                       - link: "cuti"
-                  - if: slots.list_menu == "Menu fastTrackApp"
+                  - if: slots.list_menu == "Fast Track App"
                     then:
                       - link: "fastTrackApp"
-                  - if: slots.list_menu == "Menu graduationProcess"
+                  - if: slots.list_menu == "Graduation Process"
                     then:
                       - link: "graduationProcess"
-                  - if: slots.list_menu == "Menu kartuHasilStudi"
+                  - if: slots.list_menu == "Kartu Hasil Studi"
                     then:
                       - link: "kartuHasilStudi"
-                  - if: slots.list_menu == "Menu kartuPesertaUjian"
+                  - if: slots.list_menu == "Kartu Peserta Ujian"
                     then:
                       - link: "kartuPesertaUjian"
-                  - if: slots.list_menu == "Menu kartuRencanaStudi"
+                  - if: slots.list_menu == "Kartu Rencana Studi"
                     then:
                       - link: "kartuRencanaStudi"
-                  - if: slots.list_menu == "Menu konseling"
+                  - if: slots.list_menu == "Konseling"
                     then:
                       - link: "konseling"
-                  - if: slots.list_menu == "Menu konversi"
+                  - if: slots.list_menu == "Konversi"
                     then:
                       - link: "konversi"
-                  - if: slots.list_menu == "Menu majoringApplication"
+                  - if: slots.list_menu == "Majoring Application"
                     then:
                       - link: "majoringApplication"
-                  - if: slots.list_menu == "Menu pembayaran"
+                  - if: slots.list_menu == "Pembayaran"
                     then:
                       - link: "pembayaran"
-                  - if: slots.list_menu == "Menu pertukaranMahasiswa"
+                  - if: slots.list_menu == "Pertukaran Mahasiswa"
                     then:
                       - link: "pertukaranMahasiswa"
-                  - if: slots.list_menu == "Menu skpi"
+                  - if: slots.list_menu == "SKPI"
                     then:
                       - link: "skpi"
-                  - if: slots.list_menu == "Menu skpmFK"
+                  - if: slots.list_menu == "SKPM FK"
                     then:
                       - link: "skpmFK"
-                  - if: slots.list_menu == "Menu transkrip"
+                  - if: slots.list_menu == "Transkrip"
                     then:
                       - link: "transkrip"
-                  - if: slots.list_menu == "Menu tugasAkhir"
+                  - if: slots.list_menu == "Tugas Akhir"
                     then:
                       - link: "tugasAkhir"
-                  - if: slots.list_menu == "Menu wisuda"
+                  - if: slots.list_menu == "Wisuda"
                     then:
                       - link: "wisuda"
                   - else:

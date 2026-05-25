@@ -7,7 +7,7 @@ slots:
   user_role:
     type: any
     mappings:
-      - type: custom
+      - type: controlled
 
   return_value:
     type: any
