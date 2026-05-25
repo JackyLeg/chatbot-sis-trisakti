@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_rps
+
+slots:
+  menu_rps:
+    type: categorical
+    values:
+      - Prosedur RPS
+      - Persyaratan RPS
+      - Transaksi RPS
+      - Hasil RPS
+    mappings:
+      - type: from_llm
+
+  menu_rps_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_rps:
+    - text: "Please select one of the following RPS options:"
+      translation:
+        id: "Silakan pilih salah satu opsi RPS berikut:"
+      buttons:
+        - title: "Prosedur RPS"
+          payload: Prosedur RPS
+        - title: "Persyaratan RPS"
+          payload: Persyaratan RPS
+        - title: "Transaksi RPS"
+          payload: Transaksi RPS
+        - title: "Hasil RPS"
+          payload: Hasil RPS
+
+  utter_ask_menu_rps_confirmation:
+    - text: "You have selected the option: {menu_rps}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_rps}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_rps_cancelled:
+    - text: "Okay, let's try again. Please select one of the RPS options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi RPS."
+
+  utter_menu_rps_ok:
+    - text: "You have successfully selected the RPS option: {menu_rps}."
+      translation:
+        id: "Anda telah berhasil memilih opsi RPS: {menu_rps}."
+
+  utter_answer_prosedur_rps:
+    - text: |
+        PROSEDUR RPS
+        
+  utter_answer_persyaratan_rps:
+    - text: |
+        PERSYARATAN RPS
+
+  utter_answer_transaksi_rps:
+    - text: "Silakan lengkapi data RPS."
+
+  utter_answer_hasil_rps:
+    - text: "Pengajuan RPS kamu telah diproses."
+
+  utter_answer_error_rps:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

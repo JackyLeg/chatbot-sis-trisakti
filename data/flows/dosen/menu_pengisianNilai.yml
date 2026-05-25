@@ -1,0 +1,46 @@
+flows:
+  pengisianNilai:
+      name: Pengisian Nilai
+      description: Help user with Pengisian Nilai menus
+      steps:
+        - id: ask_menu
+          collect: menu_pengisianNilai
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Pengisian Nilai.
+            there are options like Prosedur Pengisian Nilai, Persyaratan Pengisian Nilai, Transaksi Pengisian Nilai, and Hasil Pengisian Nilai.
+            while bot not do utter_answer_batal_pengisianNilai and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_pengisianNilai_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_pengisianNilai_confirmation is false
+            then:
+              - action: utter_menu_pengisianNilai_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_pengisianNilai
+          next:
+            - if: slots.return_value = "Prosedur Pengisian Nilai"
+              then: 
+                - action: utter_answer_prosedur_pengisianNilai
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Pengisian Nilai"
+              then: 
+                - action: utter_answer_persyaratan_pengisianNilai
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Pengisian Nilai"
+              then: 
+                - action: utter_answer_transaksi_pengisianNilai
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Pengisian Nilai"
+              then: 
+                - action: utter_answer_hasil_pengisianNilai
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_pengisianNilai
+                  next: ask_menu

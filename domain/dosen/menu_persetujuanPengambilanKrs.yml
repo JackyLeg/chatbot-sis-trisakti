@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_persetujuanPengambilanKrs
+
+slots:
+  menu_persetujuanPengambilanKrs:
+    type: categorical
+    values:
+      - Prosedur Persetujuan Pengambilan KRS
+      - Persyaratan Persetujuan Pengambilan KRS
+      - Transaksi Persetujuan Pengambilan KRS
+      - Hasil Persetujuan Pengambilan KRS
+    mappings:
+      - type: from_llm
+
+  menu_persetujuanPengambilanKrs_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_persetujuanPengambilanKrs:
+    - text: "Please select one of the following Persetujuan Pengambilan KRS options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Persetujuan Pengambilan KRS berikut:"
+      buttons:
+        - title: "Prosedur Persetujuan Pengambilan KRS"
+          payload: Prosedur Persetujuan Pengambilan KRS
+        - title: "Persyaratan Persetujuan Pengambilan KRS"
+          payload: Persyaratan Persetujuan Pengambilan KRS
+        - title: "Transaksi Persetujuan Pengambilan KRS"
+          payload: Transaksi Persetujuan Pengambilan KRS
+        - title: "Hasil Persetujuan Pengambilan KRS"
+          payload: Hasil Persetujuan Pengambilan KRS
+
+  utter_ask_menu_persetujuanPengambilanKrs_confirmation:
+    - text: "You have selected the option: {menu_persetujuanPengambilanKrs}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_persetujuanPengambilanKrs}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_persetujuanPengambilanKrs_cancelled:
+    - text: "Okay, let's try again. Please select one of the Persetujuan Pengambilan KRS options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Persetujuan Pengambilan KRS."
+
+  utter_menu_persetujuanPengambilanKrs_ok:
+    - text: "You have successfully selected the Persetujuan Pengambilan KRS option: {menu_persetujuanPengambilanKrs}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Persetujuan Pengambilan KRS: {menu_persetujuanPengambilanKrs}."
+
+  utter_answer_prosedur_persetujuanPengambilanKrs:
+    - text: |
+        PROSEDUR PERSETUJUAN PENGAMBILAN KRS
+        
+  utter_answer_persyaratan_persetujuanPengambilanKrs:
+    - text: |
+        PERSYARATAN PERSETUJUAN PENGAMBILAN KRS
+
+  utter_answer_transaksi_persetujuanPengambilanKrs:
+    - text: "Silakan lengkapi data Persetujuan Pengambilan KRS."
+
+  utter_answer_hasil_persetujuanPengambilanKrs:
+    - text: "Pengajuan Persetujuan Pengambilan KRS kamu telah diproses."
+
+  utter_answer_error_persetujuanPengambilanKrs:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

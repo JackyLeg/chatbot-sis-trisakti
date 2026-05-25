@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_membuatSoalUjian
+
+slots:
+  menu_membuatSoalUjian:
+    type: categorical
+    values:
+      - Prosedur Membuat Soal Ujian
+      - Persyaratan Membuat Soal Ujian
+      - Transaksi Membuat Soal Ujian
+      - Hasil Membuat Soal Ujian
+    mappings:
+      - type: from_llm
+
+  menu_membuatSoalUjian_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_membuatSoalUjian:
+    - text: "Please select one of the following Membuat Soal Ujian options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Membuat Soal Ujian berikut:"
+      buttons:
+        - title: "Prosedur Membuat Soal Ujian"
+          payload: Prosedur Membuat Soal Ujian
+        - title: "Persyaratan Membuat Soal Ujian"
+          payload: Persyaratan Membuat Soal Ujian
+        - title: "Transaksi Membuat Soal Ujian"
+          payload: Transaksi Membuat Soal Ujian
+        - title: "Hasil Membuat Soal Ujian"
+          payload: Hasil Membuat Soal Ujian
+
+  utter_ask_menu_membuatSoalUjian_confirmation:
+    - text: "You have selected the option: {menu_membuatSoalUjian}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_membuatSoalUjian}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_membuatSoalUjian_cancelled:
+    - text: "Okay, let's try again. Please select one of the Membuat Soal Ujian options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Membuat Soal Ujian."
+
+  utter_menu_membuatSoalUjian_ok:
+    - text: "You have successfully selected the Membuat Soal Ujian option: {menu_membuatSoalUjian}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Membuat Soal Ujian: {menu_membuatSoalUjian}."
+
+  utter_answer_prosedur_membuatSoalUjian:
+    - text: |
+        PROSEDUR MEMBUAT SOAL UJIAN
+        
+  utter_answer_persyaratan_membuatSoalUjian:
+    - text: |
+        PERSYARATAN MEMBUAT SOAL UJIAN
+
+  utter_answer_transaksi_membuatSoalUjian:
+    - text: "Silakan lengkapi data Membuat Soal Ujian."
+
+  utter_answer_hasil_membuatSoalUjian:
+    - text: "Pengajuan Membuat Soal Ujian kamu telah diproses."
+
+  utter_answer_error_membuatSoalUjian:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

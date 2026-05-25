@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_absensiUjian
+
+slots:
+  menu_absensiUjian:
+    type: categorical
+    values:
+      - Prosedur Absensi Ujian
+      - Persyaratan Absensi Ujian
+      - Transaksi Absensi Ujian
+      - Hasil Absensi Ujian
+    mappings:
+      - type: from_llm
+
+  menu_absensiUjian_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_absensiUjian:
+    - text: "Please select one of the following Absensi Ujian options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Absensi Ujian berikut:"
+      buttons:
+        - title: "Prosedur Absensi Ujian"
+          payload: Prosedur Absensi Ujian
+        - title: "Persyaratan Absensi Ujian"
+          payload: Persyaratan Absensi Ujian
+        - title: "Transaksi Absensi Ujian"
+          payload: Transaksi Absensi Ujian
+        - title: "Hasil Absensi Ujian"
+          payload: Hasil Absensi Ujian
+
+  utter_ask_menu_absensiUjian_confirmation:
+    - text: "You have selected the option: {menu_absensiUjian}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_absensiUjian}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_absensiUjian_cancelled:
+    - text: "Okay, let's try again. Please select one of the Absensi Ujian options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Absensi Ujian."
+
+  utter_menu_absensiUjian_ok:
+    - text: "You have successfully selected the Absensi Ujian option: {menu_absensiUjian}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Absensi Ujian: {menu_absensiUjian}."
+
+  utter_answer_prosedur_absensiUjian:
+    - text: |
+        PROSEDUR ABSENSI UJIAN
+        
+  utter_answer_persyaratan_absensiUjian:
+    - text: |
+        PERSYARATAN ABSENSI UJIAN
+
+  utter_answer_transaksi_absensiUjian:
+    - text: "Silakan lengkapi data Absensi Ujian."
+
+  utter_answer_hasil_absensiUjian:
+    - text: "Pengajuan Absensi Ujian kamu telah diproses."
+
+  utter_answer_error_absensiUjian:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

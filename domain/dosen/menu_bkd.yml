@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_bkd
+
+slots:
+  menu_bkd:
+    type: categorical
+    values:
+      - Prosedur BKD
+      - Persyaratan BKD
+      - Transaksi BKD
+      - Hasil BKD
+    mappings:
+      - type: from_llm
+
+  menu_bkd_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_bkd:
+    - text: "Please select one of the following BKD options:"
+      translation:
+        id: "Silakan pilih salah satu opsi BKD berikut:"
+      buttons:
+        - title: "Prosedur BKD"
+          payload: Prosedur BKD
+        - title: "Persyaratan BKD"
+          payload: Persyaratan BKD
+        - title: "Transaksi BKD"
+          payload: Transaksi BKD
+        - title: "Hasil BKD"
+          payload: Hasil BKD
+
+  utter_ask_menu_bkd_confirmation:
+    - text: "You have selected the option: {menu_bkd}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_bkd}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_bkd_cancelled:
+    - text: "Okay, let's try again. Please select one of the BKD options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi BKD."
+
+  utter_menu_bkd_ok:
+    - text: "You have successfully selected the BKD option: {menu_bkd}."
+      translation:
+        id: "Anda telah berhasil memilih opsi BKD: {menu_bkd}."
+
+  utter_answer_prosedur_bkd:
+    - text: |
+        PROSEDUR BKD
+        
+  utter_answer_persyaratan_bkd:
+    - text: |
+        PERSYARATAN BKD
+
+  utter_answer_transaksi_bkd:
+    - text: "Silakan lengkapi data BKD."
+
+  utter_answer_hasil_bkd:
+    - text: "Pengajuan BKD kamu telah diproses."
+
+  utter_answer_error_bkd:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

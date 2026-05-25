@@ -1,0 +1,46 @@
+flows:
+  membuatSoalUjian:
+      name: Membuat Soal Ujian
+      description: Help user with Membuat Soal Ujian menus
+      steps:
+        - id: ask_menu
+          collect: menu_membuatSoalUjian
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Membuat Soal Ujian.
+            there are options like Prosedur Membuat Soal Ujian, Persyaratan Membuat Soal Ujian, Transaksi Membuat Soal Ujian, and Hasil Membuat Soal Ujian.
+            while bot not do utter_answer_batal_membuatSoalUjian and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_membuatSoalUjian_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_membuatSoalUjian_confirmation is false
+            then:
+              - action: utter_menu_membuatSoalUjian_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_membuatSoalUjian
+          next:
+            - if: slots.return_value = "Prosedur Membuat Soal Ujian"
+              then: 
+                - action: utter_answer_prosedur_membuatSoalUjian
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Membuat Soal Ujian"
+              then: 
+                - action: utter_answer_persyaratan_membuatSoalUjian
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Membuat Soal Ujian"
+              then: 
+                - action: utter_answer_transaksi_membuatSoalUjian
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Membuat Soal Ujian"
+              then: 
+                - action: utter_answer_hasil_membuatSoalUjian
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_membuatSoalUjian
+                  next: ask_menu

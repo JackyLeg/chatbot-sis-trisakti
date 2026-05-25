@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_evaluasiKelas
+
+slots:
+  menu_evaluasiKelas:
+    type: categorical
+    values:
+      - Prosedur Evaluasi Kelas
+      - Persyaratan Evaluasi Kelas
+      - Transaksi Evaluasi Kelas
+      - Hasil Evaluasi Kelas
+    mappings:
+      - type: from_llm
+
+  menu_evaluasiKelas_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_evaluasiKelas:
+    - text: "Please select one of the following Evaluasi Kelas options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Evaluasi Kelas berikut:"
+      buttons:
+        - title: "Prosedur Evaluasi Kelas"
+          payload: Prosedur Evaluasi Kelas
+        - title: "Persyaratan Evaluasi Kelas"
+          payload: Persyaratan Evaluasi Kelas
+        - title: "Transaksi Evaluasi Kelas"
+          payload: Transaksi Evaluasi Kelas
+        - title: "Hasil Evaluasi Kelas"
+          payload: Hasil Evaluasi Kelas
+
+  utter_ask_menu_evaluasiKelas_confirmation:
+    - text: "You have selected the option: {menu_evaluasiKelas}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_evaluasiKelas}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_evaluasiKelas_cancelled:
+    - text: "Okay, let's try again. Please select one of the Evaluasi Kelas options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Evaluasi Kelas."
+
+  utter_menu_evaluasiKelas_ok:
+    - text: "You have successfully selected the Evaluasi Kelas option: {menu_evaluasiKelas}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Evaluasi Kelas: {menu_evaluasiKelas}."
+
+  utter_answer_prosedur_evaluasiKelas:
+    - text: |
+        PROSEDUR EVALUASI KELAS
+        
+  utter_answer_persyaratan_evaluasiKelas:
+    - text: |
+        PERSYARATAN EVALUASI KELAS
+
+  utter_answer_transaksi_evaluasiKelas:
+    - text: "Silakan lengkapi data Evaluasi Kelas."
+
+  utter_answer_hasil_evaluasiKelas:
+    - text: "Pengajuan Evaluasi Kelas kamu telah diproses."
+
+  utter_answer_error_evaluasiKelas:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

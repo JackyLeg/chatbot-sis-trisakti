@@ -1,0 +1,46 @@
+flows:
+  persetujuanPengambilanKrs:
+      name: Persetujuan Pengambilan KRS
+      description: Help user with Persetujuan Pengambilan KRS menus
+      steps:
+        - id: ask_menu
+          collect: menu_persetujuanPengambilanKrs
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Persetujuan Pengambilan KRS.
+            there are options like Prosedur Persetujuan Pengambilan KRS, Persyaratan Persetujuan Pengambilan KRS, Transaksi Persetujuan Pengambilan KRS, and Hasil Persetujuan Pengambilan KRS.
+            while bot not do utter_answer_batal_persetujuanPengambilanKrs and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_persetujuanPengambilanKrs_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_persetujuanPengambilanKrs_confirmation is false
+            then:
+              - action: utter_menu_persetujuanPengambilanKrs_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_persetujuanPengambilanKrs
+          next:
+            - if: slots.return_value = "Prosedur Persetujuan Pengambilan KRS"
+              then: 
+                - action: utter_answer_prosedur_persetujuanPengambilanKrs
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Persetujuan Pengambilan KRS"
+              then: 
+                - action: utter_answer_persyaratan_persetujuanPengambilanKrs
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Persetujuan Pengambilan KRS"
+              then: 
+                - action: utter_answer_transaksi_persetujuanPengambilanKrs
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Persetujuan Pengambilan KRS"
+              then: 
+                - action: utter_answer_hasil_persetujuanPengambilanKrs
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_persetujuanPengambilanKrs
+                  next: ask_menu

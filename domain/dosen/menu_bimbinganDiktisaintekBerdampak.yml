@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_bimbinganDiktisaintekBerdampak
+
+slots:
+  menu_bimbinganDiktisaintekBerdampak:
+    type: categorical
+    values:
+      - Prosedur Bimbingan Diktisaintek Berdampak
+      - Persyaratan Bimbingan Diktisaintek Berdampak
+      - Transaksi Bimbingan Diktisaintek Berdampak
+      - Hasil Bimbingan Diktisaintek Berdampak
+    mappings:
+      - type: from_llm
+
+  menu_bimbinganDiktisaintekBerdampak_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_bimbinganDiktisaintekBerdampak:
+    - text: "Please select one of the following Bimbingan Diktisaintek Berdampak options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Bimbingan Diktisaintek Berdampak berikut:"
+      buttons:
+        - title: "Prosedur Bimbingan Diktisaintek Berdampak"
+          payload: Prosedur Bimbingan Diktisaintek Berdampak
+        - title: "Persyaratan Bimbingan Diktisaintek Berdampak"
+          payload: Persyaratan Bimbingan Diktisaintek Berdampak
+        - title: "Transaksi Bimbingan Diktisaintek Berdampak"
+          payload: Transaksi Bimbingan Diktisaintek Berdampak
+        - title: "Hasil Bimbingan Diktisaintek Berdampak"
+          payload: Hasil Bimbingan Diktisaintek Berdampak
+
+  utter_ask_menu_bimbinganDiktisaintekBerdampak_confirmation:
+    - text: "You have selected the option: {menu_bimbinganDiktisaintekBerdampak}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_bimbinganDiktisaintekBerdampak}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_bimbinganDiktisaintekBerdampak_cancelled:
+    - text: "Okay, let's try again. Please select one of the Bimbingan Diktisaintek Berdampak options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Bimbingan Diktisaintek Berdampak."
+
+  utter_menu_bimbinganDiktisaintekBerdampak_ok:
+    - text: "You have successfully selected the Bimbingan Diktisaintek Berdampak option: {menu_bimbinganDiktisaintekBerdampak}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Bimbingan Diktisaintek Berdampak: {menu_bimbinganDiktisaintekBerdampak}."
+
+  utter_answer_prosedur_bimbinganDiktisaintekBerdampak:
+    - text: |
+        PROSEDUR BIMBINGAN DIKTISAINTEK BERDAMPAK
+        
+  utter_answer_persyaratan_bimbinganDiktisaintekBerdampak:
+    - text: |
+        PERSYARATAN BIMBINGAN DIKTISAINTEK BERDAMPAK
+
+  utter_answer_transaksi_bimbinganDiktisaintekBerdampak:
+    - text: "Silakan lengkapi data Bimbingan Diktisaintek Berdampak."
+
+  utter_answer_hasil_bimbinganDiktisaintekBerdampak:
+    - text: "Pengajuan Bimbingan Diktisaintek Berdampak kamu telah diproses."
+
+  utter_answer_error_bimbinganDiktisaintekBerdampak:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

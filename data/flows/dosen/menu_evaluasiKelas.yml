@@ -1,0 +1,46 @@
+flows:
+  evaluasiKelas:
+      name: Evaluasi Kelas
+      description: Help user with Evaluasi Kelas menus
+      steps:
+        - id: ask_menu
+          collect: menu_evaluasiKelas
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Evaluasi Kelas.
+            there are options like Prosedur Evaluasi Kelas, Persyaratan Evaluasi Kelas, Transaksi Evaluasi Kelas, and Hasil Evaluasi Kelas.
+            while bot not do utter_answer_batal_evaluasiKelas and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_evaluasiKelas_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_evaluasiKelas_confirmation is false
+            then:
+              - action: utter_menu_evaluasiKelas_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_evaluasiKelas
+          next:
+            - if: slots.return_value = "Prosedur Evaluasi Kelas"
+              then: 
+                - action: utter_answer_prosedur_evaluasiKelas
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Evaluasi Kelas"
+              then: 
+                - action: utter_answer_persyaratan_evaluasiKelas
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Evaluasi Kelas"
+              then: 
+                - action: utter_answer_transaksi_evaluasiKelas
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Evaluasi Kelas"
+              then: 
+                - action: utter_answer_hasil_evaluasiKelas
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_evaluasiKelas
+                  next: ask_menu

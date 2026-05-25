@@ -1,6 +1,14 @@
 version: "3.1"
 
+actions:
+  - action_check_user_role
+
 slots:
+  user_role:
+    type: any
+    mappings:
+      - type: custom
+
   return_value:
     type: any
     mappings:

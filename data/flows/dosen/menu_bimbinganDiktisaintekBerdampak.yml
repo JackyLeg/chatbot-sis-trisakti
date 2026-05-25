@@ -1,0 +1,46 @@
+flows:
+  bimbinganDiktisaintekBerdampak:
+      name: Bimbingan Diktisaintek Berdampak
+      description: Help user with Bimbingan Diktisaintek Berdampak menus
+      steps:
+        - id: ask_menu
+          collect: menu_bimbinganDiktisaintekBerdampak
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Bimbingan Diktisaintek Berdampak.
+            there are options like Prosedur Bimbingan Diktisaintek Berdampak, Persyaratan Bimbingan Diktisaintek Berdampak, Transaksi Bimbingan Diktisaintek Berdampak, and Hasil Bimbingan Diktisaintek Berdampak.
+            while bot not do utter_answer_batal_bimbinganDiktisaintekBerdampak and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_bimbinganDiktisaintekBerdampak_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_bimbinganDiktisaintekBerdampak_confirmation is false
+            then:
+              - action: utter_menu_bimbinganDiktisaintekBerdampak_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_bimbinganDiktisaintekBerdampak
+          next:
+            - if: slots.return_value = "Prosedur Bimbingan Diktisaintek Berdampak"
+              then: 
+                - action: utter_answer_prosedur_bimbinganDiktisaintekBerdampak
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Bimbingan Diktisaintek Berdampak"
+              then: 
+                - action: utter_answer_persyaratan_bimbinganDiktisaintekBerdampak
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Bimbingan Diktisaintek Berdampak"
+              then: 
+                - action: utter_answer_transaksi_bimbinganDiktisaintekBerdampak
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Bimbingan Diktisaintek Berdampak"
+              then: 
+                - action: utter_answer_hasil_bimbinganDiktisaintekBerdampak
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_bimbinganDiktisaintekBerdampak
+                  next: ask_menu

@@ -1,0 +1,46 @@
+flows:
+  daftarMahasiswaPerKelas:
+      name: Daftar Mahasiswa per Kelas
+      description: Help user with Daftar Mahasiswa per Kelas menus
+      steps:
+        - id: ask_menu
+          collect: menu_daftarMahasiswaPerKelas
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Daftar Mahasiswa per Kelas.
+            there are options like Prosedur Daftar Mahasiswa per Kelas, Persyaratan Daftar Mahasiswa per Kelas, Transaksi Daftar Mahasiswa per Kelas, and Hasil Daftar Mahasiswa per Kelas.
+            while bot not do utter_answer_batal_daftarMahasiswaPerKelas and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_daftarMahasiswaPerKelas_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_daftarMahasiswaPerKelas_confirmation is false
+            then:
+              - action: utter_menu_daftarMahasiswaPerKelas_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_daftarMahasiswaPerKelas
+          next:
+            - if: slots.return_value = "Prosedur Daftar Mahasiswa per Kelas"
+              then: 
+                - action: utter_answer_prosedur_daftarMahasiswaPerKelas
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Daftar Mahasiswa per Kelas"
+              then: 
+                - action: utter_answer_persyaratan_daftarMahasiswaPerKelas
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Daftar Mahasiswa per Kelas"
+              then: 
+                - action: utter_answer_transaksi_daftarMahasiswaPerKelas
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Daftar Mahasiswa per Kelas"
+              then: 
+                - action: utter_answer_hasil_daftarMahasiswaPerKelas
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_daftarMahasiswaPerKelas
+                  next: ask_menu

@@ -1,0 +1,46 @@
+flows:
+  rps:
+      name: RPS
+      description: Help user with RPS menus
+      steps:
+        - id: ask_menu
+          collect: menu_rps
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for RPS.
+            there are options like Prosedur RPS, Persyaratan RPS, Transaksi RPS, and Hasil RPS.
+            while bot not do utter_answer_batal_rps and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_rps_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_rps_confirmation is false
+            then:
+              - action: utter_menu_rps_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_rps
+          next:
+            - if: slots.return_value = "Prosedur RPS"
+              then: 
+                - action: utter_answer_prosedur_rps
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan RPS"
+              then: 
+                - action: utter_answer_persyaratan_rps
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi RPS"
+              then: 
+                - action: utter_answer_transaksi_rps
+                  next: ask_menu
+            - if: slots.return_value = "Hasil RPS"
+              then: 
+                - action: utter_answer_hasil_rps
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_rps
+                  next: ask_menu

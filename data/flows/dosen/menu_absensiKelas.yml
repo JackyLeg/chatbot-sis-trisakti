@@ -1,0 +1,46 @@
+flows:
+  absensiKelas:
+      name: Absensi Kelas
+      description: Help user with Absensi Kelas menus
+      steps:
+        - id: ask_menu
+          collect: menu_absensiKelas
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Absensi Kelas.
+            there are options like Prosedur Absensi Kelas, Persyaratan Absensi Kelas, Transaksi Absensi Kelas, and Hasil Absensi Kelas.
+            while bot not do utter_answer_batal_absensiKelas and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_absensiKelas_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_absensiKelas_confirmation is false
+            then:
+              - action: utter_menu_absensiKelas_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_absensiKelas
+          next:
+            - if: slots.return_value = "Prosedur Absensi Kelas"
+              then: 
+                - action: utter_answer_prosedur_absensiKelas
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Absensi Kelas"
+              then: 
+                - action: utter_answer_persyaratan_absensiKelas
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Absensi Kelas"
+              then: 
+                - action: utter_answer_transaksi_absensiKelas
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Absensi Kelas"
+              then: 
+                - action: utter_answer_hasil_absensiKelas
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_absensiKelas
+                  next: ask_menu

@@ -1,0 +1,46 @@
+flows:
+  bkd:
+      name: BKD
+      description: Help user with BKD menus
+      steps:
+        - id: ask_menu
+          collect: menu_bkd
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for BKD.
+            there are options like Prosedur BKD, Persyaratan BKD, Transaksi BKD, and Hasil BKD.
+            while bot not do utter_answer_batal_bkd and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_bkd_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_bkd_confirmation is false
+            then:
+              - action: utter_menu_bkd_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_bkd
+          next:
+            - if: slots.return_value = "Prosedur BKD"
+              then: 
+                - action: utter_answer_prosedur_bkd
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan BKD"
+              then: 
+                - action: utter_answer_persyaratan_bkd
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi BKD"
+              then: 
+                - action: utter_answer_transaksi_bkd
+                  next: ask_menu
+            - if: slots.return_value = "Hasil BKD"
+              then: 
+                - action: utter_answer_hasil_bkd
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_bkd
+                  next: ask_menu

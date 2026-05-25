@@ -4,52 +4,165 @@ slots:
   list_menu:
     type: categorical
     values:
-      - Menu Pembayaran
-      - Menu KRS
-      - Menu KPU
-      - Menu KHS
-      - Menu Cuti
-      - Menu SKPI
-      - Menu Tugas Akhir
-      - Menu TA Skripsi
-      - Menu Wisuda
-      - Menu Konversi
-      - Menu Pertukaran Mahasiswa
+      - Menu absensiKelas
+      - Menu absensiUjian
+      - Menu bimbinganDiktisaintekBerdampak
+      - Menu bimbinganKerjaPraktek
+      - Menu bimbinganSkripsi
+      - Menu bkd
+      - Menu daftarMahasiswaPerKelas
+      - Menu evaluasiKelas
+      - Menu melihatHonor
+      - Menu membuatSoalUjian
+      - Menu mentoringDosen
+      - Menu pelaporanPdpt
+      - Menu pengisianNilai
+      - Menu portofolio
+      - Menu rps
+      - Menu bimbinganAkademik
+      - Menu biodataMahasiswa
+      - Menu persetujuanPengambilanKrs
+      - Menu persetujuanPengisianKrs
+      - Menu MBoutboundNonPT
+      - Menu TAskripsi
+      - Menu cuti
+      - Menu fastTrackApp
+      - Menu graduationProcess
+      - Menu kartuHasilStudi
+      - Menu kartuPesertaUjian
+      - Menu kartuRencanaStudi
+      - Menu konseling
+      - Menu konversi
+      - Menu majoringApplication
+      - Menu pembayaran
+      - Menu pertukaranMahasiswa
+      - Menu skpi
+      - Menu skpmFK
+      - Menu transkrip
+      - Menu tugasAkhir
+      - Menu wisuda
     mappings:
       - type: from_llm
 
 responses:
-  utter_ask_list_menu:
-    - text: "Here are the available menu options:"
-      translation:
-        id: "Berikut adalah opsi menu yang tersedia:"
+  utter_ask_list_menu_dosen:
+    - text: "Berikut adalah opsi menu untuk Dosen:"
       buttons:
-        - title: "Menu Pembayaran"
-          payload: Menu Pembayaran
-        - title: "Menu KRS"
-          payload: Menu KRS
-        - title: "Menu KPU"
-          payload: Menu KPU
-        - title: "Menu KHS"
-          payload: Menu KHS
-        - title: "Menu Cuti"
-          payload: Menu Cuti
-        - title: "Menu SKPI"
-          payload: Menu SKPI
-        - title: "Menu Tugas Akhir"
-          payload: Menu Tugas Akhir
-        - title: "Menu TA Skripsi"
-          payload: Menu TA Skripsi
-        - title: "Menu Wisuda"
-          payload: Menu Wisuda
-        - title: "Menu Konversi"
-          payload: Menu Konversi
-        - title: "Menu Konversi"
-          payload: Menu Konversi
-        - title: "Menu Pertukaran Mahasiswa"
-          payload: Menu Pertukaran Mahasiswa
+        - title: "Menu absensiKelas"
+          payload: "Menu absensiKelas"
+        - title: "Menu absensiUjian"
+          payload: "Menu absensiUjian"
+        - title: "Menu bimbinganDiktisaintekBerdampak"
+          payload: "Menu bimbinganDiktisaintekBerdampak"
+        - title: "Menu bimbinganKerjaPraktek"
+          payload: "Menu bimbinganKerjaPraktek"
+        - title: "Menu bimbinganSkripsi"
+          payload: "Menu bimbinganSkripsi"
+        - title: "Menu bkd"
+          payload: "Menu bkd"
+        - title: "Menu daftarMahasiswaPerKelas"
+          payload: "Menu daftarMahasiswaPerKelas"
+        - title: "Menu evaluasiKelas"
+          payload: "Menu evaluasiKelas"
+        - title: "Menu melihatHonor"
+          payload: "Menu melihatHonor"
+        - title: "Menu membuatSoalUjian"
+          payload: "Menu membuatSoalUjian"
+        - title: "Menu mentoringDosen"
+          payload: "Menu mentoringDosen"
+        - title: "Menu pelaporanPdpt"
+          payload: "Menu pelaporanPdpt"
+        - title: "Menu pengisianNilai"
+          payload: "Menu pengisianNilai"
+        - title: "Menu portofolio"
+          payload: "Menu portofolio"
+        - title: "Menu rps"
+          payload: "Menu rps"
+
+  utter_ask_list_menu_dosenwali:
+    - text: "Berikut adalah opsi menu untuk Dosen Wali:"
+      buttons:
+        - title: "Menu absensiKelas"
+          payload: "Menu absensiKelas"
+        - title: "Menu absensiUjian"
+          payload: "Menu absensiUjian"
+        - title: "Menu bimbinganDiktisaintekBerdampak"
+          payload: "Menu bimbinganDiktisaintekBerdampak"
+        - title: "Menu bimbinganKerjaPraktek"
+          payload: "Menu bimbinganKerjaPraktek"
+        - title: "Menu bimbinganSkripsi"
+          payload: "Menu bimbinganSkripsi"
+        - title: "Menu bkd"
+          payload: "Menu bkd"
+        - title: "Menu daftarMahasiswaPerKelas"
+          payload: "Menu daftarMahasiswaPerKelas"
+        - title: "Menu evaluasiKelas"
+          payload: "Menu evaluasiKelas"
+        - title: "Menu melihatHonor"
+          payload: "Menu melihatHonor"
+        - title: "Menu membuatSoalUjian"
+          payload: "Menu membuatSoalUjian"
+        - title: "Menu mentoringDosen"
+          payload: "Menu mentoringDosen"
+        - title: "Menu pelaporanPdpt"
+          payload: "Menu pelaporanPdpt"
+        - title: "Menu pengisianNilai"
+          payload: "Menu pengisianNilai"
+        - title: "Menu portofolio"
+          payload: "Menu portofolio"
+        - title: "Menu rps"
+          payload: "Menu rps"
+        - title: "Menu bimbinganAkademik"
+          payload: "Menu bimbinganAkademik"
+        - title: "Menu biodataMahasiswa"
+          payload: "Menu biodataMahasiswa"
+        - title: "Menu persetujuanPengambilanKrs"
+          payload: "Menu persetujuanPengambilanKrs"
+        - title: "Menu persetujuanPengisianKrs"
+          payload: "Menu persetujuanPengisianKrs"
+
+  utter_ask_list_menu:
+    - text: "Memuat menu..."
+
+  utter_ask_list_menu_mahasiswa:
+    - text: "Berikut adalah opsi menu untuk Mahasiswa:"
+      buttons:
+        - title: "Menu MBoutboundNonPT"
+          payload: "Menu MBoutboundNonPT"
+        - title: "Menu TAskripsi"
+          payload: "Menu TAskripsi"
+        - title: "Menu cuti"
+          payload: "Menu cuti"
+        - title: "Menu fastTrackApp"
+          payload: "Menu fastTrackApp"
+        - title: "Menu graduationProcess"
+          payload: "Menu graduationProcess"
+        - title: "Menu kartuHasilStudi"
+          payload: "Menu kartuHasilStudi"
+        - title: "Menu kartuPesertaUjian"
+          payload: "Menu kartuPesertaUjian"
+        - title: "Menu kartuRencanaStudi"
+          payload: "Menu kartuRencanaStudi"
+        - title: "Menu konseling"
+          payload: "Menu konseling"
+        - title: "Menu konversi"
+          payload: "Menu konversi"
+        - title: "Menu majoringApplication"
+          payload: "Menu majoringApplication"
+        - title: "Menu pembayaran"
+          payload: "Menu pembayaran"
+        - title: "Menu pertukaranMahasiswa"
+          payload: "Menu pertukaranMahasiswa"
+        - title: "Menu skpi"
+          payload: "Menu skpi"
+        - title: "Menu skpmFK"
+          payload: "Menu skpmFK"
+        - title: "Menu transkrip"
+          payload: "Menu transkrip"
+        - title: "Menu tugasAkhir"
+          payload: "Menu tugasAkhir"
+        - title: "Menu wisuda"
+          payload: "Menu wisuda"
 
   utter_answer_error_list_menu:
-    - text: "Sorry, I didn't understand that. Please select a valid menu option."
-      translation:
-        id: "Maaf, saya tidak mengerti. Silakan pilih opsi menu yang valid."
+    - text: "Maaf, saya tidak mengerti. Silakan pilih opsi menu yang valid."

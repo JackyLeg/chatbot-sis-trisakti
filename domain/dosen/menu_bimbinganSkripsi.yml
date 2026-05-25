@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_bimbinganSkripsi
+
+slots:
+  menu_bimbinganSkripsi:
+    type: categorical
+    values:
+      - Prosedur Bimbingan Skripsi
+      - Persyaratan Bimbingan Skripsi
+      - Transaksi Bimbingan Skripsi
+      - Hasil Bimbingan Skripsi
+    mappings:
+      - type: from_llm
+
+  menu_bimbinganSkripsi_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_bimbinganSkripsi:
+    - text: "Please select one of the following Bimbingan Skripsi options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Bimbingan Skripsi berikut:"
+      buttons:
+        - title: "Prosedur Bimbingan Skripsi"
+          payload: Prosedur Bimbingan Skripsi
+        - title: "Persyaratan Bimbingan Skripsi"
+          payload: Persyaratan Bimbingan Skripsi
+        - title: "Transaksi Bimbingan Skripsi"
+          payload: Transaksi Bimbingan Skripsi
+        - title: "Hasil Bimbingan Skripsi"
+          payload: Hasil Bimbingan Skripsi
+
+  utter_ask_menu_bimbinganSkripsi_confirmation:
+    - text: "You have selected the option: {menu_bimbinganSkripsi}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_bimbinganSkripsi}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_bimbinganSkripsi_cancelled:
+    - text: "Okay, let's try again. Please select one of the Bimbingan Skripsi options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Bimbingan Skripsi."
+
+  utter_menu_bimbinganSkripsi_ok:
+    - text: "You have successfully selected the Bimbingan Skripsi option: {menu_bimbinganSkripsi}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Bimbingan Skripsi: {menu_bimbinganSkripsi}."
+
+  utter_answer_prosedur_bimbinganSkripsi:
+    - text: |
+        PROSEDUR BIMBINGAN SKRIPSI
+        
+  utter_answer_persyaratan_bimbinganSkripsi:
+    - text: |
+        PERSYARATAN BIMBINGAN SKRIPSI
+
+  utter_answer_transaksi_bimbinganSkripsi:
+    - text: "Silakan lengkapi data Bimbingan Skripsi."
+
+  utter_answer_hasil_bimbinganSkripsi:
+    - text: "Pengajuan Bimbingan Skripsi kamu telah diproses."
+
+  utter_answer_error_bimbinganSkripsi:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

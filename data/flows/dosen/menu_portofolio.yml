@@ -1,0 +1,46 @@
+flows:
+  portofolio:
+      name: Portofolio
+      description: Help user with Portofolio menus
+      steps:
+        - id: ask_menu
+          collect: menu_portofolio
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Portofolio.
+            there are options like Prosedur Portofolio, Persyaratan Portofolio, Transaksi Portofolio, and Hasil Portofolio.
+            while bot not do utter_answer_batal_portofolio and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_portofolio_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_portofolio_confirmation is false
+            then:
+              - action: utter_menu_portofolio_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_portofolio
+          next:
+            - if: slots.return_value = "Prosedur Portofolio"
+              then: 
+                - action: utter_answer_prosedur_portofolio
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Portofolio"
+              then: 
+                - action: utter_answer_persyaratan_portofolio
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Portofolio"
+              then: 
+                - action: utter_answer_transaksi_portofolio
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Portofolio"
+              then: 
+                - action: utter_answer_hasil_portofolio
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_portofolio
+                  next: ask_menu

@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_pengisianNilai
+
+slots:
+  menu_pengisianNilai:
+    type: categorical
+    values:
+      - Prosedur Pengisian Nilai
+      - Persyaratan Pengisian Nilai
+      - Transaksi Pengisian Nilai
+      - Hasil Pengisian Nilai
+    mappings:
+      - type: from_llm
+
+  menu_pengisianNilai_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_pengisianNilai:
+    - text: "Please select one of the following Pengisian Nilai options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Pengisian Nilai berikut:"
+      buttons:
+        - title: "Prosedur Pengisian Nilai"
+          payload: Prosedur Pengisian Nilai
+        - title: "Persyaratan Pengisian Nilai"
+          payload: Persyaratan Pengisian Nilai
+        - title: "Transaksi Pengisian Nilai"
+          payload: Transaksi Pengisian Nilai
+        - title: "Hasil Pengisian Nilai"
+          payload: Hasil Pengisian Nilai
+
+  utter_ask_menu_pengisianNilai_confirmation:
+    - text: "You have selected the option: {menu_pengisianNilai}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_pengisianNilai}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_pengisianNilai_cancelled:
+    - text: "Okay, let's try again. Please select one of the Pengisian Nilai options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Pengisian Nilai."
+
+  utter_menu_pengisianNilai_ok:
+    - text: "You have successfully selected the Pengisian Nilai option: {menu_pengisianNilai}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Pengisian Nilai: {menu_pengisianNilai}."
+
+  utter_answer_prosedur_pengisianNilai:
+    - text: |
+        PROSEDUR PENGISIAN NILAI
+        
+  utter_answer_persyaratan_pengisianNilai:
+    - text: |
+        PERSYARATAN PENGISIAN NILAI
+
+  utter_answer_transaksi_pengisianNilai:
+    - text: "Silakan lengkapi data Pengisian Nilai."
+
+  utter_answer_hasil_pengisianNilai:
+    - text: "Pengajuan Pengisian Nilai kamu telah diproses."
+
+  utter_answer_error_pengisianNilai:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

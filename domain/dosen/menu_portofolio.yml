@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_portofolio
+
+slots:
+  menu_portofolio:
+    type: categorical
+    values:
+      - Prosedur Portofolio
+      - Persyaratan Portofolio
+      - Transaksi Portofolio
+      - Hasil Portofolio
+    mappings:
+      - type: from_llm
+
+  menu_portofolio_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_portofolio:
+    - text: "Please select one of the following Portofolio options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Portofolio berikut:"
+      buttons:
+        - title: "Prosedur Portofolio"
+          payload: Prosedur Portofolio
+        - title: "Persyaratan Portofolio"
+          payload: Persyaratan Portofolio
+        - title: "Transaksi Portofolio"
+          payload: Transaksi Portofolio
+        - title: "Hasil Portofolio"
+          payload: Hasil Portofolio
+
+  utter_ask_menu_portofolio_confirmation:
+    - text: "You have selected the option: {menu_portofolio}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_portofolio}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_portofolio_cancelled:
+    - text: "Okay, let's try again. Please select one of the Portofolio options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Portofolio."
+
+  utter_menu_portofolio_ok:
+    - text: "You have successfully selected the Portofolio option: {menu_portofolio}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Portofolio: {menu_portofolio}."
+
+  utter_answer_prosedur_portofolio:
+    - text: |
+        PROSEDUR PORTOFOLIO
+        
+  utter_answer_persyaratan_portofolio:
+    - text: |
+        PERSYARATAN PORTOFOLIO
+
+  utter_answer_transaksi_portofolio:
+    - text: "Silakan lengkapi data Portofolio."
+
+  utter_answer_hasil_portofolio:
+    - text: "Pengajuan Portofolio kamu telah diproses."
+
+  utter_answer_error_portofolio:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

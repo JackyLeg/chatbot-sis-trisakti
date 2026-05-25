@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_bimbinganAkademik
+
+slots:
+  menu_bimbinganAkademik:
+    type: categorical
+    values:
+      - Prosedur Bimbingan Akademik
+      - Persyaratan Bimbingan Akademik
+      - Transaksi Bimbingan Akademik
+      - Hasil Bimbingan Akademik
+    mappings:
+      - type: from_llm
+
+  menu_bimbinganAkademik_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_bimbinganAkademik:
+    - text: "Please select one of the following Bimbingan Akademik options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Bimbingan Akademik berikut:"
+      buttons:
+        - title: "Prosedur Bimbingan Akademik"
+          payload: Prosedur Bimbingan Akademik
+        - title: "Persyaratan Bimbingan Akademik"
+          payload: Persyaratan Bimbingan Akademik
+        - title: "Transaksi Bimbingan Akademik"
+          payload: Transaksi Bimbingan Akademik
+        - title: "Hasil Bimbingan Akademik"
+          payload: Hasil Bimbingan Akademik
+
+  utter_ask_menu_bimbinganAkademik_confirmation:
+    - text: "You have selected the option: {menu_bimbinganAkademik}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_bimbinganAkademik}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_bimbinganAkademik_cancelled:
+    - text: "Okay, let's try again. Please select one of the Bimbingan Akademik options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Bimbingan Akademik."
+
+  utter_menu_bimbinganAkademik_ok:
+    - text: "You have successfully selected the Bimbingan Akademik option: {menu_bimbinganAkademik}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Bimbingan Akademik: {menu_bimbinganAkademik}."
+
+  utter_answer_prosedur_bimbinganAkademik:
+    - text: |
+        PROSEDUR BIMBINGAN AKADEMIK
+        
+  utter_answer_persyaratan_bimbinganAkademik:
+    - text: |
+        PERSYARATAN BIMBINGAN AKADEMIK
+
+  utter_answer_transaksi_bimbinganAkademik:
+    - text: "Silakan lengkapi data Bimbingan Akademik."
+
+  utter_answer_hasil_bimbinganAkademik:
+    - text: "Pengajuan Bimbingan Akademik kamu telah diproses."
+
+  utter_answer_error_bimbinganAkademik:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

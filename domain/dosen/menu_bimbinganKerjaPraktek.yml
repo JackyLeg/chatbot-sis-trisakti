@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_bimbinganKerjaPraktek
+
+slots:
+  menu_bimbinganKerjaPraktek:
+    type: categorical
+    values:
+      - Prosedur Bimbingan Kerja Praktek
+      - Persyaratan Bimbingan Kerja Praktek
+      - Transaksi Bimbingan Kerja Praktek
+      - Hasil Bimbingan Kerja Praktek
+    mappings:
+      - type: from_llm
+
+  menu_bimbinganKerjaPraktek_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_bimbinganKerjaPraktek:
+    - text: "Please select one of the following Bimbingan Kerja Praktek options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Bimbingan Kerja Praktek berikut:"
+      buttons:
+        - title: "Prosedur Bimbingan Kerja Praktek"
+          payload: Prosedur Bimbingan Kerja Praktek
+        - title: "Persyaratan Bimbingan Kerja Praktek"
+          payload: Persyaratan Bimbingan Kerja Praktek
+        - title: "Transaksi Bimbingan Kerja Praktek"
+          payload: Transaksi Bimbingan Kerja Praktek
+        - title: "Hasil Bimbingan Kerja Praktek"
+          payload: Hasil Bimbingan Kerja Praktek
+
+  utter_ask_menu_bimbinganKerjaPraktek_confirmation:
+    - text: "You have selected the option: {menu_bimbinganKerjaPraktek}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_bimbinganKerjaPraktek}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_bimbinganKerjaPraktek_cancelled:
+    - text: "Okay, let's try again. Please select one of the Bimbingan Kerja Praktek options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Bimbingan Kerja Praktek."
+
+  utter_menu_bimbinganKerjaPraktek_ok:
+    - text: "You have successfully selected the Bimbingan Kerja Praktek option: {menu_bimbinganKerjaPraktek}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Bimbingan Kerja Praktek: {menu_bimbinganKerjaPraktek}."
+
+  utter_answer_prosedur_bimbinganKerjaPraktek:
+    - text: |
+        PROSEDUR BIMBINGAN KERJA PRAKTEK
+        
+  utter_answer_persyaratan_bimbinganKerjaPraktek:
+    - text: |
+        PERSYARATAN BIMBINGAN KERJA PRAKTEK
+
+  utter_answer_transaksi_bimbinganKerjaPraktek:
+    - text: "Silakan lengkapi data Bimbingan Kerja Praktek."
+
+  utter_answer_hasil_bimbinganKerjaPraktek:
+    - text: "Pengajuan Bimbingan Kerja Praktek kamu telah diproses."
+
+  utter_answer_error_bimbinganKerjaPraktek:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

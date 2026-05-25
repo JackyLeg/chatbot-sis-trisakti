@@ -3,46 +3,195 @@ flows:
     description: list menu options for users
     name: list menu options
     steps:
-      - id: ask_menu
-        collect: list_menu
-        ask_before_filling: true
-        description: |
-          user may type "berikan daftar menu", "tampilkan menu", "list menu", "menu list", "show menu", "menu apa saja yang tersedia" to see the list of menu options
-          if user select one of the menu options, bot will link to the corresponding flow for that menu
+      - action: action_check_user_role
         next:
-          - if: slots.list_menu = "Menu Pembayaran"
-            then: 
-              - link: "pembayaran"
-          - if: slots.list_menu = "Menu KRS"
-            then: 
-              - link: "kartuRencanaStudi"
-          - if: slots.list_menu = "Menu KPU"
-            then: 
-              - link: "kartuPesertaUjian"
-          - if: slots.list_menu = "Menu KHS"
-            then: 
-              - link: "kartuHasilStudi"
-          - if: slots.list_menu = "Menu Cuti"
-            then: 
-              - link: "cuti"
-          - if: slots.list_menu = "Menu SKPI"
-            then: 
-              - link: "skpi"
-          - if: slots.list_menu = "Menu Tugas Akhir" 
-            then: 
-              - link: "tugasAkhir"
-          - if: slots.list_menu = "Menu TA Skripsi"
-            then: 
-              - link: "TAskripsi"
-          - if: slots.list_menu = "Menu Wisuda"
-            then: 
-              - link: "wisuda"
-          - if: slots.list_menu = "Menu Konversi"
-            then: 
-              - link: "konversi"
-          - if: slots.list_menu = "Menu Pertukaran Mahasiswa"
-            then: 
-              - link: "pertukaranMahasiswa"
-          - else: 
-              - action: "utter_answer_error_list_menu"
-                next: ask_menu
+          - if: slots.user_role == "DSNWALI"
+            then:
+              - id: ask_menu_dosenwali
+                collect: list_menu
+                utter: utter_ask_list_menu_dosenwali
+                ask_before_filling: true
+                description: "Meminta user Dosen Wali untuk memilih menu"
+                next:
+                  - if: slots.list_menu == "Menu absensiKelas"
+                    then:
+                      - link: "absensiKelas"
+                  - if: slots.list_menu == "Menu absensiUjian"
+                    then:
+                      - link: "absensiUjian"
+                  - if: slots.list_menu == "Menu bimbinganDiktisaintekBerdampak"
+                    then:
+                      - link: "bimbinganDiktisaintekBerdampak"
+                  - if: slots.list_menu == "Menu bimbinganKerjaPraktek"
+                    then:
+                      - link: "bimbinganKerjaPraktek"
+                  - if: slots.list_menu == "Menu bimbinganSkripsi"
+                    then:
+                      - link: "bimbinganSkripsi"
+                  - if: slots.list_menu == "Menu bkd"
+                    then:
+                      - link: "bkd"
+                  - if: slots.list_menu == "Menu daftarMahasiswaPerKelas"
+                    then:
+                      - link: "daftarMahasiswaPerKelas"
+                  - if: slots.list_menu == "Menu evaluasiKelas"
+                    then:
+                      - link: "evaluasiKelas"
+                  - if: slots.list_menu == "Menu melihatHonor"
+                    then:
+                      - link: "melihatHonor"
+                  - if: slots.list_menu == "Menu membuatSoalUjian"
+                    then:
+                      - link: "membuatSoalUjian"
+                  - if: slots.list_menu == "Menu mentoringDosen"
+                    then:
+                      - link: "mentoringDosen"
+                  - if: slots.list_menu == "Menu pelaporanPdpt"
+                    then:
+                      - link: "pelaporanPdpt"
+                  - if: slots.list_menu == "Menu pengisianNilai"
+                    then:
+                      - link: "pengisianNilai"
+                  - if: slots.list_menu == "Menu portofolio"
+                    then:
+                      - link: "portofolio"
+                  - if: slots.list_menu == "Menu rps"
+                    then:
+                      - link: "rps"
+                  - if: slots.list_menu == "Menu bimbinganAkademik"
+                    then:
+                      - link: "bimbinganAkademik"
+                  - if: slots.list_menu == "Menu biodataMahasiswa"
+                    then:
+                      - link: "biodataMahasiswa"
+                  - if: slots.list_menu == "Menu persetujuanPengambilanKrs"
+                    then:
+                      - link: "persetujuanPengambilanKrs"
+                  - if: slots.list_menu == "Menu persetujuanPengisianKrs"
+                    then:
+                      - link: "persetujuanPengisianKrs"
+                  - else:
+                      - action: utter_answer_error_list_menu
+                        next: ask_menu_dosenwali
+
+          - if: slots.user_role == "DSN"
+            then:
+              - id: ask_menu_dosen
+                collect: list_menu
+                utter: utter_ask_list_menu_dosen
+                ask_before_filling: true
+                description: "Meminta user Dosen untuk memilih menu"
+                next:
+                  - if: slots.list_menu == "Menu absensiKelas"
+                    then:
+                      - link: "absensiKelas"
+                  - if: slots.list_menu == "Menu absensiUjian"
+                    then:
+                      - link: "absensiUjian"
+                  - if: slots.list_menu == "Menu bimbinganDiktisaintekBerdampak"
+                    then:
+                      - link: "bimbinganDiktisaintekBerdampak"
+                  - if: slots.list_menu == "Menu bimbinganKerjaPraktek"
+                    then:
+                      - link: "bimbinganKerjaPraktek"
+                  - if: slots.list_menu == "Menu bimbinganSkripsi"
+                    then:
+                      - link: "bimbinganSkripsi"
+                  - if: slots.list_menu == "Menu bkd"
+                    then:
+                      - link: "bkd"
+                  - if: slots.list_menu == "Menu daftarMahasiswaPerKelas"
+                    then:
+                      - link: "daftarMahasiswaPerKelas"
+                  - if: slots.list_menu == "Menu evaluasiKelas"
+                    then:
+                      - link: "evaluasiKelas"
+                  - if: slots.list_menu == "Menu melihatHonor"
+                    then:
+                      - link: "melihatHonor"
+                  - if: slots.list_menu == "Menu membuatSoalUjian"
+                    then:
+                      - link: "membuatSoalUjian"
+                  - if: slots.list_menu == "Menu mentoringDosen"
+                    then:
+                      - link: "mentoringDosen"
+                  - if: slots.list_menu == "Menu pelaporanPdpt"
+                    then:
+                      - link: "pelaporanPdpt"
+                  - if: slots.list_menu == "Menu pengisianNilai"
+                    then:
+                      - link: "pengisianNilai"
+                  - if: slots.list_menu == "Menu portofolio"
+                    then:
+                      - link: "portofolio"
+                  - if: slots.list_menu == "Menu rps"
+                    then:
+                      - link: "rps"
+                  - else:
+                      - action: utter_answer_error_list_menu
+                        next: ask_menu_dosen
+                    
+          - else:
+              - id: ask_menu_mahasiswa
+                collect: list_menu
+                utter: utter_ask_list_menu_mahasiswa
+                ask_before_filling: true
+                description: "Meminta user Mahasiswa untuk memilih menu"
+                next:
+                  - if: slots.list_menu == "Menu MBoutboundNonPT"
+                    then:
+                      - link: "MBoutboundNonPT"
+                  - if: slots.list_menu == "Menu TAskripsi"
+                    then:
+                      - link: "TAskripsi"
+                  - if: slots.list_menu == "Menu cuti"
+                    then:
+                      - link: "cuti"
+                  - if: slots.list_menu == "Menu fastTrackApp"
+                    then:
+                      - link: "fastTrackApp"
+                  - if: slots.list_menu == "Menu graduationProcess"
+                    then:
+                      - link: "graduationProcess"
+                  - if: slots.list_menu == "Menu kartuHasilStudi"
+                    then:
+                      - link: "kartuHasilStudi"
+                  - if: slots.list_menu == "Menu kartuPesertaUjian"
+                    then:
+                      - link: "kartuPesertaUjian"
+                  - if: slots.list_menu == "Menu kartuRencanaStudi"
+                    then:
+                      - link: "kartuRencanaStudi"
+                  - if: slots.list_menu == "Menu konseling"
+                    then:
+                      - link: "konseling"
+                  - if: slots.list_menu == "Menu konversi"
+                    then:
+                      - link: "konversi"
+                  - if: slots.list_menu == "Menu majoringApplication"
+                    then:
+                      - link: "majoringApplication"
+                  - if: slots.list_menu == "Menu pembayaran"
+                    then:
+                      - link: "pembayaran"
+                  - if: slots.list_menu == "Menu pertukaranMahasiswa"
+                    then:
+                      - link: "pertukaranMahasiswa"
+                  - if: slots.list_menu == "Menu skpi"
+                    then:
+                      - link: "skpi"
+                  - if: slots.list_menu == "Menu skpmFK"
+                    then:
+                      - link: "skpmFK"
+                  - if: slots.list_menu == "Menu transkrip"
+                    then:
+                      - link: "transkrip"
+                  - if: slots.list_menu == "Menu tugasAkhir"
+                    then:
+                      - link: "tugasAkhir"
+                  - if: slots.list_menu == "Menu wisuda"
+                    then:
+                      - link: "wisuda"
+                  - else:
+                      - action: utter_answer_error_list_menu
+                        next: ask_menu_mahasiswa

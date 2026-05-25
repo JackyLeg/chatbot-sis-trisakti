@@ -1,0 +1,46 @@
+flows:
+  bimbinganKerjaPraktek:
+      name: Bimbingan Kerja Praktek
+      description: Help user with Bimbingan Kerja Praktek menus
+      steps:
+        - id: ask_menu
+          collect: menu_bimbinganKerjaPraktek
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Bimbingan Kerja Praktek.
+            there are options like Prosedur Bimbingan Kerja Praktek, Persyaratan Bimbingan Kerja Praktek, Transaksi Bimbingan Kerja Praktek, and Hasil Bimbingan Kerja Praktek.
+            while bot not do utter_answer_batal_bimbinganKerjaPraktek and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_bimbinganKerjaPraktek_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_bimbinganKerjaPraktek_confirmation is false
+            then:
+              - action: utter_menu_bimbinganKerjaPraktek_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_bimbinganKerjaPraktek
+          next:
+            - if: slots.return_value = "Prosedur Bimbingan Kerja Praktek"
+              then: 
+                - action: utter_answer_prosedur_bimbinganKerjaPraktek
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Bimbingan Kerja Praktek"
+              then: 
+                - action: utter_answer_persyaratan_bimbinganKerjaPraktek
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Bimbingan Kerja Praktek"
+              then: 
+                - action: utter_answer_transaksi_bimbinganKerjaPraktek
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Bimbingan Kerja Praktek"
+              then: 
+                - action: utter_answer_hasil_bimbinganKerjaPraktek
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_bimbinganKerjaPraktek
+                  next: ask_menu

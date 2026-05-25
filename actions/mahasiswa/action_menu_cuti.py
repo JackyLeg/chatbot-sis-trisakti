@@ -21,12 +21,7 @@ class MenuCuti(Action):
         pilihan_menu = tracker.get_slot("menu_cuti")
         dispatcher.utter_message(json_message={"context": "cuti"})
         
-        # Ambil identitas user untuk cek status login. 
-        # (Silakan ubah "npm" menjadi nama slot yang sesuai di project ini jika berbeda)
         # id_login = tracker.get_slot("npm")
-        # Jika ingin test dengan data dummy/hardcode "241150", jalankan line berikut:
-        # id_login = tracker.get_slot("npm") or "241150"
-        
         def fetch_peraturan_api(sender: str, context_name: str) -> bool:
             try:
                 
@@ -50,20 +45,15 @@ class MenuCuti(Action):
                 print(f"Failed to fetch from get-peraturan API: {e}")
             return False
 
+        
         match pilihan_menu:
             case "Prosedur Cuti":
-                # Panggil API dengan context_name "cuti_prosedur"
-                # API akan selalu dipanggil walaupun belum login (id_login == ""). 
                 if fetch_peraturan_api(tracker.sender_id, "cuti_prosedur"):
-                    return [] 
-                    
-                # Fallback slot (jika API down / error / tidak ada keluaran teks)
+                    return []
                 return [SlotSet("return_value", "Prosedur Cuti")]
             case "Persyaratan Cuti":
                 if fetch_peraturan_api(tracker.sender_id, "cuti_persyaratan"):
-                    return [] 
-                    
-                # Fallback slot (jika API down / error / tidak ada keluaran teks)
+                    return []
                 return [SlotSet("return_value", "Persyaratan Cuti")]
             case "Transaksi Cuti":
                 return [SlotSet("return_value", "Transaksi Cuti")]

@@ -1,0 +1,80 @@
+version: "3.1"
+
+actions:
+- action_menu_daftarMahasiswaPerKelas
+
+slots:
+  menu_daftarMahasiswaPerKelas:
+    type: categorical
+    values:
+      - Prosedur Daftar Mahasiswa per Kelas
+      - Persyaratan Daftar Mahasiswa per Kelas
+      - Transaksi Daftar Mahasiswa per Kelas
+      - Hasil Daftar Mahasiswa per Kelas
+    mappings:
+      - type: from_llm
+
+  menu_daftarMahasiswaPerKelas_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
+
+responses:
+  utter_ask_menu_daftarMahasiswaPerKelas:
+    - text: "Please select one of the following Daftar Mahasiswa per Kelas options:"
+      translation:
+        id: "Silakan pilih salah satu opsi Daftar Mahasiswa per Kelas berikut:"
+      buttons:
+        - title: "Prosedur Daftar Mahasiswa per Kelas"
+          payload: Prosedur Daftar Mahasiswa per Kelas
+        - title: "Persyaratan Daftar Mahasiswa per Kelas"
+          payload: Persyaratan Daftar Mahasiswa per Kelas
+        - title: "Transaksi Daftar Mahasiswa per Kelas"
+          payload: Transaksi Daftar Mahasiswa per Kelas
+        - title: "Hasil Daftar Mahasiswa per Kelas"
+          payload: Hasil Daftar Mahasiswa per Kelas
+
+  utter_ask_menu_daftarMahasiswaPerKelas_confirmation:
+    - text: "You have selected the option: {menu_daftarMahasiswaPerKelas}. Is that correct?"
+      translation:
+        id: "Anda telah memilih opsi: {menu_daftarMahasiswaPerKelas}. Apakah itu benar?"
+      buttons:
+        - title: "Yes"
+          payload: Yes, that's correct
+          translation:
+            id:
+              title: "Ya"
+              payload: Ya, itu benar
+        - title: "No"
+          payload: No, I want to change it
+          translation:
+            id:
+              title: "Tidak"
+              payload: Tidak, saya ingin mengubahnya
+
+  utter_menu_daftarMahasiswaPerKelas_cancelled:
+    - text: "Okay, let's try again. Please select one of the Daftar Mahasiswa per Kelas options."
+      translation:
+        id: "Baik, mari coba lagi. Silakan pilih salah satu opsi Daftar Mahasiswa per Kelas."
+
+  utter_menu_daftarMahasiswaPerKelas_ok:
+    - text: "You have successfully selected the Daftar Mahasiswa per Kelas option: {menu_daftarMahasiswaPerKelas}."
+      translation:
+        id: "Anda telah berhasil memilih opsi Daftar Mahasiswa per Kelas: {menu_daftarMahasiswaPerKelas}."
+
+  utter_answer_prosedur_daftarMahasiswaPerKelas:
+    - text: |
+        PROSEDUR DAFTAR MAHASISWA PER KELAS
+        
+  utter_answer_persyaratan_daftarMahasiswaPerKelas:
+    - text: |
+        PERSYARATAN DAFTAR MAHASISWA PER KELAS
+
+  utter_answer_transaksi_daftarMahasiswaPerKelas:
+    - text: "Silakan lengkapi data Daftar Mahasiswa per Kelas."
+
+  utter_answer_hasil_daftarMahasiswaPerKelas:
+    - text: "Pengajuan Daftar Mahasiswa per Kelas kamu telah diproses."
+
+  utter_answer_error_daftarMahasiswaPerKelas:
+    - text: "Maaf, menu tidak ditemukan. Silakan pilih opsi yang tersedia."

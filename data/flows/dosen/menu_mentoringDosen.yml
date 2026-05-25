@@ -1,0 +1,46 @@
+flows:
+  mentoringDosen:
+      name: Mentoring Dosen
+      description: Help user with Mentoring Dosen menus
+      steps:
+        - id: ask_menu
+          collect: menu_mentoringDosen
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Mentoring Dosen.
+            there are options like Prosedur Mentoring Dosen, Persyaratan Mentoring Dosen, Transaksi Mentoring Dosen, and Hasil Mentoring Dosen.
+            while bot not do utter_answer_batal_mentoringDosen and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_mentoringDosen_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_mentoringDosen_confirmation is false
+            then:
+              - action: utter_menu_mentoringDosen_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_mentoringDosen
+          next:
+            - if: slots.return_value = "Prosedur Mentoring Dosen"
+              then: 
+                - action: utter_answer_prosedur_mentoringDosen
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Mentoring Dosen"
+              then: 
+                - action: utter_answer_persyaratan_mentoringDosen
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Mentoring Dosen"
+              then: 
+                - action: utter_answer_transaksi_mentoringDosen
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Mentoring Dosen"
+              then: 
+                - action: utter_answer_hasil_mentoringDosen
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_mentoringDosen
+                  next: ask_menu

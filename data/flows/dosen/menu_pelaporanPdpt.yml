@@ -1,0 +1,46 @@
+flows:
+  pelaporanPdpt:
+      name: Pelaporan PDPT
+      description: Help user with Pelaporan PDPT menus
+      steps:
+        - id: ask_menu
+          collect: menu_pelaporanPdpt
+          ask_before_filling: true
+          description: |
+            User must select one of 4 options for Pelaporan PDPT.
+            there are options like Prosedur Pelaporan PDPT, Persyaratan Pelaporan PDPT, Transaksi Pelaporan PDPT, and Hasil Pelaporan PDPT.
+            while bot not do utter_answer_batal_pelaporanPdpt and if user gets their result, flow will continue to what user want to do next in this menu
+          next: menu_confirmation
+
+        - id: menu_confirmation
+          collect: menu_pelaporanPdpt_confirmation
+          ask_before_filling: true
+          next:
+          - if: slots.menu_pelaporanPdpt_confirmation is false
+            then:
+              - action: utter_menu_pelaporanPdpt_cancelled
+                next: ask_menu
+          - else: continue_flow
+
+        - id: continue_flow
+          action: action_menu_pelaporanPdpt
+          next:
+            - if: slots.return_value = "Prosedur Pelaporan PDPT"
+              then: 
+                - action: utter_answer_prosedur_pelaporanPdpt
+                  next: ask_menu
+            - if: slots.return_value = "Persyaratan Pelaporan PDPT"
+              then: 
+                - action: utter_answer_persyaratan_pelaporanPdpt
+                  next: ask_menu
+            - if: slots.return_value = "Transaksi Pelaporan PDPT"
+              then: 
+                - action: utter_answer_transaksi_pelaporanPdpt
+                  next: ask_menu
+            - if: slots.return_value = "Hasil Pelaporan PDPT"
+              then: 
+                - action: utter_answer_hasil_pelaporanPdpt
+                  next: ask_menu
+            - else: 
+                - action: utter_answer_error_pelaporanPdpt
+                  next: ask_menu
