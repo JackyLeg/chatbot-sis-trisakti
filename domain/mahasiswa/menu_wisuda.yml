@@ -65,6 +65,17 @@ responses:
   utter_answer_prosedur_wisuda:
     - text: |
         PROSEDUR WISUDA
+        1. Hadir paling lambat 60 menit sebelum acara dimulai.
+        2. Dilarang membawa makanan, minuman, tas berukuran besar, kamera.
+        3. Disarankan sarapan atau makan sebelum wisuda bagi sesi pagi dan sesi siang sebelum memasuki ruangan wisuda.
+        4. Dilarang merokok sesuai Perda DKI Nomor: 2/2005 tentang larangan merokok dan kawasan dilarang merokok.
+        5. Wajib menjaga ketertiban dan kelancaran acara selama acara berlangsung.
+        6. Tidak dibenarkan mengaktifkan nada dering handphone selama berada di dalam ruangan.
+        7. Tidak dibenarkan meninggalkan ruangan sampai acara selesai.
+        8. Wisudawan yang izin ke toilet, harus melapor ke panitia dan meninggalkan topi toga wisuda di bangku masing-masing (secara bergantian maksimal 3 orang).
+        9. Untuk Wisudawati yang menggunakan jilbab, dan aksesoris seperti sanggul dan lain sebagainya harap memperhatikan posisi aksesoris tersebut agar tidak menutupi wajah.
+        10. Tidak ada aktivitas pemotretan, karena akan dilakukan oleh petugas dokumentasi dari panitia.
+        11. Jaga barang bawaan anda, karena panitia tidak bertanggung jawab apabila terjadi kehilangan.
         
   utter_answer_persyaratan_wisuda:
     - text: |

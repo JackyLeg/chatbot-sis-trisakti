@@ -26,13 +26,13 @@ class ActionCheckUserRole(Action):
                 if role_response.status_code == 200:
                     role = role_response.json().get("role")
                     if not role or role == "No Role":
-                        role = "STD"
+                        role = "DSNWALI"
                 else:
                     print(f"API Error: Status {role_response.status_code}")
-                    role = "STD"
+                    role = "DSNWALI"
             except Exception as e:
                 print(f"Failed to fetch get-role API: {e}")
-                role = "STD"
+                role = "DSNWALI"
 
         #print(f"DEBUG: Sender ID: {tracker.sender_id} | Final Role yang didapat: {role}")
 
