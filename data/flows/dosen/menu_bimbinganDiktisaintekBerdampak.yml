@@ -25,6 +25,8 @@ flows:
         - id: continue_flow
           action: action_menu_bimbinganDiktisaintekBerdampak
           next:
+            - if: slots.return_value = "api_success"
+              then: ask_menu
             - if: slots.return_value = "Prosedur Bimbingan Diktisaintek Berdampak"
               then: 
                 - action: utter_answer_prosedur_bimbinganDiktisaintekBerdampak

@@ -48,11 +48,11 @@ class MenuDaftarMahasiswaPerKelas(Action):
         match pilihan_menu:
             case "Prosedur Daftar Mahasiswa per Kelas":
                 if fetch_peraturan_api(tracker.sender_id, "daftarMahasiswaPerKelas_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Daftar Mahasiswa per Kelas")]
             case "Persyaratan Daftar Mahasiswa per Kelas":
                 if fetch_peraturan_api(tracker.sender_id, "daftarMahasiswaPerKelas_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Daftar Mahasiswa per Kelas")]
             case "Transaksi Daftar Mahasiswa per Kelas":
                 return [SlotSet("return_value", "Transaksi Daftar Mahasiswa per Kelas")]

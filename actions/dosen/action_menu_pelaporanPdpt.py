@@ -48,11 +48,11 @@ class MenuPelaporanPdpt(Action):
         match pilihan_menu:
             case "Prosedur Pelaporan PDPT":
                 if fetch_peraturan_api(tracker.sender_id, "pelaporanPdpt_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Pelaporan PDPT")]
             case "Persyaratan Pelaporan PDPT":
                 if fetch_peraturan_api(tracker.sender_id, "pelaporanPdpt_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Pelaporan PDPT")]
             case "Transaksi Pelaporan PDPT":
                 return [SlotSet("return_value", "Transaksi Pelaporan PDPT")]

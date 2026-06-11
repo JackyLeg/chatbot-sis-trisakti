@@ -49,11 +49,11 @@ class MenuTranskrip(Action):
         match pilihan_menu:
             case "Prosedur Transkrip":
                 if fetch_peraturan_api(tracker.sender_id, "transkrip_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Transkrip")]
             case "Persyaratan Transkrip":
                 if fetch_peraturan_api(tracker.sender_id, "transkrip_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Transkrip")]
             case "Transaksi Transkrip":
                 return [SlotSet("return_value", "Transaksi Transkrip")]

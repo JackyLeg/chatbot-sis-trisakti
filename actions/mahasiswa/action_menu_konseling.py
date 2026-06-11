@@ -49,7 +49,7 @@ class MenuKonseling(Action):
         match pilihan_menu:
             case "Prosedur Konseling":
                 if fetch_peraturan_api(tracker.sender_id, "konseling_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Konseling")]
             case "Persyaratan Konseling":
                 return [

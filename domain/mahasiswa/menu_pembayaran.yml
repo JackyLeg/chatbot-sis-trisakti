@@ -10,7 +10,7 @@ slots:
       - Prosedur Pembayaran
       - Persyaratan Pembayaran
       - Transaksi Pembayaran
-      - Hasil Pembayaran
+      - Status Pembayaran
     mappings:
       - type: from_llm
 

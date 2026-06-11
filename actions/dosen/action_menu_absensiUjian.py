@@ -48,11 +48,11 @@ class MenuAbsensiUjian(Action):
         match pilihan_menu:
             case "Prosedur Absensi Ujian":
                 if fetch_peraturan_api(tracker.sender_id, "absensiUjian_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Absensi Ujian")]
             case "Persyaratan Absensi Ujian":
                 if fetch_peraturan_api(tracker.sender_id, "absensiUjian_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Absensi Ujian")]
             case "Transaksi Absensi Ujian":
                 return [SlotSet("return_value", "Transaksi Absensi Ujian")]

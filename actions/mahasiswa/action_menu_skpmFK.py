@@ -49,11 +49,11 @@ class MenuSKPMFK(Action):
         match pilihan_menu:
             case "Prosedur SKPM FK":
                 if fetch_peraturan_api(tracker.sender_id, "cuti_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur SKPM FK")]
             case "Persyaratan SKPM FK":
                 if fetch_peraturan_api(tracker.sender_id, "cuti_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan SKPM FK")]
             case "Transaksi SKPM FK":
                 return [SlotSet("return_value", "Transaksi SKPM FK")]

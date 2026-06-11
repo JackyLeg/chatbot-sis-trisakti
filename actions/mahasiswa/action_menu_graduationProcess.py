@@ -49,11 +49,11 @@ class MenuGraduationProcess(Action):
         match pilihan_menu:
             case "Prosedur Graduation Process":
                 if fetch_peraturan_api(tracker.sender_id, "graduationProcess_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Graduation Process")]
             case "Persyaratan Graduation Process":
                 if fetch_peraturan_api(tracker.sender_id, "graduationProcess_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Graduation Process")]
             case "Transaksi Graduation Process":
                 return [SlotSet("return_value", "Transaksi Graduation Process")]

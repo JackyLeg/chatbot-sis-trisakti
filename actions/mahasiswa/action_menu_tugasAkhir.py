@@ -49,11 +49,11 @@ class MenuTugasAkhir(Action):
         match pilihan_menu:
             case "Prosedur Tugas Akhir":
                 if fetch_peraturan_api(tracker.sender_id, "cuti_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Tugas Akhir")]
             case "Persyaratan Tugas Akhir":
                 if fetch_peraturan_api(tracker.sender_id, "cuti_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Tugas Akhir")]
             case "Transaksi Tugas Akhir":
                 return [SlotSet("return_value", "Transaksi Tugas Akhir")]

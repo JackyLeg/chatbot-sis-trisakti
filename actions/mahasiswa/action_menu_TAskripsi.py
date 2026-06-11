@@ -49,11 +49,11 @@ class MenuTAskripsi(Action):
         match pilihan_menu:
             case "Prosedur TAskripsi":
                 if fetch_peraturan_api(tracker.sender_id, "TAskripsi_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur TAskripsi")]
             case "Persyaratan TAskripsi":
                 if fetch_peraturan_api(tracker.sender_id, "TAskripsi_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan TAskripsi")]
             case "Transaksi TAskripsi":
                 return [SlotSet("return_value", "Transaksi TAskripsi")]

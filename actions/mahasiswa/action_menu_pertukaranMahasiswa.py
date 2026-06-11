@@ -49,11 +49,11 @@ class MenuPertukaranMahasiswa(Action):
         match pilihan_menu:
             case "Prosedur Pertukaran Mahasiswa":
                 if fetch_peraturan_api(tracker.sender_id, "pertukaranMahasiswa_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Pertukaran Mahasiswa")]
             case "Persyaratan Pertukaran Mahasiswa":
                 if fetch_peraturan_api(tracker.sender_id, "pertukaranMahasiswa_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Pertukaran Mahasiswa")]
             case "Transaksi Pertukaran Mahasiswa":
                 return [SlotSet("return_value", "Transaksi Pertukaran Mahasiswa")]

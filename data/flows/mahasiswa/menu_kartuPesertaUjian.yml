@@ -25,6 +25,8 @@ flows:
         - id: continue_flow
           action: action_menu_kartuPesertaUjian
           next:
+            - if: slots.return_value = "api_success"
+              then: ask_menu
             - if: slots.return_value = "Prosedur Kartu Peserta Ujian"
               then: 
                 - action: utter_answer_prosedur_kartuPesertaUjian

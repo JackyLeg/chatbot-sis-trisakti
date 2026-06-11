@@ -48,11 +48,11 @@ class MenuEvaluasiKelas(Action):
         match pilihan_menu:
             case "Prosedur Evaluasi Kelas":
                 if fetch_peraturan_api(tracker.sender_id, "evaluasiKelas_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Evaluasi Kelas")]
             case "Persyaratan Evaluasi Kelas":
                 if fetch_peraturan_api(tracker.sender_id, "evaluasiKelas_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Evaluasi Kelas")]
             case "Transaksi Evaluasi Kelas":
                 return [SlotSet("return_value", "Transaksi Evaluasi Kelas")]

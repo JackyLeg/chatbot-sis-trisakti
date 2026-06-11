@@ -50,11 +50,11 @@ class MenuKartuRencanaStudi(Action):
         match pilihan_menu:
             case "Prosedur KRS":
                 if fetch_peraturan_api(tracker.sender_id, "krs"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur KRS")]
             case "Persyaratan KRS":
                 if fetch_peraturan_api(tracker.sender_id, "krs"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan KRS")]
             case "Transaksi KRS":
                 return [SlotSet("return_value", "Transaksi KRS")]

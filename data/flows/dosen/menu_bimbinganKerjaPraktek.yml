@@ -25,6 +25,8 @@ flows:
         - id: continue_flow
           action: action_menu_bimbinganKerjaPraktek
           next:
+            - if: slots.return_value = "api_success"
+              then: ask_menu
             - if: slots.return_value = "Prosedur Bimbingan Kerja Praktek"
               then: 
                 - action: utter_answer_prosedur_bimbinganKerjaPraktek

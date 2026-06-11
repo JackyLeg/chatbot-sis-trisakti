@@ -48,11 +48,11 @@ class MenuPengisianNilai(Action):
         match pilihan_menu:
             case "Prosedur Pengisian Nilai":
                 if fetch_peraturan_api(tracker.sender_id, "pengisianNilai_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Pengisian Nilai")]
             case "Persyaratan Pengisian Nilai":
                 if fetch_peraturan_api(tracker.sender_id, "pengisianNilai_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Pengisian Nilai")]
             case "Transaksi Pengisian Nilai":
                 return [SlotSet("return_value", "Transaksi Pengisian Nilai")]

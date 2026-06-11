@@ -49,11 +49,11 @@ class MenuMBOutboundNonPT(Action):
         match pilihan_menu:
             case "Prosedur MBOutboundNonPT":
                 if fetch_peraturan_api(tracker.sender_id, "MBOutboundNonPT_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur MBOutboundNonPT")]
             case "Persyaratan MBOutboundNonPT":
                 if fetch_peraturan_api(tracker.sender_id, "MBOutboundNonPT_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan MBOutboundNonPT")]
             case "Transaksi MBOutboundNonPT":
                 return [SlotSet("return_value", "Transaksi MBOutboundNonPT")]

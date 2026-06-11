@@ -49,11 +49,11 @@ class MenuPembayaran(Action):
         match pilihan_menu:
             case "Prosedur Pembayaran":
                 if fetch_peraturan_api(tracker.sender_id, "pembayaran_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Pembayaran")]
             case "Persyaratan Pembayaran":
                 if fetch_peraturan_api(tracker.sender_id, "pembayaran_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Pembayaran")]
             case "Transaksi Pembayaran":
                 return [SlotSet("return_value", "Transaksi Pembayaran")]

@@ -49,11 +49,11 @@ class MenuKartuHasilStudi(Action):
         match pilihan_menu:
             case "Prosedur KHS":
                 if fetch_peraturan_api(tracker.sender_id, "kartuHasilStudi_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur KHS")]
             case "Persyaratan KHS":
                 if fetch_peraturan_api(tracker.sender_id, "kartuHasilStudi_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan KHS")]
             case "Hasil KHS":
                 return [SlotSet("return_value", "Hasil KHS")]

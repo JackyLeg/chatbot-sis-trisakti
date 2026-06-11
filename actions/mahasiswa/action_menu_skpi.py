@@ -49,11 +49,11 @@ class MenuSKPI(Action):
         match pilihan_menu:
             case "Prosedur SKPI":
                 if fetch_peraturan_api(tracker.sender_id, "skpi_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur SKPI")]
             case "Persyaratan SKPI":
                 if fetch_peraturan_api(tracker.sender_id, "skpi_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan SKPI")]
             case "Transaksi SKPI":
                 return [SlotSet("return_value", "Transaksi SKPI")]

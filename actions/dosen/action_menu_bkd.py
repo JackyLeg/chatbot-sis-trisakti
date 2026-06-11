@@ -48,11 +48,11 @@ class MenuBkd(Action):
         match pilihan_menu:
             case "Prosedur BKD":
                 if fetch_peraturan_api(tracker.sender_id, "bkd_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur BKD")]
             case "Persyaratan BKD":
                 if fetch_peraturan_api(tracker.sender_id, "bkd_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan BKD")]
             case "Transaksi BKD":
                 return [SlotSet("return_value", "Transaksi BKD")]

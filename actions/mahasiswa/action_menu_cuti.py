@@ -49,11 +49,11 @@ class MenuCuti(Action):
         match pilihan_menu:
             case "Prosedur Cuti":
                 if fetch_peraturan_api(tracker.sender_id, "cuti_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Cuti")]
             case "Persyaratan Cuti":
                 if fetch_peraturan_api(tracker.sender_id, "cuti_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Cuti")]
             case "Transaksi Cuti":
                 return [SlotSet("return_value", "Transaksi Cuti")]

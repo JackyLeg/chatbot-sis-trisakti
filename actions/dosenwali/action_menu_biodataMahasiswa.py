@@ -48,11 +48,11 @@ class MenuBiodataMahasiswa(Action):
         match pilihan_menu:
             case "Prosedur Biodata Mahasiswa":
                 if fetch_peraturan_api(tracker.sender_id, "biodataMahasiswa_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Biodata Mahasiswa")]
             case "Persyaratan Biodata Mahasiswa":
                 if fetch_peraturan_api(tracker.sender_id, "biodataMahasiswa_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Biodata Mahasiswa")]
             case "Transaksi Biodata Mahasiswa":
                 return [SlotSet("return_value", "Transaksi Biodata Mahasiswa")]

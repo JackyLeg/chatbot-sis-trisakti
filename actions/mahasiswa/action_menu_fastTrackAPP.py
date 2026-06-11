@@ -49,11 +49,11 @@ class MenuFastTrackApp(Action):
         match pilihan_menu:
             case "Prosedur FastTrackApp":
                 if fetch_peraturan_api(tracker.sender_id, "fastTrackApp_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur FastTrackApp")]
             case "Persyaratan FastTrackApp":
                 if fetch_peraturan_api(tracker.sender_id, "fastTrackApp_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan FastTrackApp")]
             case "Transaksi FastTrackApp":
                 return [SlotSet("return_value", "Transaksi FastTrackApp")]

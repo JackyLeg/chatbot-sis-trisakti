@@ -48,11 +48,11 @@ class MenuBimbinganSkripsi(Action):
         match pilihan_menu:
             case "Prosedur Bimbingan Skripsi":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganSkripsi_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Bimbingan Skripsi")]
             case "Persyaratan Bimbingan Skripsi":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganSkripsi_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Bimbingan Skripsi")]
             case "Transaksi Bimbingan Skripsi":
                 return [SlotSet("return_value", "Transaksi Bimbingan Skripsi")]

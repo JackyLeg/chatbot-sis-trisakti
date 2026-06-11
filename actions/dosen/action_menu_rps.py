@@ -48,11 +48,11 @@ class MenuRps(Action):
         match pilihan_menu:
             case "Prosedur RPS":
                 if fetch_peraturan_api(tracker.sender_id, "rps_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur RPS")]
             case "Persyaratan RPS":
                 if fetch_peraturan_api(tracker.sender_id, "rps_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan RPS")]
             case "Transaksi RPS":
                 return [SlotSet("return_value", "Transaksi RPS")]

@@ -48,11 +48,11 @@ class MenuPortofolio(Action):
         match pilihan_menu:
             case "Prosedur Portofolio":
                 if fetch_peraturan_api(tracker.sender_id, "portofolio_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Portofolio")]
             case "Persyaratan Portofolio":
                 if fetch_peraturan_api(tracker.sender_id, "portofolio_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Portofolio")]
             case "Transaksi Portofolio":
                 return [SlotSet("return_value", "Transaksi Portofolio")]

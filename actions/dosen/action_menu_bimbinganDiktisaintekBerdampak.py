@@ -48,11 +48,11 @@ class MenuBimbinganDiktisaintekBerdampak(Action):
         match pilihan_menu:
             case "Prosedur Bimbingan Diktisaintek Berdampak":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganDiktisaintekBerdampak_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Bimbingan Diktisaintek Berdampak")]
             case "Persyaratan Bimbingan Diktisaintek Berdampak":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganDiktisaintekBerdampak_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Bimbingan Diktisaintek Berdampak")]
             case "Transaksi Bimbingan Diktisaintek Berdampak":
                 return [SlotSet("return_value", "Transaksi Bimbingan Diktisaintek Berdampak")]

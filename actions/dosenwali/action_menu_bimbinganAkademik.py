@@ -48,11 +48,11 @@ class MenuBimbinganAkademik(Action):
         match pilihan_menu:
             case "Prosedur Bimbingan Akademik":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganAkademik_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Bimbingan Akademik")]
             case "Persyaratan Bimbingan Akademik":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganAkademik_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Bimbingan Akademik")]
             case "Transaksi Bimbingan Akademik":
                 return [SlotSet("return_value", "Transaksi Bimbingan Akademik")]

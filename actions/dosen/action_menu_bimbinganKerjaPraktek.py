@@ -48,11 +48,11 @@ class MenuBimbinganKerjaPraktek(Action):
         match pilihan_menu:
             case "Prosedur Bimbingan Kerja Praktek":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganKerjaPraktek_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Bimbingan Kerja Praktek")]
             case "Persyaratan Bimbingan Kerja Praktek":
                 if fetch_peraturan_api(tracker.sender_id, "bimbinganKerjaPraktek_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Bimbingan Kerja Praktek")]
             case "Transaksi Bimbingan Kerja Praktek":
                 return [SlotSet("return_value", "Transaksi Bimbingan Kerja Praktek")]

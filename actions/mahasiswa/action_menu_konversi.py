@@ -49,11 +49,11 @@ class MenuKonversi(Action):
         match pilihan_menu:
             case "Prosedur Konversi":
                 if fetch_peraturan_api(tracker.sender_id, "konversi_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Konversi")]
             case "Persyaratan Konversi":
                 if fetch_peraturan_api(tracker.sender_id, "konversi_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Konversi")]
             case "Transaksi Konversi":
                 return [SlotSet("return_value", "Transaksi Konversi")]

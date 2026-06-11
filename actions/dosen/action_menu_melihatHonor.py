@@ -48,11 +48,11 @@ class MenuMelihatHonor(Action):
         match pilihan_menu:
             case "Prosedur Melihat Honor":
                 if fetch_peraturan_api(tracker.sender_id, "melihatHonor_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Melihat Honor")]
             case "Persyaratan Melihat Honor":
                 if fetch_peraturan_api(tracker.sender_id, "melihatHonor_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Melihat Honor")]
             case "Transaksi Melihat Honor":
                 return [SlotSet("return_value", "Transaksi Melihat Honor")]

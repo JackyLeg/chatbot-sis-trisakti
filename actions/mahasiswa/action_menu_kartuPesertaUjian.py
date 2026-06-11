@@ -49,11 +49,11 @@ class MenuKartuPesertaUjian(Action):
         match pilihan_menu:
             case "Prosedur Kartu Peserta Ujian":
                 if fetch_peraturan_api(tracker.sender_id, "kartuPesertaUjian_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Kartu Peserta Ujian")]
             case "Persyaratan Kartu Peserta Ujian":
                 if fetch_peraturan_api(tracker.sender_id, "kartuPesertaUjian_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Kartu Peserta Ujian")]
             case "Transaksi Kartu Peserta Ujian":
                 return [SlotSet("return_value", "Transaksi Kartu Peserta Ujian")]

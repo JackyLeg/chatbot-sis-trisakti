@@ -48,11 +48,11 @@ class MenuMembuatSoalUjian(Action):
         match pilihan_menu:
             case "Prosedur Membuat Soal Ujian":
                 if fetch_peraturan_api(tracker.sender_id, "membuatSoalUjian_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Membuat Soal Ujian")]
             case "Persyaratan Membuat Soal Ujian":
                 if fetch_peraturan_api(tracker.sender_id, "membuatSoalUjian_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Membuat Soal Ujian")]
             case "Transaksi Membuat Soal Ujian":
                 return [SlotSet("return_value", "Transaksi Membuat Soal Ujian")]

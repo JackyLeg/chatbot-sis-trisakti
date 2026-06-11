@@ -48,11 +48,11 @@ class MenuPersetujuanPengisianKrs(Action):
         match pilihan_menu:
             case "Prosedur Persetujuan Pengisian KRS":
                 if fetch_peraturan_api(tracker.sender_id, "persetujuanPengisianKrs_prosedur"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Prosedur Persetujuan Pengisian KRS")]
             case "Persyaratan Persetujuan Pengisian KRS":
                 if fetch_peraturan_api(tracker.sender_id, "persetujuanPengisianKrs_persyaratan"):
-                    return []
+                    return [SlotSet("return_value", "api_success")]
                 return [SlotSet("return_value", "Persyaratan Persetujuan Pengisian KRS")]
             case "Transaksi Persetujuan Pengisian KRS":
                 return [SlotSet("return_value", "Transaksi Persetujuan Pengisian KRS")]
